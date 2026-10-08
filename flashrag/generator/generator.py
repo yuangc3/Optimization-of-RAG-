@@ -1,5 +1,6 @@
 from typing import List
 from copy import deepcopy
+import time
 import warnings
 from tqdm import tqdm
 from tqdm.auto import trange
@@ -404,6 +405,7 @@ class HFCausalLMGenerator(BaseGenerator):
 
         responses = []
         scores = []
+        score_postprocess_s = 0.0
         generated_token_ids = []
         generated_token_logits = []
 
@@ -427,10 +429,21 @@ class HFCausalLMGenerator(BaseGenerator):
                 )
 
                 generated_ids = outputs.sequences
+                # Finish generation before timing score post-processing.
+                if generated_ids.device.type == "mps":
+                    torch.mps.synchronize()
+                elif generated_ids.device.type == "cuda":
+                    torch.cuda.synchronize(generated_ids.device)
+                score_start = time.perf_counter()
                 logits = torch.stack(outputs.scores, dim=1).softmax(-1)
                 generated_ids = generated_ids[:, inputs["input_ids"].shape[-1] :]
                 gen_score = torch.gather(logits, 2, generated_ids[:, :, None]).squeeze(-1).cpu().tolist()
                 scores.extend(gen_score)
+                score_postprocess_s += time.perf_counter() - score_start
+                print(
+                    f"[tokens] input={inputs['input_ids'].shape[-1]}, "
+                    f"generated={generated_ids.shape[-1]}"
+                )
 
             # get additinoal info
             if return_dict:
@@ -500,6 +513,8 @@ class HFCausalLMGenerator(BaseGenerator):
                     new_text = new_text[:lower_stop_index]
 
                 responses.append(new_text.strip())
+
+        print(f"[profile] score_postprocess_batch_s={score_postprocess_s:.4f}")
 
         if return_dict:
             generated_token_ids = torch.cat(generated_token_ids, dim=0)

@@ -2,7 +2,7 @@ from flashrag.evaluator import Evaluator
 from flashrag.dataset.utils import split_dataset, merge_dataset
 from flashrag.utils import get_retriever, get_generator, get_refiner, get_judger
 from flashrag.prompt import PromptTemplate
-
+import time 
 
 class BasicPipeline:
     """Base object of all pipelines. A pipeline includes the overall process of RAG.
@@ -42,10 +42,13 @@ class BasicPipeline:
 
 
 class SequentialPipeline(BasicPipeline):
-    def __init__(self, config, prompt_template=None, retriever=None, generator=None):
+    def __init__(self, config, prompt_template=None, retriever=None, generator=None, rewriter=None):
         """
         inference stage:
             query -> pre-retrieval -> retriever -> post-retrieval -> generator
+
+        rewriter: Optional module whose batch_run(dataset) returns one rewritten
+            query per question for retrieval. Answer prompts use the original questions.
         """
 
         super().__init__(config, prompt_template)
@@ -59,7 +62,7 @@ class SequentialPipeline(BasicPipeline):
         else:
             self.retriever = retriever
 
-        # TODO: add rewriter module
+        self.rewriter = rewriter
 
         self.use_fid = config["use_fid"]
 
@@ -81,7 +84,14 @@ class SequentialPipeline(BasicPipeline):
 
     def run(self, dataset, do_eval=True, pred_process_fun=None):
         input_query = dataset.question
+        if self.rewriter is not None:
+            input_query = self.rewriter.batch_run(dataset)
+            dataset.update_output("rewrite_result", input_query)
+        retrieval_start = time.perf_counter()
         retrieval_results = self.retriever.batch_search(input_query)
+        retrieval_s = time.perf_counter() - retrieval_start
+
+        print(f"[profile] retrieval_batch_s={retrieval_s:.4f}, queries={len(input_query)}")
         dataset.update_output("retrieval_result", retrieval_results)
 
         if self.refiner:
@@ -105,11 +115,14 @@ class SequentialPipeline(BasicPipeline):
 
         else:
             if not self.use_fid:
+                prompt_start = time.perf_counter()
                 input_prompts = [
                     self.prompt_template.get_string(question=q, retrieval_result=r)
                     for q, r in zip(dataset.question, dataset.retrieval_result)
                 ]
-
+                prompt_s = time.perf_counter() - prompt_start
+                print(f"[profile] prompt_batch_s={prompt_s:.4f}")
+                
         if self.use_fid:
             print("Use FiD generation")
             input_prompts = []
@@ -122,7 +135,11 @@ class SequentialPipeline(BasicPipeline):
         # delete used refiner to release memory
         if self.refiner:
             del self.refiner
+        print(f"[profile] generator_device={self.generator.model.device}")
+        generation_start = time.perf_counter()
         pred_answer_list = self.generator.generate(input_prompts)
+        generation_s = time.perf_counter() - generation_start
+        print(f"[profile] generation_batch_s={generation_s:.4f}")
         dataset.update_output("pred", pred_answer_list)
 
         dataset = self.evaluate(dataset, do_eval=do_eval, pred_process_fun=pred_process_fun)
