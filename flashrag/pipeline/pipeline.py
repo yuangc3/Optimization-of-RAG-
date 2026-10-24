@@ -3,6 +3,17 @@ from flashrag.dataset.utils import split_dataset, merge_dataset
 from flashrag.utils import get_retriever, get_generator, get_refiner, get_judger
 from flashrag.prompt import PromptTemplate
 import time 
+import torch
+
+
+def _synchronize_device(device):
+    if device is None:
+        return
+    device = torch.device(device)
+    if device.type == "cuda":
+        torch.cuda.synchronize(device)
+    elif device.type == "mps" and hasattr(torch, "mps"):
+        torch.mps.synchronize()
 
 class BasicPipeline:
     """Base object of all pipelines. A pipeline includes the overall process of RAG.
@@ -63,6 +74,7 @@ class SequentialPipeline(BasicPipeline):
             self.retriever = retriever
 
         self.rewriter = rewriter
+        self.last_profile = {}
 
         self.use_fid = config["use_fid"]
 
@@ -87,8 +99,10 @@ class SequentialPipeline(BasicPipeline):
         if self.rewriter is not None:
             input_query = self.rewriter.batch_run(dataset)
             dataset.update_output("rewrite_result", input_query)
+        _synchronize_device(self.device)
         retrieval_start = time.perf_counter()
         retrieval_results = self.retriever.batch_search(input_query)
+        _synchronize_device(self.device)
         retrieval_s = time.perf_counter() - retrieval_start
 
         print(f"[profile] retrieval_batch_s={retrieval_s:.4f}, queries={len(input_query)}")
@@ -136,9 +150,17 @@ class SequentialPipeline(BasicPipeline):
         if self.refiner:
             del self.refiner
         print(f"[profile] generator_device={self.generator.model.device}")
+        generator_device = getattr(self.generator.model, "device", self.device)
+        _synchronize_device(generator_device)
         generation_start = time.perf_counter()
         pred_answer_list = self.generator.generate(input_prompts)
+        _synchronize_device(generator_device)
         generation_s = time.perf_counter() - generation_start
+        self.last_profile = {
+            "retrieval_s": retrieval_s,
+            "prompt_s": locals().get("prompt_s"),
+            "generation_s": generation_s,
+        }
         print(f"[profile] generation_batch_s={generation_s:.4f}")
         dataset.update_output("pred", pred_answer_list)
 
