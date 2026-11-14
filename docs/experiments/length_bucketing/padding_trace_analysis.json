@@ -1,0 +1,484 @@
+[
+  {
+    "host_window_ms": 1527.1078,
+    "kernel_count": 39116,
+    "kernel_sum_ms": 684.4263650000281,
+    "kernel_union_ms": 684.4273203125,
+    "process_kernel_coverage_percent": 44.818533459949585,
+    "kernel_copy_memset_union_ms": 685.2397216796875,
+    "copy_count": 364,
+    "copy_bytes": 477794004,
+    "copy_union_ms": 0.71496923828125,
+    "copies_by_direction": {
+      "Memcpy HtoD (Pageable -> Device)": 20,
+      "Memcpy DtoD (Device -> Device)": 204,
+      "Memcpy DtoH (Device -> Pinned)": 76,
+      "Memcpy DtoH (Device -> Pageable)": 64
+    },
+    "copy_direction_details": {
+      "Memcpy HtoD (Pageable -> Device)": {
+        "count": 20,
+        "bytes": 440192,
+        "union_ms": 0.03839794921875
+      },
+      "Memcpy DtoH (Device -> Pageable)": {
+        "count": 64,
+        "bytes": 442112,
+        "union_ms": 0.0681923828125
+      },
+      "Memcpy DtoD (Device -> Device)": {
+        "count": 204,
+        "bytes": 476911624,
+        "union_ms": 0.53023828125
+      },
+      "Memcpy DtoH (Device -> Pinned)": {
+        "count": 76,
+        "bytes": 76,
+        "union_ms": 0.078140625
+      }
+    },
+    "sync_api_count": 161,
+    "sync_api_host_union_ms": 383.157498046875,
+    "launch_api_count": 39116,
+    "launch_api_host_union_ms": 320.0330922851563,
+    "runtime_api_counts": {
+      "cudaFree": 34,
+      "cudaStreamIsCapturing": 918,
+      "cudaMemcpyAsync": 364,
+      "cudaStreamSynchronize": 160,
+      "cudaLaunchKernel": 34308,
+      "cudaMalloc": 34,
+      "cudaOccupancyMaxActiveBlocksPerMultiprocessor": 144,
+      "cudaMemsetAsync": 2144,
+      "cudaDeviceGetAttribute": 4808,
+      "cuLaunchKernel": 4808,
+      "cudaDeviceSynchronize": 1
+    },
+    "host_scopes": {
+      "rag.profile_window": {
+        "calls": 1,
+        "sum_host_interval_ms": 1527.1078
+      },
+      "rag.empty_cache": {
+        "calls": 4,
+        "sum_host_interval_ms": 6.6785
+      },
+      "rag.tokenization": {
+        "calls": 4,
+        "sum_host_interval_ms": 31.813699999999997
+      },
+      "rag.model_generate": {
+        "calls": 4,
+        "sum_host_interval_ms": 1472.3509
+      },
+      "rag.prefill": {
+        "calls": 4,
+        "sum_host_interval_ms": 133.881
+      },
+      "rag.decode": {
+        "calls": 28,
+        "sum_host_interval_ms": 909.6528999999997
+      },
+      "rag.text_decode": {
+        "calls": 64,
+        "sum_host_interval_ms": 12.8553
+      }
+    },
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_tn",
+        "calls": 264,
+        "sum_us": 175520.61100000012
+      },
+      {
+        "name": "_Z40fmha_cutlassF_bf16_aligned_64x64_rf_sm80N22PyTorchMemEffAttention15AttentionKernelIN7cutlass10bfloat16_tENS1_4arch4Sm80ELb1ELi64ELi64ELi64ELb1ELb1EE6ParamsE",
+        "calls": 768,
+        "sum_us": 78658.20299999996
+      },
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+        "calls": 72,
+        "sum_us": 64678.83999999999
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x1_tn_align8EEvNT_6ParamsE",
+        "calls": 2720,
+        "sum_us": 58620.08699999994
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_13BinaryFunctorIN3c108BFloat16ES4_S4_NS0_15binary_internal10MulFunctorIfEEEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 768,
+        "sum_us": 45943.06599999925
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE10_clEvEUlN3c108BFloat16EE_EEvS4_RKT_EUliE_EEviT1_",
+        "calls": 2208,
+        "sum_us": 36695.66999999956
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_61_GLOBAL__N__bd18916b_23_ActivationSiluKernel_cu_b5be07b8_454011silu_kernelERNS_18TensorIteratorBaseEENKUlvE_clEvENKUlvE4_clEvEUlN3c108BFloat16EE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 768,
+        "sum_us": 29414.1390000003
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8EEvNT_6ParamsE",
+        "calls": 2016,
+        "sum_us": 28387.451000000074
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_tensorop_bf16_s16816gemm_relu_bf16_256x128_32x3_tn_align8EEvNT_6ParamsE",
+        "calls": 72,
+        "sum_us": 23976.362999999998
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIN3c108BFloat16ES5_S5_NS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 4640,
+        "sum_us": 21346.46600000051
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIfffNS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 1568,
+        "sum_us": 12291.352999999712
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZNS0_50_GLOBAL__N__f7789698_12_PowKernel_cu_31bb9268_646829pow_tensor_scalar_kernel_implIffEEvRNS_18TensorIteratorBaseET0_EUlfE_St5arrayIPcLy2EEEEviS6_T1_",
+        "calls": 1568,
+        "sum_us": 11890.010999999584
+      }
+    ],
+    "kernels_by_forward_phase": {
+      "outside_forward_or_unmatched": {
+        "kernel_count": 1452,
+        "kernel_sum_ms": 3.087578000000002
+      },
+      "rag.prefill": {
+        "kernel_count": 4552,
+        "kernel_sum_ms": 490.72282500000046
+      },
+      "rag.decode": {
+        "kernel_count": 33112,
+        "kernel_sum_ms": 190.6159620000031
+      }
+    },
+    "note": "Kernel coverage is this process's traced activity in an instrumented host window, not global GPU utilization or SM occupancy. Host API intervals include waits, not just CPU execution.",
+    "sort_by_length": false,
+    "question_ids": [
+      "test_1942",
+      "test_761",
+      "test_2999",
+      "test_2385",
+      "test_1261",
+      "test_837",
+      "test_2980",
+      "test_1696",
+      "test_3118",
+      "test_2952",
+      "test_3124",
+      "test_1103",
+      "test_2200",
+      "test_1021",
+      "test_2622",
+      "test_3345",
+      "test_3028",
+      "test_2058",
+      "test_1467",
+      "test_1720",
+      "test_2176",
+      "test_2997",
+      "test_2538",
+      "test_910",
+      "test_1284",
+      "test_2244",
+      "test_2900",
+      "test_1369",
+      "test_2144",
+      "test_322",
+      "test_3012",
+      "test_3188"
+    ],
+    "logical_output_tokens": 256,
+    "generation_profile": {
+      "sort_by_length": false,
+      "sorting_s": 4.999999873689376e-06,
+      "processing_order": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "logical_input_tokens": 13270,
+      "padded_input_token_slots": 27504,
+      "generated_token_slots": 256,
+      "batches": 4
+    }
+  },
+  {
+    "host_window_ms": 1559.0844,
+    "kernel_count": 39116,
+    "kernel_sum_ms": 463.40940600001466,
+    "kernel_union_ms": 463.410166015625,
+    "process_kernel_coverage_percent": 29.723225119539713,
+    "kernel_copy_memset_union_ms": 464.26480419921876,
+    "copy_count": 364,
+    "copy_bytes": 477292116,
+    "copy_union_ms": 0.7031357421875,
+    "copies_by_direction": {
+      "Memcpy DtoD (Device -> Device)": 204,
+      "Memcpy DtoH (Device -> Pinned)": 76,
+      "Memcpy DtoH (Device -> Pageable)": 64,
+      "Memcpy HtoD (Pageable -> Device)": 20
+    },
+    "copy_direction_details": {
+      "Memcpy HtoD (Pageable -> Device)": {
+        "count": 20,
+        "bytes": 272896,
+        "union_ms": 0.02910791015625
+      },
+      "Memcpy DtoH (Device -> Pageable)": {
+        "count": 64,
+        "bytes": 274816,
+        "union_ms": 0.063392578125
+      },
+      "Memcpy DtoD (Device -> Device)": {
+        "count": 204,
+        "bytes": 476744328,
+        "union_ms": 0.532513671875
+      },
+      "Memcpy DtoH (Device -> Pinned)": {
+        "count": 76,
+        "bytes": 76,
+        "union_ms": 0.07812158203125
+      }
+    },
+    "sync_api_count": 161,
+    "sync_api_host_union_ms": 185.82760205078125,
+    "launch_api_count": 39116,
+    "launch_api_host_union_ms": 381.77034423828127,
+    "runtime_api_counts": {
+      "cuLaunchKernel": 4736,
+      "cudaLaunchKernel": 34380,
+      "cudaMemcpyAsync": 364,
+      "cudaMemsetAsync": 2144,
+      "cudaStreamSynchronize": 160,
+      "cudaStreamIsCapturing": 948,
+      "cudaFree": 64,
+      "cudaMalloc": 64,
+      "cudaOccupancyMaxActiveBlocksPerMultiprocessor": 144,
+      "cudaDeviceGetAttribute": 4736,
+      "cudaDeviceSynchronize": 1
+    },
+    "host_scopes": {
+      "rag.profile_window": {
+        "calls": 1,
+        "sum_host_interval_ms": 1559.0844
+      },
+      "rag.empty_cache": {
+        "calls": 4,
+        "sum_host_interval_ms": 8.3793
+      },
+      "rag.tokenization": {
+        "calls": 4,
+        "sum_host_interval_ms": 28.454700000000003
+      },
+      "rag.model_generate": {
+        "calls": 4,
+        "sum_host_interval_ms": 1485.9798
+      },
+      "rag.prefill": {
+        "calls": 4,
+        "sum_host_interval_ms": 161.2977
+      },
+      "rag.decode": {
+        "calls": 28,
+        "sum_host_interval_ms": 1090.4472999999996
+      },
+      "rag.text_decode": {
+        "calls": 64,
+        "sum_host_interval_ms": 10.857799999999997
+      }
+    },
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_tn",
+        "calls": 264,
+        "sum_us": 111924.25899999998
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x1_tn_align8EEvNT_6ParamsE",
+        "calls": 2720,
+        "sum_us": 58168.27999999987
+      },
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+        "calls": 96,
+        "sum_us": 51002.989999999976
+      },
+      {
+        "name": "_Z40fmha_cutlassF_bf16_aligned_64x64_rf_sm80N22PyTorchMemEffAttention15AttentionKernelIN7cutlass10bfloat16_tENS1_4arch4Sm80ELb1ELi64ELi64ELi64ELb1ELb1EE6ParamsE",
+        "calls": 768,
+        "sum_us": 44979.413
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_13BinaryFunctorIN3c108BFloat16ES4_S4_NS0_15binary_internal10MulFunctorIfEEEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 768,
+        "sum_us": 26104.831000000253
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8EEvNT_6ParamsE",
+        "calls": 2016,
+        "sum_us": 25817.294000000038
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE10_clEvEUlN3c108BFloat16EE_EEvS4_RKT_EUliE_EEviT1_",
+        "calls": 2208,
+        "sum_us": 24374.61699999967
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_61_GLOBAL__N__bd18916b_23_ActivationSiluKernel_cu_b5be07b8_454011silu_kernelERNS_18TensorIteratorBaseEENKUlvE_clEvENKUlvE4_clEvEUlN3c108BFloat16EE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 768,
+        "sum_us": 16813.52299999995
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIN3c108BFloat16ES5_S5_NS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 4640,
+        "sum_us": 15698.273000000145
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIfffNS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 1568,
+        "sum_us": 8251.56099999993
+      },
+      {
+        "name": "_ZN2at6native40_GLOBAL__N__0b46c3ea_8_Shape_cu_85d9f36c19CatArrayBatchedCopyINS1_10OpaqueTypeILj2EEEjLi4ELi64ELi64EEEvPT_NS1_25CatArrInputTensorMetadataIS5_T0_XT2_EXT3_EEENS1_16TensorSizeStrideIS8_Lj4EEEiS8_",
+        "calls": 1728,
+        "sum_us": 7787.846999999928
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_15CUDAFunctor_addIN3c108BFloat16EEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 2880,
+        "sum_us": 7663.383000000139
+      }
+    ],
+    "kernels_by_forward_phase": {
+      "outside_forward_or_unmatched": {
+        "kernel_count": 1452,
+        "kernel_sum_ms": 3.0759420000000017
+      },
+      "rag.prefill": {
+        "kernel_count": 4648,
+        "kernel_sum_ms": 297.50101300000074
+      },
+      "rag.decode": {
+        "kernel_count": 33016,
+        "kernel_sum_ms": 162.83245100000386
+      }
+    },
+    "note": "Kernel coverage is this process's traced activity in an instrumented host window, not global GPU utilization or SM occupancy. Host API intervals include waits, not just CPU execution.",
+    "sort_by_length": true,
+    "question_ids": [
+      "test_1942",
+      "test_761",
+      "test_2999",
+      "test_2385",
+      "test_1261",
+      "test_837",
+      "test_2980",
+      "test_1696",
+      "test_3118",
+      "test_2952",
+      "test_3124",
+      "test_1103",
+      "test_2200",
+      "test_1021",
+      "test_2622",
+      "test_3345",
+      "test_3028",
+      "test_2058",
+      "test_1467",
+      "test_1720",
+      "test_2176",
+      "test_2997",
+      "test_2538",
+      "test_910",
+      "test_1284",
+      "test_2244",
+      "test_2900",
+      "test_1369",
+      "test_2144",
+      "test_322",
+      "test_3012",
+      "test_3188"
+    ],
+    "logical_output_tokens": 256,
+    "generation_profile": {
+      "sort_by_length": true,
+      "sorting_s": 0.022239100000660983,
+      "processing_order": [
+        24,
+        2,
+        7,
+        23,
+        28,
+        5,
+        20,
+        4,
+        11,
+        1,
+        8,
+        21,
+        9,
+        15,
+        3,
+        16,
+        25,
+        26,
+        12,
+        19,
+        27,
+        31,
+        30,
+        14,
+        22,
+        10,
+        13,
+        18,
+        6,
+        29,
+        17,
+        0
+      ],
+      "logical_input_tokens": 13270,
+      "padded_input_token_slots": 17048,
+      "generated_token_slots": 256,
+      "batches": 4
+    }
+  }
+]

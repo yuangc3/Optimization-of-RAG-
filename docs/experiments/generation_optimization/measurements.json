@@ -1,0 +1,92 @@
+[
+  {
+    "repeat": 1,
+    "variant": "baseline",
+    "seconds": 33.0056354999997,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1118.0,
+    "device_allocations": 339,
+    "device_frees": 344
+  },
+  {
+    "repeat": 1,
+    "variant": "retain_allocator_cache",
+    "seconds": 33.32007160000012,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1124.0,
+    "device_allocations": 2,
+    "device_frees": 0
+  },
+  {
+    "repeat": 1,
+    "variant": "score_collection_on",
+    "seconds": 33.353414999999586,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1114.232421875,
+    "peak_reserved_mib": 1138.0,
+    "device_allocations": 372,
+    "device_frees": 377
+  },
+  {
+    "repeat": 2,
+    "variant": "baseline",
+    "seconds": 32.486277599999994,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1118.0,
+    "device_allocations": 339,
+    "device_frees": 344
+  },
+  {
+    "repeat": 2,
+    "variant": "score_collection_on",
+    "seconds": 32.496161299999585,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1114.232421875,
+    "peak_reserved_mib": 1138.0,
+    "device_allocations": 372,
+    "device_frees": 377
+  },
+  {
+    "repeat": 2,
+    "variant": "retain_allocator_cache",
+    "seconds": 31.82764959999986,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1124.0,
+    "device_allocations": 2,
+    "device_frees": 0
+  },
+  {
+    "repeat": 3,
+    "variant": "score_collection_on",
+    "seconds": 31.885241599999972,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1114.232421875,
+    "peak_reserved_mib": 1138.0,
+    "device_allocations": 372,
+    "device_frees": 377
+  },
+  {
+    "repeat": 3,
+    "variant": "baseline",
+    "seconds": 32.93463200000042,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1118.0,
+    "device_allocations": 339,
+    "device_frees": 344
+  },
+  {
+    "repeat": 3,
+    "variant": "retain_allocator_cache",
+    "seconds": 32.25391430000036,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1124.0,
+    "device_allocations": 2,
+    "device_frees": 0
+  }
+]

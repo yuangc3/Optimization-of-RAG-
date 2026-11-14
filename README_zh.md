@@ -1,4 +1,6 @@
 # <div align="center">⚡FlashRAG: 一个高效的RAG研究Python工具包<div>
+
+**Project work:** [Adaptive Top-K performance report: results, bottlenecks, and next optimization tests](docs/performance_profilling_report.md).
 \[ [English](README.md) | 中文 \]
 <div align="center">
 <a href="https://arxiv.org/abs/2405.13576" target="_blank"><img src=https://img.shields.io/badge/arXiv-b5212f.svg?logo=arxiv></a>

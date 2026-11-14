@@ -1,0 +1,20 @@
+{
+  "python": "3.11.9",
+  "executable": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\.venv\\Scripts\\python.exe",
+  "isolated_environment": true,
+  "torch": "2.11.0+cu128",
+  "cuda_runtime": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "gpu_memory_bytes": 12878086144,
+  "cuda_matrix_check": "passed",
+  "transformers": "5.7.0",
+  "faiss": "1.15.1",
+  "flashrag_imports": "passed",
+  "corpus_documents": 15000,
+  "index_vectors": 15000,
+  "index_dimensions": 768,
+  "faiss_search": "passed",
+  "sample_questions": 17,
+  "note": "Environment check only; no Qwen generation or RAG quality measurement."
+}

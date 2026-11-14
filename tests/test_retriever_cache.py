@@ -2,6 +2,7 @@ import copy
 import json
 import tempfile
 import unittest
+import warnings
 from pathlib import Path
 from unittest.mock import patch
 
@@ -65,8 +66,14 @@ class TestRetrieverCache(unittest.TestCase):
     def test_single_search_with_no_cached_results(self):
         for return_score in [False, True]:
             with self.subTest(return_score=return_score):
-                with self.assertWarns(UserWarning):
+                # unittest.assertWarns scans every imported module's warning
+                # registry, triggering optional Transformers lazy imports.
+                # Capture the actual warning without loading vision backends.
+                with warnings.catch_warnings(record=True) as captured:
+                    warnings.simplefilter("always", UserWarning)
                     result = self.retriever().search("empty", return_score=return_score)
+                self.assertTrue(any(issubclass(w.category, UserWarning) and "cached retrieval" in str(w.message)
+                                    for w in captured))
                 self.assertEqual(result, ([], []) if return_score else [])
 
     def test_batch_search_keeps_query_dimension_and_order(self):

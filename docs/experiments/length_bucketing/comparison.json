@@ -1,0 +1,43 @@
+{
+  "sample_count": 500,
+  "paired_repeats": 4,
+  "baseline_median_seconds": 47.546961299999566,
+  "sorted_median_seconds": 42.097109649999766,
+  "time_reduction_percent": 11.462039846487205,
+  "padded_slots_reduction_percent": 53.35965585490972,
+  "peak_allocated_memory_increase_percent": 56.684449728363106,
+  "mean_sorting_seconds": 0.2822795249999217,
+  "median_sorting_seconds": 0.28079299999990326,
+  "text_changes": 79,
+  "quality_comparison": {
+    "em": {
+      "delta": 0.0,
+      "better": 0,
+      "worse": 0,
+      "paired_bootstrap_95_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    "f1": {
+      "delta": -3.20082712495422e-05,
+      "better": 8,
+      "worse": 7,
+      "paired_bootstrap_95_ci": [
+        -0.0018160292713440556,
+        0.0016567987729163077
+      ]
+    },
+    "acc": {
+      "delta": 0.002,
+      "better": 2,
+      "worse": 1,
+      "paired_bootstrap_95_ci": [
+        -0.004,
+        0.008
+      ]
+    }
+  },
+  "full_rag_single_pass_seconds": 44.08823839999968,
+  "validation": "All predictions restored to original question order; all repeats stable; full-RAG adaptive output equals replay; retrieved documents and k unchanged."
+}

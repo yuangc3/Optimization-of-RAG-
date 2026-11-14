@@ -1,0 +1,148 @@
+Load data from provided data
+[profile] retrieval_batch_s=0.0000, queries=2
+[profile] prompt_batch_s=0.0000
+[profile] generator_device=cpu
+[profile] generation_batch_s=0.0000
+Load data from provided data
+[profile] retrieval_batch_s=0.0000, queries=2
+[profile] prompt_batch_s=0.0000
+[profile] generator_device=cpu
+[profile] generation_batch_s=0.0000
+Load data from provided data
+Load data from provided data
+Load data from provided data
+[profile] retrieval_batch_s=0.0000, queries=2
+[profile] prompt_batch_s=0.0000
+[profile] generator_device=cpu
+[profile] generation_batch_s=0.0000
+Load data from provided data
+[profile] retrieval_batch_s=0.0000, queries=2
+[profile] prompt_batch_s=0.0000
+[profile] generator_device=cpu
+[profile] generation_batch_s=0.0000
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+[tokens] input=2, generated=2
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=2
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=2
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0011
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=5, generated=2
+[tokens] input=3, generated=2
+[profile] score_postprocess_batch_s=0.0001
+[tokens] input=2, generated=2
+[tokens] input=5, generated=2
+[profile] score_postprocess_batch_s=0.0001
+[tokens] input=2, generated=2
+[tokens] input=5, generated=2
+[profile] score_postprocess_batch_s=0.0001
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=3
+[tokens] input=2, generated=3
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=3
+[tokens] input=2, generated=3
+[profile] score_postprocess_batch_s=0.0001
+[tokens] input=2, generated=3
+[tokens] input=2, generated=3
+[profile] score_postprocess_batch_s=0.0001
+[tokens] input=2, generated=2
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0001
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=2
+[tokens] input=4, generated=2
+[profile] score_postprocess_batch_s=0.0001
+[tokens] input=2, generated=2
+[tokens] input=4, generated=2
+[profile] score_postprocess_batch_s=0.0000
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=2
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0000
+[tokens] input=2, generated=2
+[tokens] input=2, generated=2
+[profile] score_postprocess_batch_s=0.0000
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+Load data from provided data
+test_empty_retrieval_is_passed_as_an_empty_context (test_adaptive_topk.AdaptivePipelineTest.test_empty_retrieval_is_passed_as_an_empty_context) ... ok
+test_fixed_path_keeps_retriever_api_and_documents (test_adaptive_topk.AdaptivePipelineTest.test_fixed_path_keeps_retriever_api_and_documents) ... ok
+test_malformed_retriever_outputs_fail_before_generation (test_adaptive_topk.AdaptivePipelineTest.test_malformed_retriever_outputs_fail_before_generation) ... ok
+test_per_query_k_changes_prompts_and_records_decisions (test_adaptive_topk.AdaptivePipelineTest.test_per_query_k_changes_prompts_and_records_decisions) ... ok
+test_threshold_policy_uses_existing_pipeline_and_records_scores (test_adaptive_topk.AdaptivePipelineTest.test_threshold_policy_uses_existing_pipeline_and_records_scores) ... ok
+test_empty_short_and_singleton_results_are_bounded (test_adaptive_topk.ScoreGapPolicyTest.test_empty_short_and_singleton_results_are_bounded) ... ok
+test_flat_or_tied_scores_use_fallback (test_adaptive_topk.ScoreGapPolicyTest.test_flat_or_tied_scores_use_fallback) ... ok
+test_invalid_configuration_scores_and_score_order_are_rejected (test_adaptive_topk.ScoreGapPolicyTest.test_invalid_configuration_scores_and_score_order_are_rejected) ... ok
+test_largest_significant_gap_selects_document_prefix (test_adaptive_topk.ScoreGapPolicyTest.test_largest_significant_gap_selects_document_prefix) ... ok
+test_lower_is_better_distances (test_adaptive_topk.ScoreGapPolicyTest.test_lower_is_better_distances) ... ok
+test_minimum_maximum_and_tie_breaking (test_adaptive_topk.ScoreGapPolicyTest.test_minimum_maximum_and_tie_breaking) ... ok
+test_significant_gap_can_select_more_than_five (test_adaptive_topk.ScoreGapPolicyTest.test_significant_gap_can_select_more_than_five) ... ok
+test_invalid_values_and_unsorted_scores_fail (test_adaptive_topk.SimilarityThresholdPolicyTest.test_invalid_values_and_unsorted_scores_fail) ... ok
+test_lower_distance_direction_and_short_results (test_adaptive_topk.SimilarityThresholdPolicyTest.test_lower_distance_direction_and_short_results) ... ok
+test_policy_configuration_is_round_trippable_and_unknown_type_fails (test_adaptive_topk.SimilarityThresholdPolicyTest.test_policy_configuration_is_round_trippable_and_unknown_type_fails) ... ok
+test_threshold_boundary_and_minimum_are_inclusive (test_adaptive_topk.SimilarityThresholdPolicyTest.test_threshold_boundary_and_minimum_are_inclusive) ... ok
+test_weak_query_falls_back_and_scores_are_not_probabilities (test_adaptive_topk.SimilarityThresholdPolicyTest.test_weak_query_falls_back_and_scores_are_not_probabilities) ... ok
+test_accepting_all_items_preserves_order (test_dataset_filter.TestFilterDataset.test_accepting_all_items_preserves_order) ... ok
+test_consecutive_rejections_are_all_removed (test_dataset_filter.TestFilterDataset.test_consecutive_rejections_are_all_removed) ... ok
+test_filtering_empty_file_returns_empty_dataset (test_dataset_filter.TestFilterDataset.test_filtering_empty_file_returns_empty_dataset) ... ok
+test_filtering_preserves_source_and_retained_items (test_dataset_filter.TestFilterDataset.test_filtering_preserves_source_and_retained_items) ... ok
+test_no_predicate_returns_original_dataset (test_dataset_filter.TestFilterDataset.test_no_predicate_returns_original_dataset) ... ok
+test_predicate_visits_every_item_once_in_order (test_dataset_filter.TestFilterDataset.test_predicate_visits_every_item_once_in_order) ... ok
+test_rejecting_all_items_returns_empty_dataset (test_dataset_filter.TestFilterDataset.test_rejecting_all_items_returns_empty_dataset) ... ok
+test_cache_saves_only_valid_results (test_dense_retriever.TestDenseRetriever.test_cache_saves_only_valid_results) ... ok
+test_empty_index_returns_no_documents (test_dense_retriever.TestDenseRetriever.test_empty_index_returns_no_documents) ... ok
+test_flat_index_preserves_valid_results_and_scores (test_dense_retriever.TestDenseRetriever.test_flat_index_preserves_valid_results_and_scores) ... ok
+test_ivf_search_keeps_documents_and_scores_aligned_per_query (test_dense_retriever.TestDenseRetriever.test_ivf_search_keeps_documents_and_scores_aligned_per_query) ... ok
+test_empty_retrieval_scores_zero (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_empty_retrieval_scores_zero) ... ok
+test_falls_back_to_id_and_normalizes_id_types (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_falls_back_to_id_and_normalizes_id_types) ... ok
+test_metrics_are_discoverable_by_evaluator (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_metrics_are_discoverable_by_evaluator) ... ok
+test_precision_uses_k_when_fewer_documents_are_returned (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_precision_uses_k_when_fewer_documents_are_returned) ... ok
+test_rejects_missing_or_empty_ground_truth (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_rejects_missing_or_empty_ground_truth) ... ok
+test_rejects_missing_retrieved_document_id (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_rejects_missing_retrieved_document_id) ... ok
+test_rejects_non_positive_topk (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_rejects_non_positive_topk) ... ok
+test_scores_ranked_unique_parent_documents (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_scores_ranked_unique_parent_documents) ... ok
+test_uses_configured_document_id_fields (test_document_retrieval_metrics.TestDocumentRetrievalMetrics.test_uses_configured_document_id_fields) ... ok
+test_calibration_retains_every_development_fixed5_lexical_hit (test_final_topk_study.FinalStudyProtocolTest.test_calibration_retains_every_development_fixed5_lexical_hit) ... ok
+test_lexical_proxy_uses_token_boundaries_and_rejects_empty_aliases (test_final_topk_study.FinalStudyProtocolTest.test_lexical_proxy_uses_token_boundaries_and_rejects_empty_aliases) ... ok
+test_splits_exclude_prior_questions_and_are_disjoint_and_frozen (test_final_topk_study.FinalStudyProtocolTest.test_splits_exclude_prior_questions_and_are_disjoint_and_frozen) ... ok
+test_kernel_union_excludes_nested_annotations_and_overlapping_time (test_generator_score_path.RuntimeTraceAnalysisTest.test_kernel_union_excludes_nested_annotations_and_overlapping_time) ... ok
+test_allocator_cache_control_preserves_text_and_skips_cache_clear (test_generator_score_path.ScorePathTest.test_allocator_cache_control_preserves_text_and_skips_cache_clear) ... ok
+test_generated_only_decode_preserves_scores_and_dictionary_outputs (test_generator_score_path.ScorePathTest.test_generated_only_decode_preserves_scores_and_dictionary_outputs) ... ok
+test_length_sort_restores_text_scores_ids_logits_and_reduces_padding (test_generator_score_path.ScorePathTest.test_length_sort_restores_text_scores_ids_logits_and_reduces_padding) ... ok
+test_real_huggingface_generation_matches_score_path_without_downloads (test_generator_score_path.ScorePathTest.test_real_huggingface_generation_matches_score_path_without_downloads) ... ok
+test_return_dict_preserves_logits_ids_scores_and_padding_across_batches (test_generator_score_path.ScorePathTest.test_return_dict_preserves_logits_ids_scores_and_padding_across_batches) ... ok
+test_return_scores_preserves_probabilities (test_generator_score_path.ScorePathTest.test_return_scores_preserves_probabilities) ... ok
+test_reused_real_tokenizer_preserves_truncation_padding_and_return_order (test_generator_score_path.ScorePathTest.test_reused_real_tokenizer_preserves_truncation_padding_and_return_order) ... ok
+test_text_only_skips_score_processing_and_matches_legacy (test_generator_score_path.ScorePathTest.test_text_only_skips_score_processing_and_matches_legacy) ... ok
+test_calculate_metric_normalizes_scores_to_zero_one_range (test_llm_judge.TestLLMJudge.test_calculate_metric_normalizes_scores_to_zero_one_range) ... ok
+test_extract_judge_score_as_instance_method (test_llm_judge.TestLLMJudge.test_extract_judge_score_as_instance_method) ... ok
+test_clone_preserves_records_without_mutating_original_or_other_repeat (test_perf_dataset_clone.DatasetCloneTest.test_clone_preserves_records_without_mutating_original_or_other_repeat) ... ok
+test_batch_search_keeps_query_dimension_and_order (test_retriever_cache.TestRetrieverCache.test_batch_search_keeps_query_dimension_and_order) ... ok
+test_single_search_can_save_cache (test_retriever_cache.TestRetrieverCache.test_single_search_can_save_cache) ... ok
+test_single_search_returns_flat_results_and_scores (test_retriever_cache.TestRetrieverCache.test_single_search_returns_flat_results_and_scores) ... ok
+test_single_search_with_no_cached_results (test_retriever_cache.TestRetrieverCache.test_single_search_with_no_cached_results) ... ok
+
+----------------------------------------------------------------------
+Ran 56 tests in 0.388s
+
+OK

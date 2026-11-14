@@ -1,0 +1,48 @@
+{
+  "policies": {
+    "score_gap": {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.03,
+        "higher_is_better": true
+      },
+      "mean_k": 4.945,
+      "k_distribution": {
+        "5": 196,
+        "3": 1,
+        "2": 3
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    "similarity_threshold": {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7174408435821533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.77,
+      "k_distribution": {
+        "5": 179,
+        "3": 9,
+        "4": 4,
+        "2": 8
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    }
+  },
+  "manifest_sha256": "4ef774a458c94c6a0447f21ed2ab3c9f8d66153eaa9efff2689630cb8c1e0aa9",
+  "calibration_sha256": "5747e90d8b08f37199278c0cbed602e462f1dfc36774ec3c9d2a9cfa2212edfe",
+  "frozen_utc": "2026-11-14T01:58:00Z",
+  "development_selection": "No individual development lexical hit lost versus fixed-5; minimize mean k; ties prefer larger min_k then canonical configuration.",
+  "evaluation_rule": "All frozen methods reported; no final-test winner is selected or retuned. Match fixed-5 observed EM and F1 for a quality-preserving claim; report all paired differences regardless."
+}

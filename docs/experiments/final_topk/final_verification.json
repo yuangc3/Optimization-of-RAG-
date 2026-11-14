@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "settings": 6,
+  "evaluation_questions": 500,
+  "repetitions": 3,
+  "evaluation_generations": 9000,
+  "development_questions": 200,
+  "development_generations": 1200,
+  "all_ids_in_original_order": true,
+  "adaptive_documents_match_fixed5_prefix": true,
+  "frozen_policy_and_resource_hash_checks": true,
+  "prediction_disagreements": {
+    "fixed_10": 0,
+    "similarity_threshold": 0,
+    "fixed_1": 0,
+    "score_gap": 0,
+    "fixed_5": 0,
+    "fixed_3": 0
+  }
+}

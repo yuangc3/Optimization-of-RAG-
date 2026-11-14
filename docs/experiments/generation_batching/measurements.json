@@ -1,0 +1,92 @@
+[
+  {
+    "repeat": 1,
+    "variant": "baseline",
+    "seconds": 27.47656740000002,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1118.0,
+    "device_allocations": 336,
+    "device_frees": 341
+  },
+  {
+    "repeat": 1,
+    "variant": "batch4",
+    "seconds": 13.531710500000372,
+    "text_mismatches_against_saved": 14,
+    "peak_allocated_mib": 1169.00634765625,
+    "peak_reserved_mib": 1236.0,
+    "device_allocations": 425,
+    "device_frees": 412
+  },
+  {
+    "repeat": 1,
+    "variant": "batch8",
+    "seconds": 9.128142599999592,
+    "text_mismatches_against_saved": 16,
+    "peak_allocated_mib": 1386.1962890625,
+    "peak_reserved_mib": 1482.0,
+    "device_allocations": 126,
+    "device_frees": 127
+  },
+  {
+    "repeat": 2,
+    "variant": "batch4",
+    "seconds": 13.638509200000044,
+    "text_mismatches_against_saved": 14,
+    "peak_allocated_mib": 1169.00634765625,
+    "peak_reserved_mib": 1236.0,
+    "device_allocations": 425,
+    "device_frees": 412
+  },
+  {
+    "repeat": 2,
+    "variant": "batch8",
+    "seconds": 9.918299699999807,
+    "text_mismatches_against_saved": 16,
+    "peak_allocated_mib": 1386.1962890625,
+    "peak_reserved_mib": 1482.0,
+    "device_allocations": 126,
+    "device_frees": 127
+  },
+  {
+    "repeat": 2,
+    "variant": "baseline",
+    "seconds": 27.352996099999473,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1118.0,
+    "device_allocations": 338,
+    "device_frees": 343
+  },
+  {
+    "repeat": 3,
+    "variant": "batch8",
+    "seconds": 10.116913600000771,
+    "text_mismatches_against_saved": 16,
+    "peak_allocated_mib": 1386.1962890625,
+    "peak_reserved_mib": 1482.0,
+    "device_allocations": 126,
+    "device_frees": 127
+  },
+  {
+    "repeat": 3,
+    "variant": "baseline",
+    "seconds": 26.868695999999545,
+    "text_mismatches_against_saved": 0,
+    "peak_allocated_mib": 1103.6533203125,
+    "peak_reserved_mib": 1118.0,
+    "device_allocations": 338,
+    "device_frees": 343
+  },
+  {
+    "repeat": 3,
+    "variant": "batch4",
+    "seconds": 12.932456999999886,
+    "text_mismatches_against_saved": 14,
+    "peak_allocated_mib": 1169.00634765625,
+    "peak_reserved_mib": 1236.0,
+    "device_allocations": 425,
+    "device_frees": 412
+  }
+]

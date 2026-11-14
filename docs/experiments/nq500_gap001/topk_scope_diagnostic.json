@@ -1,0 +1,51 @@
+{
+  "fixed_source": "docs\\experiments\\nq500_gap001\\adaptive_topk_k5_20261113_151722_140059.json",
+  "adaptive_source": "docs\\experiments\\nq500_gap001\\adaptive_topk_adaptive_gap_20261113_151722_140059.json",
+  "sample_count": 500,
+  "selected_k_distribution": {
+    "1": 139,
+    "2": 52,
+    "3": 19,
+    "4": 7,
+    "5": 277,
+    "6": 3,
+    "7": 3
+  },
+  "em_losses": [
+    {
+      "id": "test_3053",
+      "selected_k": 1,
+      "fixed_em": 1.0,
+      "adaptive_em": 0.0,
+      "fixed_lexical_answer_coverage": true,
+      "adaptive_lexical_answer_coverage": false
+    },
+    {
+      "id": "test_984",
+      "selected_k": 3,
+      "fixed_em": 1.0,
+      "adaptive_em": 0.0,
+      "fixed_lexical_answer_coverage": false,
+      "adaptive_lexical_answer_coverage": false
+    },
+    {
+      "id": "test_526",
+      "selected_k": 1,
+      "fixed_em": 1.0,
+      "adaptive_em": 0.0,
+      "fixed_lexical_answer_coverage": true,
+      "adaptive_lexical_answer_coverage": false
+    },
+    {
+      "id": "test_1149",
+      "selected_k": 1,
+      "fixed_em": 1.0,
+      "adaptive_em": 0.0,
+      "fixed_lexical_answer_coverage": true,
+      "adaptive_lexical_answer_coverage": false
+    }
+  ],
+  "em_gains": [],
+  "queries_k_above_5": 6,
+  "note": "Post-hoc diagnostic on reused test questions. Nonempty normalized answer substring in normalized retrieved contents is a lexical proxy, not evidence sufficiency. This analysis must not be used to tune a rule and then claim these 500 questions are a new held-out evaluation."
+}

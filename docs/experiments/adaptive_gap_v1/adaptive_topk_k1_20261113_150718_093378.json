@@ -1,0 +1,1502 @@
+{
+  "metadata": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.7.0",
+    "generator_device": "cuda:0",
+    "model_path": "models/Qwen2.5-0.5B-Instruct",
+    "retriever_path": "C:\\Users\\caiyu\\.cache\\huggingface\\hub\\models--intfloat--e5-base-v2\\snapshots\\f52bf8ec8c7124536f0efb74aca902b2995e5bcd",
+    "data_dir": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\examples\\quick_start\\dataset",
+    "index_path": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\examples\\quick_start\\indexes\\e5_Flat.index",
+    "corpus_path": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\examples\\quick_start\\indexes\\general_knowledge.jsonl",
+    "collect_scores": false,
+    "generation_params": {
+      "do_sample": false,
+      "max_tokens": 32
+    },
+    "seed": 2024,
+    "input_tokens_note": "Evaluator tokenizer count; not necessarily generator tokenizer count",
+    "adaptive_policy": {
+      "min_k": 1,
+      "max_k": 10,
+      "fallback_k": 5,
+      "gap_threshold": 0.05,
+      "higher_is_better": true
+    }
+  },
+  "run_id": "20261113_150718_093378",
+  "k": 1,
+  "setting": "k1",
+  "policy": null,
+  "generator_avg_input_tokens": 140.88235294117646,
+  "selected_k_distribution": {
+    "1": 17
+  },
+  "sample_count": 17,
+  "warmups": 1,
+  "repeats": 3,
+  "metrics_by_repeat": [
+    {
+      "em": 0.058823529411764705,
+      "f1": 0.08347338935574229,
+      "acc": 0.11764705882352941,
+      "avg_input_tokens": 162.1764705882353
+    },
+    {
+      "em": 0.058823529411764705,
+      "f1": 0.08347338935574229,
+      "acc": 0.11764705882352941,
+      "avg_input_tokens": 162.1764705882353
+    },
+    {
+      "em": 0.058823529411764705,
+      "f1": 0.08347338935574229,
+      "acc": 0.11764705882352941,
+      "avg_input_tokens": 162.1764705882353
+    }
+  ],
+  "mean_metrics": {
+    "em": 0.058823529411764705,
+    "f1": 0.08347338935574229,
+    "acc": 0.11764705882352941,
+    "avg_input_tokens": 162.1764705882353
+  },
+  "mean_docs_per_query": 1,
+  "end_to_end_seconds_by_repeat": [
+    6.981655699999919,
+    8.475059599999895,
+    7.193528899999819
+  ],
+  "stage_seconds_by_repeat": {
+    "retrieval_s": [
+      0.01403039999968314,
+      0.015120899999601534,
+      0.015285899999980757
+    ],
+    "selection_s": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prompt_s": [
+      0.01756629999999859,
+      0.019425399999818183,
+      0.018363199999839708
+    ],
+    "generation_s": [
+      6.949871100000109,
+      8.440308499999901,
+      7.1596684000001005
+    ]
+  },
+  "median_end_to_end_s": 7.193528899999819,
+  "mean_end_to_end_s": 7.550081399999878,
+  "throughput_qps_at_median": 2.3632351014813366,
+  "samples_by_repeat": [
+    [
+      {
+        "id": "test_0",
+        "question": "who got the first nobel prize in physics",
+        "golden_answers": [
+          "Wilhelm Conrad Röntgen"
+        ],
+        "prediction": "C. V. Raman",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 116
+        },
+        "retrieved_documents": [
+          {
+            "id": 3027,
+            "title": "Who was the first Indian to win the Nobel Prize in Physics?",
+            "contents": "Who was the first Indian to win the Nobel Prize in Physics?\nC. V. Raman was the first Indian to win the Nobel Prize in Physics."
+          }
+        ],
+        "input_tokens": 116,
+        "generator_input_tokens": 94,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_1",
+        "question": "when is the next deadpool movie being released",
+        "golden_answers": [
+          "May 18, 2018"
+        ],
+        "prediction": "The next Deadpool movie is set to be released in 2023.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 139
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          }
+        ],
+        "input_tokens": 139,
+        "generator_input_tokens": 119,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_2",
+        "question": "which mode is used for short wave broadcast service",
+        "golden_answers": [
+          "Olivia",
+          "MFSK"
+        ],
+        "prediction": "short wave",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 255
+        },
+        "retrieved_documents": [
+          {
+            "id": 14825,
+            "title": "Explain the working principle of MediaTek Dimensity?",
+            "contents": "Explain the working principle of MediaTek Dimensity?\nMediaTek Dimensity is an integrated wireless 5G modem-to-antenna 5G system-on-chip (SoC) developed by MediaTek. It features an octa-core 64-bit ARM Cortex-A77/A55 CPU cluster and Imagination Technologies IMG9X-MP6 GPU, both of which are 5G-integrated and have 2.0GHz operating frequency. The integrated MediaTek 5G modem supports 2G, 3G, 4G and 5G networks, and handles up to 5Gbps download speeds and 2.5Gbps upload speeds. The chip also supports up to 8K Ultra HD video capturing and playback, as well as multi-camera systems. Additionally, MediaTek Dimensity also boasts low power consumption and machine learning technology."
+          }
+        ],
+        "input_tokens": 255,
+        "generator_input_tokens": 236,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_3",
+        "question": "the south west wind blows across nigeria between",
+        "golden_answers": [
+          "till September"
+        ],
+        "prediction": "November and December",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 185
+        },
+        "retrieved_documents": [
+          {
+            "id": 8993,
+            "title": "Describe the weather in the following city: Lagos, Nigeria?",
+            "contents": "Describe the weather in the following city: Lagos, Nigeria?\nThe weather in Lagos, Nigeria is usually hot, humid, and rainy. It is typically warm year round, with temperatures ranging from the high 70s to the mid-80s (Fahrenheit). The rainy season begins in April and ends in October. During this time, temperatures will be slightly cooler and there could be significant rainfall on some days. From November to March, the climate is much drier, but temperatures will remain warm."
+          }
+        ],
+        "input_tokens": 185,
+        "generator_input_tokens": 165,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_4",
+        "question": "what does hp mean in war and order",
+        "golden_answers": [
+          "hit points or health points"
+        ],
+        "prediction": "Health Point (HP) is a metric used in video games and online multiplayer games to represent the health points of characters. It represents the player's current health level",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.13333333333333333,
+          "acc": 0.0,
+          "input_tokens": 260
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          }
+        ],
+        "input_tokens": 260,
+        "generator_input_tokens": 238,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_5",
+        "question": "who wrote the first declaration of human rights",
+        "golden_answers": [
+          "Cyrus"
+        ],
+        "prediction": "No one has been definitively identified as the author of the first Declaration of Human Rights. It is believed to have originated with John Locke, a British philosopher and",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 114
+        },
+        "retrieved_documents": [
+          {
+            "id": 6081,
+            "title": "What values were promised in the United States Declaration of Independence??",
+            "contents": "What values were promised in the United States Declaration of Independence??\nThe United States Declaration of Independence promised life, liberty, and the pursuit of happiness."
+          }
+        ],
+        "input_tokens": 114,
+        "generator_input_tokens": 92,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_6",
+        "question": "who is the owner of reading football club",
+        "golden_answers": [
+          "Xiu Li Dai",
+          "Dai Xiuli",
+          "Dai Yongge",
+          "Yongge Dai"
+        ],
+        "prediction": "None of the provided documents contain information about a \"reading football club.\" The text only mentions that Peter Rawlinson, one of the founders of Lucid Motors",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 117
+        },
+        "retrieved_documents": [
+          {
+            "id": 2041,
+            "title": "Who is the founder of the electric car company Lucid Motors?",
+            "contents": "Who is the founder of the electric car company Lucid Motors?\nPeter Rawlinson is one of the founders of the electric car company Lucid Motors.\\n"
+          }
+        ],
+        "input_tokens": 117,
+        "generator_input_tokens": 95,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_7",
+        "question": "when is the next scandal episode coming out",
+        "golden_answers": [
+          "February 1, 2018"
+        ],
+        "prediction": "The next scandal episode is scheduled to be released in 2023.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 138
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          }
+        ],
+        "input_tokens": 138,
+        "generator_input_tokens": 118,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_8",
+        "question": "when is the last time the philadelphia won the superbowl",
+        "golden_answers": [
+          "Super Bowl LII,",
+          "2017"
+        ],
+        "prediction": "2016",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 120
+        },
+        "retrieved_documents": [
+          {
+            "id": 11253,
+            "title": "Name five major cities in the United States.?",
+            "contents": "Name five major cities in the United States.?\nFive major cities in the United States are New York City, Los Angeles, Chicago, Houston, and Philadelphia."
+          }
+        ],
+        "input_tokens": 120,
+        "generator_input_tokens": 98,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_9",
+        "question": "who was the first lady nominated member of the rajya sabha",
+        "golden_answers": [
+          "Mary Kom"
+        ],
+        "prediction": "None of the provided documents contain information about a \"first lady\" or a \"Ladies' Assembly.\" The given text is about Annie Besant being the first",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 115
+        },
+        "retrieved_documents": [
+          {
+            "id": 2971,
+            "title": "Who was the first woman President of the Indian National Congress?",
+            "contents": "Who was the first woman President of the Indian National Congress?\nAnnie Besant was the first woman President of the Indian National Congress."
+          }
+        ],
+        "input_tokens": 115,
+        "generator_input_tokens": 93,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_10",
+        "question": "what is the most current adobe flash player version",
+        "golden_answers": [
+          "28.0.0.137"
+        ],
+        "prediction": "The most current Adobe Flash Player version is 36.0.0.47.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 112
+        },
+        "retrieved_documents": [
+          {
+            "id": 8474,
+            "title": "What is the latest version of Android??",
+            "contents": "What is the latest version of Android??\nThe latest version of Android is 11.0 (released in 2020)."
+          }
+        ],
+        "input_tokens": 112,
+        "generator_input_tokens": 93,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_11",
+        "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+        "golden_answers": [
+          "Pyotr Ilyich Tchaikovsky"
+        ],
+        "prediction": "Pyotr Ilyich Tchaikovsky",
+        "metric_scores": {
+          "em": 1.0,
+          "f1": 1.0,
+          "acc": 1.0,
+          "input_tokens": 127
+        },
+        "retrieved_documents": [
+          {
+            "id": 2428,
+            "title": "Who is the composer who wrote \"Swan Lake\"?",
+            "contents": "Who is the composer who wrote \"Swan Lake\"?\nPyotr Ilyich Tchaikovsky is the composer who wrote \"Swan Lake\".\\n"
+          }
+        ],
+        "input_tokens": 127,
+        "generator_input_tokens": 105,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_12",
+        "question": "how many episodes are there in dragon ball z",
+        "golden_answers": [
+          "291 episodes",
+          "291"
+        ],
+        "prediction": "5",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 259
+        },
+        "retrieved_documents": [
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          }
+        ],
+        "input_tokens": 259,
+        "generator_input_tokens": 237,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_13",
+        "question": "cast of law & order special victim unit",
+        "golden_answers": [
+          "Kelli Giddish",
+          "Richard Belzer",
+          "Stephanie March",
+          "Diane Neal",
+          "Ice-T",
+          "Danny Pino",
+          "Dann Florek",
+          "Tamara Tunie",
+          "Michaela McManus",
+          "Mariska Hargitay",
+          "Adam Beach",
+          "B. D. Wong",
+          "Christopher Meloni",
+          "Raúl Esparza",
+          "Michelle Hurd",
+          "Peter Scanavino"
+        ],
+        "prediction": "The cast of Law & Order: Special Victims Unit includes:\n\n- Detective Mike Mullen\n- Detective Sarah Thompson\n- Detective John Doe\n- Detective Emily Carter",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 260
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          }
+        ],
+        "input_tokens": 260,
+        "generator_input_tokens": 238,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_14",
+        "question": "who designed the garden city of new earswick",
+        "golden_answers": [
+          "planner Raymond Unwin",
+          "architect Barry Parker",
+          "Raymond Unwin"
+        ],
+        "prediction": "None of the provided documents mention the design of the Garden City of New Ewirdick.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 112
+        },
+        "retrieved_documents": [
+          {
+            "id": 3083,
+            "title": "Which Indian city is known as the \"Garden City\"?",
+            "contents": "Which Indian city is known as the \"Garden City\"?\nBengaluru is known as the \"Garden City\" in India."
+          }
+        ],
+        "input_tokens": 112,
+        "generator_input_tokens": 90,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_15",
+        "question": "what is the first step in the evolution of the eye",
+        "golden_answers": [
+          "photoreceptor proteins that sense light",
+          "eyespots"
+        ],
+        "prediction": "Variation",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 178
+        },
+        "retrieved_documents": [
+          {
+            "id": 12418,
+            "title": "Describe the four stages of natural selection.?",
+            "contents": "Describe the four stages of natural selection.?\nThe four stages of natural selection are variation, heritability, selection, and adaptation. Variation occurs when individuals in a species have unique attributes. Heritability is the transfer of a trait from parents to their offspring. Selection is the process of different traits becoming more abundant or rare in a population depending on the environment. Finally, adaptation is when heritable traits that are advantageous become more common in a population."
+          }
+        ],
+        "input_tokens": 178,
+        "generator_input_tokens": 156,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_16",
+        "question": "where is the tv show the curse of oak island filmed",
+        "golden_answers": [
+          "Oak Island"
+        ],
+        "prediction": "The TV show \"The Curse of Oak Island\" was filmed on an island in Maine.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.2857142857142857,
+          "acc": 1.0,
+          "input_tokens": 150
+        },
+        "retrieved_documents": [
+          {
+            "id": 7881,
+            "title": "Create a new setting for a story.?",
+            "contents": "Create a new setting for a story.?\nThe story takes place on a small island off the coast of Maine, surrounded by mist and cloaked in mystery. Native inhabitants of the island have been known to tell tales of strange and otherworldly creatures living in the depths of the shadows cast by the surrounding trees."
+          }
+        ],
+        "input_tokens": 150,
+        "generator_input_tokens": 128,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      }
+    ],
+    [
+      {
+        "id": "test_0",
+        "question": "who got the first nobel prize in physics",
+        "golden_answers": [
+          "Wilhelm Conrad Röntgen"
+        ],
+        "prediction": "C. V. Raman",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 116
+        },
+        "retrieved_documents": [
+          {
+            "id": 3027,
+            "title": "Who was the first Indian to win the Nobel Prize in Physics?",
+            "contents": "Who was the first Indian to win the Nobel Prize in Physics?\nC. V. Raman was the first Indian to win the Nobel Prize in Physics."
+          }
+        ],
+        "input_tokens": 116,
+        "generator_input_tokens": 94,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_1",
+        "question": "when is the next deadpool movie being released",
+        "golden_answers": [
+          "May 18, 2018"
+        ],
+        "prediction": "The next Deadpool movie is set to be released in 2023.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 139
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          }
+        ],
+        "input_tokens": 139,
+        "generator_input_tokens": 119,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_2",
+        "question": "which mode is used for short wave broadcast service",
+        "golden_answers": [
+          "Olivia",
+          "MFSK"
+        ],
+        "prediction": "short wave",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 255
+        },
+        "retrieved_documents": [
+          {
+            "id": 14825,
+            "title": "Explain the working principle of MediaTek Dimensity?",
+            "contents": "Explain the working principle of MediaTek Dimensity?\nMediaTek Dimensity is an integrated wireless 5G modem-to-antenna 5G system-on-chip (SoC) developed by MediaTek. It features an octa-core 64-bit ARM Cortex-A77/A55 CPU cluster and Imagination Technologies IMG9X-MP6 GPU, both of which are 5G-integrated and have 2.0GHz operating frequency. The integrated MediaTek 5G modem supports 2G, 3G, 4G and 5G networks, and handles up to 5Gbps download speeds and 2.5Gbps upload speeds. The chip also supports up to 8K Ultra HD video capturing and playback, as well as multi-camera systems. Additionally, MediaTek Dimensity also boasts low power consumption and machine learning technology."
+          }
+        ],
+        "input_tokens": 255,
+        "generator_input_tokens": 236,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_3",
+        "question": "the south west wind blows across nigeria between",
+        "golden_answers": [
+          "till September"
+        ],
+        "prediction": "November and December",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 185
+        },
+        "retrieved_documents": [
+          {
+            "id": 8993,
+            "title": "Describe the weather in the following city: Lagos, Nigeria?",
+            "contents": "Describe the weather in the following city: Lagos, Nigeria?\nThe weather in Lagos, Nigeria is usually hot, humid, and rainy. It is typically warm year round, with temperatures ranging from the high 70s to the mid-80s (Fahrenheit). The rainy season begins in April and ends in October. During this time, temperatures will be slightly cooler and there could be significant rainfall on some days. From November to March, the climate is much drier, but temperatures will remain warm."
+          }
+        ],
+        "input_tokens": 185,
+        "generator_input_tokens": 165,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_4",
+        "question": "what does hp mean in war and order",
+        "golden_answers": [
+          "hit points or health points"
+        ],
+        "prediction": "Health Point (HP) is a metric used in video games and online multiplayer games to represent the health points of characters. It represents the player's current health level",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.13333333333333333,
+          "acc": 0.0,
+          "input_tokens": 260
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          }
+        ],
+        "input_tokens": 260,
+        "generator_input_tokens": 238,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_5",
+        "question": "who wrote the first declaration of human rights",
+        "golden_answers": [
+          "Cyrus"
+        ],
+        "prediction": "No one has been definitively identified as the author of the first Declaration of Human Rights. It is believed to have originated with John Locke, a British philosopher and",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 114
+        },
+        "retrieved_documents": [
+          {
+            "id": 6081,
+            "title": "What values were promised in the United States Declaration of Independence??",
+            "contents": "What values were promised in the United States Declaration of Independence??\nThe United States Declaration of Independence promised life, liberty, and the pursuit of happiness."
+          }
+        ],
+        "input_tokens": 114,
+        "generator_input_tokens": 92,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_6",
+        "question": "who is the owner of reading football club",
+        "golden_answers": [
+          "Xiu Li Dai",
+          "Dai Xiuli",
+          "Dai Yongge",
+          "Yongge Dai"
+        ],
+        "prediction": "None of the provided documents contain information about a \"reading football club.\" The text only mentions that Peter Rawlinson, one of the founders of Lucid Motors",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 117
+        },
+        "retrieved_documents": [
+          {
+            "id": 2041,
+            "title": "Who is the founder of the electric car company Lucid Motors?",
+            "contents": "Who is the founder of the electric car company Lucid Motors?\nPeter Rawlinson is one of the founders of the electric car company Lucid Motors.\\n"
+          }
+        ],
+        "input_tokens": 117,
+        "generator_input_tokens": 95,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_7",
+        "question": "when is the next scandal episode coming out",
+        "golden_answers": [
+          "February 1, 2018"
+        ],
+        "prediction": "The next scandal episode is scheduled to be released in 2023.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 138
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          }
+        ],
+        "input_tokens": 138,
+        "generator_input_tokens": 118,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_8",
+        "question": "when is the last time the philadelphia won the superbowl",
+        "golden_answers": [
+          "Super Bowl LII,",
+          "2017"
+        ],
+        "prediction": "2016",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 120
+        },
+        "retrieved_documents": [
+          {
+            "id": 11253,
+            "title": "Name five major cities in the United States.?",
+            "contents": "Name five major cities in the United States.?\nFive major cities in the United States are New York City, Los Angeles, Chicago, Houston, and Philadelphia."
+          }
+        ],
+        "input_tokens": 120,
+        "generator_input_tokens": 98,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_9",
+        "question": "who was the first lady nominated member of the rajya sabha",
+        "golden_answers": [
+          "Mary Kom"
+        ],
+        "prediction": "None of the provided documents contain information about a \"first lady\" or a \"Ladies' Assembly.\" The given text is about Annie Besant being the first",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 115
+        },
+        "retrieved_documents": [
+          {
+            "id": 2971,
+            "title": "Who was the first woman President of the Indian National Congress?",
+            "contents": "Who was the first woman President of the Indian National Congress?\nAnnie Besant was the first woman President of the Indian National Congress."
+          }
+        ],
+        "input_tokens": 115,
+        "generator_input_tokens": 93,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_10",
+        "question": "what is the most current adobe flash player version",
+        "golden_answers": [
+          "28.0.0.137"
+        ],
+        "prediction": "The most current Adobe Flash Player version is 36.0.0.47.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 112
+        },
+        "retrieved_documents": [
+          {
+            "id": 8474,
+            "title": "What is the latest version of Android??",
+            "contents": "What is the latest version of Android??\nThe latest version of Android is 11.0 (released in 2020)."
+          }
+        ],
+        "input_tokens": 112,
+        "generator_input_tokens": 93,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_11",
+        "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+        "golden_answers": [
+          "Pyotr Ilyich Tchaikovsky"
+        ],
+        "prediction": "Pyotr Ilyich Tchaikovsky",
+        "metric_scores": {
+          "em": 1.0,
+          "f1": 1.0,
+          "acc": 1.0,
+          "input_tokens": 127
+        },
+        "retrieved_documents": [
+          {
+            "id": 2428,
+            "title": "Who is the composer who wrote \"Swan Lake\"?",
+            "contents": "Who is the composer who wrote \"Swan Lake\"?\nPyotr Ilyich Tchaikovsky is the composer who wrote \"Swan Lake\".\\n"
+          }
+        ],
+        "input_tokens": 127,
+        "generator_input_tokens": 105,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_12",
+        "question": "how many episodes are there in dragon ball z",
+        "golden_answers": [
+          "291 episodes",
+          "291"
+        ],
+        "prediction": "5",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 259
+        },
+        "retrieved_documents": [
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          }
+        ],
+        "input_tokens": 259,
+        "generator_input_tokens": 237,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_13",
+        "question": "cast of law & order special victim unit",
+        "golden_answers": [
+          "Kelli Giddish",
+          "Richard Belzer",
+          "Stephanie March",
+          "Diane Neal",
+          "Ice-T",
+          "Danny Pino",
+          "Dann Florek",
+          "Tamara Tunie",
+          "Michaela McManus",
+          "Mariska Hargitay",
+          "Adam Beach",
+          "B. D. Wong",
+          "Christopher Meloni",
+          "Raúl Esparza",
+          "Michelle Hurd",
+          "Peter Scanavino"
+        ],
+        "prediction": "The cast of Law & Order: Special Victims Unit includes:\n\n- Detective Mike Mullen\n- Detective Sarah Thompson\n- Detective John Doe\n- Detective Emily Carter",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 260
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          }
+        ],
+        "input_tokens": 260,
+        "generator_input_tokens": 238,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_14",
+        "question": "who designed the garden city of new earswick",
+        "golden_answers": [
+          "planner Raymond Unwin",
+          "architect Barry Parker",
+          "Raymond Unwin"
+        ],
+        "prediction": "None of the provided documents mention the design of the Garden City of New Ewirdick.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 112
+        },
+        "retrieved_documents": [
+          {
+            "id": 3083,
+            "title": "Which Indian city is known as the \"Garden City\"?",
+            "contents": "Which Indian city is known as the \"Garden City\"?\nBengaluru is known as the \"Garden City\" in India."
+          }
+        ],
+        "input_tokens": 112,
+        "generator_input_tokens": 90,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_15",
+        "question": "what is the first step in the evolution of the eye",
+        "golden_answers": [
+          "photoreceptor proteins that sense light",
+          "eyespots"
+        ],
+        "prediction": "Variation",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 178
+        },
+        "retrieved_documents": [
+          {
+            "id": 12418,
+            "title": "Describe the four stages of natural selection.?",
+            "contents": "Describe the four stages of natural selection.?\nThe four stages of natural selection are variation, heritability, selection, and adaptation. Variation occurs when individuals in a species have unique attributes. Heritability is the transfer of a trait from parents to their offspring. Selection is the process of different traits becoming more abundant or rare in a population depending on the environment. Finally, adaptation is when heritable traits that are advantageous become more common in a population."
+          }
+        ],
+        "input_tokens": 178,
+        "generator_input_tokens": 156,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_16",
+        "question": "where is the tv show the curse of oak island filmed",
+        "golden_answers": [
+          "Oak Island"
+        ],
+        "prediction": "The TV show \"The Curse of Oak Island\" was filmed on an island in Maine.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.2857142857142857,
+          "acc": 1.0,
+          "input_tokens": 150
+        },
+        "retrieved_documents": [
+          {
+            "id": 7881,
+            "title": "Create a new setting for a story.?",
+            "contents": "Create a new setting for a story.?\nThe story takes place on a small island off the coast of Maine, surrounded by mist and cloaked in mystery. Native inhabitants of the island have been known to tell tales of strange and otherworldly creatures living in the depths of the shadows cast by the surrounding trees."
+          }
+        ],
+        "input_tokens": 150,
+        "generator_input_tokens": 128,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      }
+    ],
+    [
+      {
+        "id": "test_0",
+        "question": "who got the first nobel prize in physics",
+        "golden_answers": [
+          "Wilhelm Conrad Röntgen"
+        ],
+        "prediction": "C. V. Raman",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 116
+        },
+        "retrieved_documents": [
+          {
+            "id": 3027,
+            "title": "Who was the first Indian to win the Nobel Prize in Physics?",
+            "contents": "Who was the first Indian to win the Nobel Prize in Physics?\nC. V. Raman was the first Indian to win the Nobel Prize in Physics."
+          }
+        ],
+        "input_tokens": 116,
+        "generator_input_tokens": 94,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_1",
+        "question": "when is the next deadpool movie being released",
+        "golden_answers": [
+          "May 18, 2018"
+        ],
+        "prediction": "The next Deadpool movie is set to be released in 2023.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 139
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          }
+        ],
+        "input_tokens": 139,
+        "generator_input_tokens": 119,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_2",
+        "question": "which mode is used for short wave broadcast service",
+        "golden_answers": [
+          "Olivia",
+          "MFSK"
+        ],
+        "prediction": "short wave",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 255
+        },
+        "retrieved_documents": [
+          {
+            "id": 14825,
+            "title": "Explain the working principle of MediaTek Dimensity?",
+            "contents": "Explain the working principle of MediaTek Dimensity?\nMediaTek Dimensity is an integrated wireless 5G modem-to-antenna 5G system-on-chip (SoC) developed by MediaTek. It features an octa-core 64-bit ARM Cortex-A77/A55 CPU cluster and Imagination Technologies IMG9X-MP6 GPU, both of which are 5G-integrated and have 2.0GHz operating frequency. The integrated MediaTek 5G modem supports 2G, 3G, 4G and 5G networks, and handles up to 5Gbps download speeds and 2.5Gbps upload speeds. The chip also supports up to 8K Ultra HD video capturing and playback, as well as multi-camera systems. Additionally, MediaTek Dimensity also boasts low power consumption and machine learning technology."
+          }
+        ],
+        "input_tokens": 255,
+        "generator_input_tokens": 236,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_3",
+        "question": "the south west wind blows across nigeria between",
+        "golden_answers": [
+          "till September"
+        ],
+        "prediction": "November and December",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 185
+        },
+        "retrieved_documents": [
+          {
+            "id": 8993,
+            "title": "Describe the weather in the following city: Lagos, Nigeria?",
+            "contents": "Describe the weather in the following city: Lagos, Nigeria?\nThe weather in Lagos, Nigeria is usually hot, humid, and rainy. It is typically warm year round, with temperatures ranging from the high 70s to the mid-80s (Fahrenheit). The rainy season begins in April and ends in October. During this time, temperatures will be slightly cooler and there could be significant rainfall on some days. From November to March, the climate is much drier, but temperatures will remain warm."
+          }
+        ],
+        "input_tokens": 185,
+        "generator_input_tokens": 165,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_4",
+        "question": "what does hp mean in war and order",
+        "golden_answers": [
+          "hit points or health points"
+        ],
+        "prediction": "Health Point (HP) is a metric used in video games and online multiplayer games to represent the health points of characters. It represents the player's current health level",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.13333333333333333,
+          "acc": 0.0,
+          "input_tokens": 260
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          }
+        ],
+        "input_tokens": 260,
+        "generator_input_tokens": 238,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_5",
+        "question": "who wrote the first declaration of human rights",
+        "golden_answers": [
+          "Cyrus"
+        ],
+        "prediction": "No one has been definitively identified as the author of the first Declaration of Human Rights. It is believed to have originated with John Locke, a British philosopher and",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 114
+        },
+        "retrieved_documents": [
+          {
+            "id": 6081,
+            "title": "What values were promised in the United States Declaration of Independence??",
+            "contents": "What values were promised in the United States Declaration of Independence??\nThe United States Declaration of Independence promised life, liberty, and the pursuit of happiness."
+          }
+        ],
+        "input_tokens": 114,
+        "generator_input_tokens": 92,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_6",
+        "question": "who is the owner of reading football club",
+        "golden_answers": [
+          "Xiu Li Dai",
+          "Dai Xiuli",
+          "Dai Yongge",
+          "Yongge Dai"
+        ],
+        "prediction": "None of the provided documents contain information about a \"reading football club.\" The text only mentions that Peter Rawlinson, one of the founders of Lucid Motors",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 117
+        },
+        "retrieved_documents": [
+          {
+            "id": 2041,
+            "title": "Who is the founder of the electric car company Lucid Motors?",
+            "contents": "Who is the founder of the electric car company Lucid Motors?\nPeter Rawlinson is one of the founders of the electric car company Lucid Motors.\\n"
+          }
+        ],
+        "input_tokens": 117,
+        "generator_input_tokens": 95,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_7",
+        "question": "when is the next scandal episode coming out",
+        "golden_answers": [
+          "February 1, 2018"
+        ],
+        "prediction": "The next scandal episode is scheduled to be released in 2023.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 138
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          }
+        ],
+        "input_tokens": 138,
+        "generator_input_tokens": 118,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_8",
+        "question": "when is the last time the philadelphia won the superbowl",
+        "golden_answers": [
+          "Super Bowl LII,",
+          "2017"
+        ],
+        "prediction": "2016",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 120
+        },
+        "retrieved_documents": [
+          {
+            "id": 11253,
+            "title": "Name five major cities in the United States.?",
+            "contents": "Name five major cities in the United States.?\nFive major cities in the United States are New York City, Los Angeles, Chicago, Houston, and Philadelphia."
+          }
+        ],
+        "input_tokens": 120,
+        "generator_input_tokens": 98,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_9",
+        "question": "who was the first lady nominated member of the rajya sabha",
+        "golden_answers": [
+          "Mary Kom"
+        ],
+        "prediction": "None of the provided documents contain information about a \"first lady\" or a \"Ladies' Assembly.\" The given text is about Annie Besant being the first",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 115
+        },
+        "retrieved_documents": [
+          {
+            "id": 2971,
+            "title": "Who was the first woman President of the Indian National Congress?",
+            "contents": "Who was the first woman President of the Indian National Congress?\nAnnie Besant was the first woman President of the Indian National Congress."
+          }
+        ],
+        "input_tokens": 115,
+        "generator_input_tokens": 93,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_10",
+        "question": "what is the most current adobe flash player version",
+        "golden_answers": [
+          "28.0.0.137"
+        ],
+        "prediction": "The most current Adobe Flash Player version is 36.0.0.47.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 112
+        },
+        "retrieved_documents": [
+          {
+            "id": 8474,
+            "title": "What is the latest version of Android??",
+            "contents": "What is the latest version of Android??\nThe latest version of Android is 11.0 (released in 2020)."
+          }
+        ],
+        "input_tokens": 112,
+        "generator_input_tokens": 93,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_11",
+        "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+        "golden_answers": [
+          "Pyotr Ilyich Tchaikovsky"
+        ],
+        "prediction": "Pyotr Ilyich Tchaikovsky",
+        "metric_scores": {
+          "em": 1.0,
+          "f1": 1.0,
+          "acc": 1.0,
+          "input_tokens": 127
+        },
+        "retrieved_documents": [
+          {
+            "id": 2428,
+            "title": "Who is the composer who wrote \"Swan Lake\"?",
+            "contents": "Who is the composer who wrote \"Swan Lake\"?\nPyotr Ilyich Tchaikovsky is the composer who wrote \"Swan Lake\".\\n"
+          }
+        ],
+        "input_tokens": 127,
+        "generator_input_tokens": 105,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_12",
+        "question": "how many episodes are there in dragon ball z",
+        "golden_answers": [
+          "291 episodes",
+          "291"
+        ],
+        "prediction": "5",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 259
+        },
+        "retrieved_documents": [
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          }
+        ],
+        "input_tokens": 259,
+        "generator_input_tokens": 237,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_13",
+        "question": "cast of law & order special victim unit",
+        "golden_answers": [
+          "Kelli Giddish",
+          "Richard Belzer",
+          "Stephanie March",
+          "Diane Neal",
+          "Ice-T",
+          "Danny Pino",
+          "Dann Florek",
+          "Tamara Tunie",
+          "Michaela McManus",
+          "Mariska Hargitay",
+          "Adam Beach",
+          "B. D. Wong",
+          "Christopher Meloni",
+          "Raúl Esparza",
+          "Michelle Hurd",
+          "Peter Scanavino"
+        ],
+        "prediction": "The cast of Law & Order: Special Victims Unit includes:\n\n- Detective Mike Mullen\n- Detective Sarah Thompson\n- Detective John Doe\n- Detective Emily Carter",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 260
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          }
+        ],
+        "input_tokens": 260,
+        "generator_input_tokens": 238,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_14",
+        "question": "who designed the garden city of new earswick",
+        "golden_answers": [
+          "planner Raymond Unwin",
+          "architect Barry Parker",
+          "Raymond Unwin"
+        ],
+        "prediction": "None of the provided documents mention the design of the Garden City of New Ewirdick.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 112
+        },
+        "retrieved_documents": [
+          {
+            "id": 3083,
+            "title": "Which Indian city is known as the \"Garden City\"?",
+            "contents": "Which Indian city is known as the \"Garden City\"?\nBengaluru is known as the \"Garden City\" in India."
+          }
+        ],
+        "input_tokens": 112,
+        "generator_input_tokens": 90,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_15",
+        "question": "what is the first step in the evolution of the eye",
+        "golden_answers": [
+          "photoreceptor proteins that sense light",
+          "eyespots"
+        ],
+        "prediction": "Variation",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 178
+        },
+        "retrieved_documents": [
+          {
+            "id": 12418,
+            "title": "Describe the four stages of natural selection.?",
+            "contents": "Describe the four stages of natural selection.?\nThe four stages of natural selection are variation, heritability, selection, and adaptation. Variation occurs when individuals in a species have unique attributes. Heritability is the transfer of a trait from parents to their offspring. Selection is the process of different traits becoming more abundant or rare in a population depending on the environment. Finally, adaptation is when heritable traits that are advantageous become more common in a population."
+          }
+        ],
+        "input_tokens": 178,
+        "generator_input_tokens": 156,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_16",
+        "question": "where is the tv show the curse of oak island filmed",
+        "golden_answers": [
+          "Oak Island"
+        ],
+        "prediction": "The TV show \"The Curse of Oak Island\" was filmed on an island in Maine.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.2857142857142857,
+          "acc": 1.0,
+          "input_tokens": 150
+        },
+        "retrieved_documents": [
+          {
+            "id": 7881,
+            "title": "Create a new setting for a story.?",
+            "contents": "Create a new setting for a story.?\nThe story takes place on a small island off the coast of Maine, surrounded by mist and cloaked in mystery. Native inhabitants of the island have been known to tell tales of strange and otherworldly creatures living in the depths of the shadows cast by the surrounding trees."
+          }
+        ],
+        "input_tokens": 150,
+        "generator_input_tokens": 128,
+        "selected_k": 1,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      }
+    ]
+  ]
+}

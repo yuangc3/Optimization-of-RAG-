@@ -1,4 +1,80 @@
 # <div align="center">⚡FlashRAG: A Python Toolkit for Efficient RAG Research<div>
+
+**Project work:** [Adaptive Top-K performance report: results, bottlenecks, and next optimization tests](docs/performance_profilling_report.md).
+## CS598APE project: Lightweight Adaptive Top-K
+
+Authors: Yidong Zhang and Yuang Cai. The primary contribution is training-free per-query document-prefix selection using score gaps or absolute similarity thresholds. The implementation is integrated into FlashRAG's `SequentialPipeline`. Batching, allocator, tokenization, and decoding experiments are supporting system work; their speedups are not attributed to Adaptive-K.
+
+- Full English source report and experiment history: [performance report](docs/performance_profilling_report.md).
+- Submission PDF: [project report](docs/performance_profilling_report.pdf).
+- Core policy module: `flashrag/retriever/adaptive_topk.py`.
+- Final experimental protocol: `scripts/run_final_topk_study.py`.
+- Tests: `tests/test_*.py`; all run without downloading models.
+- Final evidence: `docs/experiments/final_topk/` (split manifest, resource audit, calibration grid, frozen policies, all repetitions, paired quality analysis, and test log).
+
+Tested hardware: Windows 11 build 26200, AMD Ryzen 7 7800X3D (8 cores / 16 logical CPUs), about 63.15 GiB usable RAM, and NVIDIA RTX 4070 SUPER with 12 GiB VRAM. The final experiment uses CUDA PyTorch 2.11.0+cu128, Python 3.11.9, Qwen2.5-0.5B-Instruct in bfloat16, E5-base-v2 in float32, and CPU FAISS. This configuration was tested; a minimum GPU/RAM requirement was not measured. CUDA is required by the final benchmark harness. GPU-less unit tests work with a compatible CPU PyTorch installation. Portability and performance on Linux/macOS were not validated for the final artifact.
+
+Create an environment and install dependencies (activation is optional):
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+.\.venv\Scripts\python.exe -m pip install -r requirements-baseline.txt
+```
+
+Model weights are excluded from the submission archive. `scripts/download_qwen.py` downloads the pinned Qwen model described in `docs/qwen_download.json`. Download E5 with the pinned command below, or pass the model directory with `--retriever-path`. Exact model revisions and file checksums are recorded in `docs/final_resource_manifest.json`. The corpus and FAISS index must be the matching pair under `examples/quick_start/indexes/`; final SHA-256 values and sampled alignment checks are in `resource_audit.json`. If rebuilding the index, retain corpus order and E5 passage prefixes/pooling; changed resources require new experiments.
+
+The two submission archives preserve repository-relative paths. Extract `cs598ape_resources.zip` into the same directory as `cs598ape_final_artifact.zip`; it supplies the matching corpus/index and the large diagnostic traces. Models remain separate.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/download_qwen.py
+.\.venv\Scripts\python.exe -c "from huggingface_hub import snapshot_download; print(snapshot_download('intfloat/e5-base-v2', revision='f52bf8ec8c7124536f0efb74aca902b2995e5bcd', allow_patterns=['config.json','model.safetensors','tokenizer.json','tokenizer_config.json','special_tokens_map.json','vocab.txt']))"
+```
+
+The official NQ JSONL, exact development/evaluation splits, prior excluded-question lists, and manifests are included in the artifact. The preparation stage verifies the pinned official source checksum, excludes the earlier 17 and 500 questions, and creates 200 development plus 500 new evaluation questions using seed 598. Gold-answer substring checks are explicitly lexical proxies, not ground-truth document relevance judgments.
+
+Run tests from the repository root:
+
+```powershell
+$env:PYTHONPATH = (Get-Location).Path
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+Run the final study using existing local resources:
+
+```powershell
+$env:PYTHONPATH = (Get-Location).Path
+$env:HF_HUB_OFFLINE = '1'
+$env:TRANSFORMERS_OFFLINE = '1'
+$env:HF_DATASETS_CACHE = Join-Path (Get-Location).Path 'models/datasets-cache'
+$env:TIKTOKEN_CACHE_DIR = Join-Path (Get-Location).Path 'models/tiktoken-cache'
+.\.venv\Scripts\python.exe scripts/run_final_topk_study.py --stage all --output-dir docs/experiments/reproduction
+```
+
+The development stage calibrates 81 score-only configurations against development retrieval coverage, then freezes one policy per family before LLM evaluation. Final methods are fixed k=1/3/5/10, score-gap, and similarity-threshold, all at generator batch 8 without length sorting and with the same greedy maximum-32-token decoding. Three measured repetitions rotate method order; each setting gets an eight-question warmup outside timing. All methods and negative results are reported. Completed measurements are checkpointed for interrupted runs; use the same code, resources, settings and split seed when resuming. Keep the original `final_topk/` evidence unchanged and write reproductions to a new directory.
+
+To use a policy directly:
+
+```python
+from flashrag.retriever.adaptive_topk import SimilarityThresholdPolicy
+policy = SimilarityThresholdPolicy(score_threshold=0.7174408435821533,
+                                   min_k=2, max_k=5, fallback_k=5)
+# Pass retrieval_policy=policy to SequentialPipeline(config, ...).
+# The calibrated threshold is specific to the recorded E5/index setup.
+```
+
+Export the PDF from the submission section of the single Markdown report:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/export_project_report.py
+```
+
+Optional Windows CPU profiling: `scripts/profile_generation.py --windows-cpu-study ...` collects process/thread CPU counters and separate Python profiles. `scripts/capture_windows_cpu.ps1` is an administrator-only WPR entry point. Native ETW capture was blocked by the recorded Windows privilege error and is not claimed as completed. No C/C++ source was added by this project; Valgrind is not applicable to the authored Python implementation, and no Valgrind-clean claim is made for native third-party libraries.
+
+The upstream FlashRAG documentation follows below.
+
+---
+
 \[ English | [中文](README_zh.md) \]
 <div align="center">
 <a href="https://arxiv.org/abs/2405.13576" target="_blank"><img src=https://img.shields.io/badge/arXiv-b5212f.svg?logo=arxiv></a>

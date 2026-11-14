@@ -1,0 +1,766 @@
+[
+  {
+    "host_window_ms": 1682.8769,
+    "kernel_count": 39116,
+    "kernel_sum_ms": 467.40329800005327,
+    "kernel_union_ms": 467.4042529296875,
+    "process_kernel_coverage_percent": 27.77412019439375,
+    "kernel_copy_memset_union_ms": 468.24268212890627,
+    "copy_count": 364,
+    "copy_bytes": 477292116,
+    "copy_union_ms": 0.69548974609375,
+    "copies_by_direction": {
+      "Memcpy DtoD (Device -> Device)": 204,
+      "Memcpy DtoH (Device -> Pinned)": 76,
+      "Memcpy DtoH (Device -> Pageable)": 64,
+      "Memcpy HtoD (Pageable -> Device)": 20
+    },
+    "copy_direction_details": {
+      "Memcpy DtoH (Device -> Pinned)": {
+        "count": 76,
+        "bytes": 76,
+        "union_ms": 0.07657568359375
+      },
+      "Memcpy HtoD (Pageable -> Device)": {
+        "count": 20,
+        "bytes": 272896,
+        "union_ms": 0.025888671875
+      },
+      "Memcpy DtoD (Device -> Device)": {
+        "count": 204,
+        "bytes": 476744328,
+        "union_ms": 0.53027734375
+      },
+      "Memcpy DtoH (Device -> Pageable)": {
+        "count": 64,
+        "bytes": 274816,
+        "union_ms": 0.062748046875
+      }
+    },
+    "sync_api_count": 161,
+    "sync_api_host_union_ms": 177.00019970703124,
+    "launch_api_count": 39116,
+    "launch_api_host_union_ms": 406.156099609375,
+    "runtime_api_counts": {
+      "cuLaunchKernel": 4736,
+      "cudaLaunchKernel": 34380,
+      "cudaMemcpyAsync": 364,
+      "cudaMemsetAsync": 2144,
+      "cudaStreamSynchronize": 160,
+      "cudaStreamIsCapturing": 949,
+      "cudaFree": 65,
+      "cudaMalloc": 65,
+      "cudaOccupancyMaxActiveBlocksPerMultiprocessor": 144,
+      "cudaDeviceGetAttribute": 4736,
+      "cudaDeviceSynchronize": 1
+    },
+    "host_scopes": {
+      "rag.profile_window": {
+        "calls": 1,
+        "sum_host_interval_ms": 1682.8769
+      },
+      "rag.empty_cache": {
+        "calls": 4,
+        "sum_host_interval_ms": 7.6068
+      },
+      "rag.tokenization": {
+        "calls": 4,
+        "sum_host_interval_ms": 29.1963
+      },
+      "rag.model_generate": {
+        "calls": 4,
+        "sum_host_interval_ms": 1606.8241999999998
+      },
+      "rag.prefill": {
+        "calls": 4,
+        "sum_host_interval_ms": 162.881
+      },
+      "rag.decode": {
+        "calls": 28,
+        "sum_host_interval_ms": 1212.3642
+      },
+      "rag.text_decode": {
+        "calls": 64,
+        "sum_host_interval_ms": 11.937600000000002
+      }
+    },
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_tn",
+        "calls": 264,
+        "sum_us": 112055.33600000002
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x1_tn_align8EEvNT_6ParamsE",
+        "calls": 2720,
+        "sum_us": 60042.73099999989
+      },
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+        "calls": 96,
+        "sum_us": 50519.35899999999
+      },
+      {
+        "name": "_Z40fmha_cutlassF_bf16_aligned_64x64_rf_sm80N22PyTorchMemEffAttention15AttentionKernelIN7cutlass10bfloat16_tENS1_4arch4Sm80ELb1ELi64ELi64ELi64ELb1ELb1EE6ParamsE",
+        "calls": 768,
+        "sum_us": 44880.11500000011
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_13BinaryFunctorIN3c108BFloat16ES4_S4_NS0_15binary_internal10MulFunctorIfEEEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 768,
+        "sum_us": 27036.17800000031
+      },
+      {
+        "name": "_ZN7cutlass7Kernel2I68cutlass_80_wmma_tensorop_bf16_s161616gemm_bf16_16x16_128x2_tn_align8EEvNT_6ParamsE",
+        "calls": 2016,
+        "sum_us": 26077.408000000018
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE10_clEvEUlN3c108BFloat16EE_EEvS4_RKT_EUliE_EEviT1_",
+        "calls": 2208,
+        "sum_us": 24447.329999999667
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_61_GLOBAL__N__bd18916b_23_ActivationSiluKernel_cu_b5be07b8_454011silu_kernelERNS_18TensorIteratorBaseEENKUlvE_clEvENKUlvE4_clEvEUlN3c108BFloat16EE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 768,
+        "sum_us": 17187.41499999985
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIN3c108BFloat16ES5_S5_NS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 4640,
+        "sum_us": 15524.885000000262
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIfffNS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 1568,
+        "sum_us": 8169.621000000059
+      },
+      {
+        "name": "_ZN2at6native40_GLOBAL__N__0b46c3ea_8_Shape_cu_85d9f36c19CatArrayBatchedCopyINS1_10OpaqueTypeILj2EEEjLi4ELi64ELi64EEEvPT_NS1_25CatArrInputTensorMetadataIS5_T0_XT2_EXT3_EEENS1_16TensorSizeStrideIS8_Lj4EEEiS8_",
+        "calls": 1728,
+        "sum_us": 7826.362999999966
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_15CUDAFunctor_addIN3c108BFloat16EEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 2880,
+        "sum_us": 7540.253000000172
+      }
+    ],
+    "kernels_by_forward_phase": {
+      "rag.decode": {
+        "kernel_count": 33016,
+        "kernel_sum_ms": 164.63443600000107
+      },
+      "outside_forward_or_unmatched": {
+        "kernel_count": 1452,
+        "kernel_sum_ms": 3.0851260000000047
+      },
+      "rag.prefill": {
+        "kernel_count": 4648,
+        "kernel_sum_ms": 299.6837360000002
+      }
+    },
+    "note": "Kernel coverage is this process's traced activity in an instrumented host window, not global GPU utilization or SM occupancy. Host API intervals include waits, not just CPU execution.",
+    "variant": "batch8_length_sorted",
+    "options": {
+      "batch_size": 8,
+      "clear_cuda_cache": true,
+      "min_new_tokens": 8,
+      "max_new_tokens": 8,
+      "collect_scores": false,
+      "sort_by_length": true
+    },
+    "sort_by_length": true,
+    "question_ids": [
+      "test_1942",
+      "test_761",
+      "test_2999",
+      "test_2385",
+      "test_1261",
+      "test_837",
+      "test_2980",
+      "test_1696",
+      "test_3118",
+      "test_2952",
+      "test_3124",
+      "test_1103",
+      "test_2200",
+      "test_1021",
+      "test_2622",
+      "test_3345",
+      "test_3028",
+      "test_2058",
+      "test_1467",
+      "test_1720",
+      "test_2176",
+      "test_2997",
+      "test_2538",
+      "test_910",
+      "test_1284",
+      "test_2244",
+      "test_2900",
+      "test_1369",
+      "test_2144",
+      "test_322",
+      "test_3012",
+      "test_3188"
+    ],
+    "logical_output_tokens": 256,
+    "generation_profile": {
+      "sort_by_length": true,
+      "sorting_s": 0.023736200000712415,
+      "processing_order": [
+        24,
+        2,
+        7,
+        23,
+        28,
+        5,
+        20,
+        4,
+        11,
+        1,
+        8,
+        21,
+        9,
+        15,
+        3,
+        16,
+        25,
+        26,
+        12,
+        19,
+        27,
+        31,
+        30,
+        14,
+        22,
+        10,
+        13,
+        18,
+        6,
+        29,
+        17,
+        0
+      ],
+      "logical_input_tokens": 13270,
+      "padded_input_token_slots": 17048,
+      "generated_token_slots": 256,
+      "batches": 4,
+      "reuse_tokenization": false,
+      "decode_generated_only": false,
+      "batch_tokenization_s": 0.029465000006894115,
+      "text_decoding_s": 0.012956600003235508
+    }
+  },
+  {
+    "host_window_ms": 1011.7115,
+    "kernel_count": 10115,
+    "kernel_sum_ms": 813.1806269999768,
+    "kernel_union_ms": 813.1807763671875,
+    "process_kernel_coverage_percent": 80.37674538316382,
+    "kernel_copy_memset_union_ms": 814.0170668945312,
+    "copy_count": 139,
+    "copy_bytes": 470681397,
+    "copy_union_ms": 0.830818359375,
+    "copies_by_direction": {
+      "Memcpy HtoD (Pageable -> Device)": 5,
+      "Memcpy DtoD (Device -> Device)": 51,
+      "Memcpy DtoH (Device -> Pinned)": 19,
+      "Memcpy DtoH (Device -> Pageable)": 64
+    },
+    "copy_direction_details": {
+      "Memcpy DtoH (Device -> Pinned)": {
+        "count": 19,
+        "bytes": 19,
+        "union_ms": 0.02118115234375
+      },
+      "Memcpy HtoD (Pageable -> Device)": {
+        "count": 5,
+        "bytes": 500256,
+        "union_ms": 0.02483203125
+      },
+      "Memcpy DtoD (Device -> Device)": {
+        "count": 51,
+        "bytes": 469678850,
+        "union_ms": 0.7134169921875
+      },
+      "Memcpy DtoH (Device -> Pageable)": {
+        "count": 64,
+        "bytes": 502272,
+        "union_ms": 0.07138818359375
+      }
+    },
+    "sync_api_count": 89,
+    "sync_api_host_union_ms": 578.6973979492187,
+    "launch_api_count": 10115,
+    "launch_api_host_union_ms": 136.6278935546875,
+    "runtime_api_counts": {
+      "cudaFree": 14,
+      "cudaStreamIsCapturing": 283,
+      "cudaMemcpyAsync": 139,
+      "cudaStreamSynchronize": 88,
+      "cudaLaunchKernel": 8883,
+      "cudaMalloc": 14,
+      "cudaOccupancyMaxActiveBlocksPerMultiprocessor": 48,
+      "cudaDeviceGetAttribute": 1232,
+      "cudaMemsetAsync": 224,
+      "cuLaunchKernel": 1232,
+      "cudaDeviceSynchronize": 1
+    },
+    "host_scopes": {
+      "rag.profile_window": {
+        "calls": 1,
+        "sum_host_interval_ms": 1011.7115
+      },
+      "rag.empty_cache": {
+        "calls": 1,
+        "sum_host_interval_ms": 7.3873999999999995
+      },
+      "rag.tokenization": {
+        "calls": 1,
+        "sum_host_interval_ms": 28.3519
+      },
+      "rag.model_generate": {
+        "calls": 1,
+        "sum_host_interval_ms": 937.9498000000001
+      },
+      "rag.prefill": {
+        "calls": 1,
+        "sum_host_interval_ms": 80.9012
+      },
+      "rag.decode": {
+        "calls": 7,
+        "sum_host_interval_ms": 239.51239999999996
+      },
+      "rag.text_decode": {
+        "calls": 64,
+        "sum_host_interval_ms": 12.3788
+      }
+    },
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_tn",
+        "calls": 72,
+        "sum_us": 200152.33399999997
+      },
+      {
+        "name": "_Z40fmha_cutlassF_bf16_aligned_64x64_rf_sm80N22PyTorchMemEffAttention15AttentionKernelIN7cutlass10bfloat16_tENS1_4arch4Sm80ELb1ELi64ELi64ELi64ELb1ELb1EE6ParamsE",
+        "calls": 192,
+        "sum_us": 116985.80399999999
+      },
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+        "calls": 24,
+        "sum_us": 91404.224
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE10_clEvEUlN3c108BFloat16EE_EEvS4_RKT_EUliE_EEviT1_",
+        "calls": 552,
+        "sum_us": 60503.150999999874
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_13BinaryFunctorIN3c108BFloat16ES4_S4_NS0_15binary_internal10MulFunctorIfEEEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 192,
+        "sum_us": 53752.362999999634
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_61_GLOBAL__N__bd18916b_23_ActivationSiluKernel_cu_b5be07b8_454011silu_kernelERNS_18TensorIteratorBaseEENKUlvE_clEvENKUlvE4_clEvEUlN3c108BFloat16EE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 192,
+        "sum_us": 35709.41900000007
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIN3c108BFloat16ES5_S5_NS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 1160,
+        "sum_us": 28884.22399999983
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZNS0_50_GLOBAL__N__f7789698_12_PowKernel_cu_31bb9268_646829pow_tensor_scalar_kernel_implIffEEvRNS_18TensorIteratorBaseET0_EUlfE_St5arrayIPcLy2EEEEviS6_T1_",
+        "calls": 392,
+        "sum_us": 27557.879999999648
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIfffNS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 392,
+        "sum_us": 23201.098999999816
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZNS0_25bfloat16_copy_kernel_cudaERNS_18TensorIteratorBaseEEUlfE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 408,
+        "sum_us": 22349.29299999964
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_15CUDAFunctor_addIN3c108BFloat16EEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 720,
+        "sum_us": 20450.311999999794
+      },
+      {
+        "name": "_ZN2at6native27unrolled_elementwise_kernelIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_St5arrayIPcLy2EELi4E23TrivialOffsetCalculatorILi1EjESB_NS0_6memory12LoadWithCastILi1EEENSC_13StoreWithCastILi1EEEEEviT_T0_T2_T3_T4_T5_",
+        "calls": 408,
+        "sum_us": 19864.647999999877
+      }
+    ],
+    "kernels_by_forward_phase": {
+      "outside_forward_or_unmatched": {
+        "kernel_count": 363,
+        "kernel_sum_ms": 1.6307729999999998
+      },
+      "rag.prefill": {
+        "kernel_count": 1162,
+        "kernel_sum_ms": 673.1949259999996
+      },
+      "rag.decode": {
+        "kernel_count": 8590,
+        "kernel_sum_ms": 138.35492799999952
+      }
+    },
+    "note": "Kernel coverage is this process's traced activity in an instrumented host window, not global GPU utilization or SM occupancy. Host API intervals include waits, not just CPU execution.",
+    "variant": "sorted_batch32",
+    "options": {
+      "batch_size": 32,
+      "clear_cuda_cache": true,
+      "min_new_tokens": 8,
+      "max_new_tokens": 8,
+      "collect_scores": false,
+      "sort_by_length": true
+    },
+    "sort_by_length": true,
+    "question_ids": [
+      "test_1942",
+      "test_761",
+      "test_2999",
+      "test_2385",
+      "test_1261",
+      "test_837",
+      "test_2980",
+      "test_1696",
+      "test_3118",
+      "test_2952",
+      "test_3124",
+      "test_1103",
+      "test_2200",
+      "test_1021",
+      "test_2622",
+      "test_3345",
+      "test_3028",
+      "test_2058",
+      "test_1467",
+      "test_1720",
+      "test_2176",
+      "test_2997",
+      "test_2538",
+      "test_910",
+      "test_1284",
+      "test_2244",
+      "test_2900",
+      "test_1369",
+      "test_2144",
+      "test_322",
+      "test_3012",
+      "test_3188"
+    ],
+    "logical_output_tokens": 256,
+    "generation_profile": {
+      "sort_by_length": true,
+      "sorting_s": 0.023572099999000784,
+      "processing_order": [
+        24,
+        2,
+        7,
+        23,
+        28,
+        5,
+        20,
+        4,
+        11,
+        1,
+        8,
+        21,
+        9,
+        15,
+        3,
+        16,
+        25,
+        26,
+        12,
+        19,
+        27,
+        31,
+        30,
+        14,
+        22,
+        10,
+        13,
+        18,
+        6,
+        29,
+        17,
+        0
+      ],
+      "logical_input_tokens": 13270,
+      "padded_input_token_slots": 31264,
+      "generated_token_slots": 256,
+      "batches": 1,
+      "reuse_tokenization": false,
+      "decode_generated_only": false,
+      "batch_tokenization_s": 0.02836329999990994,
+      "text_decoding_s": 0.013167299999622628
+    }
+  },
+  {
+    "host_window_ms": 987.94,
+    "kernel_count": 10116,
+    "kernel_sum_ms": 810.6967389999672,
+    "kernel_union_ms": 810.6969047851562,
+    "process_kernel_coverage_percent": 82.05932594946619,
+    "kernel_copy_memset_union_ms": 811.3956782226562,
+    "copy_count": 76,
+    "copy_bytes": 470181173,
+    "copy_union_ms": 0.69195703125,
+    "copies_by_direction": {
+      "Memcpy HtoD (Pageable -> Device)": 5,
+      "Memcpy DtoD (Device -> Device)": 51,
+      "Memcpy DtoH (Device -> Pinned)": 19,
+      "Memcpy DtoH (Device -> Pageable)": 1
+    },
+    "copy_direction_details": {
+      "Memcpy DtoH (Device -> Pinned)": {
+        "count": 19,
+        "bytes": 19,
+        "union_ms": 0.01868505859375
+      },
+      "Memcpy HtoD (Pageable -> Device)": {
+        "count": 5,
+        "bytes": 500256,
+        "union_ms": 0.02304052734375
+      },
+      "Memcpy DtoD (Device -> Device)": {
+        "count": 51,
+        "bytes": 469678850,
+        "union_ms": 0.64917431640625
+      },
+      "Memcpy DtoH (Device -> Pageable)": {
+        "count": 1,
+        "bytes": 2048,
+        "union_ms": 0.00105712890625
+      }
+    },
+    "sync_api_count": 26,
+    "sync_api_host_union_ms": 588.7712016601563,
+    "launch_api_count": 10116,
+    "launch_api_host_union_ms": 133.87219189453126,
+    "runtime_api_counts": {
+      "cudaFree": 14,
+      "cudaStreamIsCapturing": 220,
+      "cudaMemcpyAsync": 76,
+      "cudaStreamSynchronize": 25,
+      "cudaLaunchKernel": 8884,
+      "cudaMalloc": 14,
+      "cudaOccupancyMaxActiveBlocksPerMultiprocessor": 48,
+      "cudaDeviceGetAttribute": 1232,
+      "cudaMemsetAsync": 224,
+      "cuLaunchKernel": 1232,
+      "cudaDeviceSynchronize": 1
+    },
+    "host_scopes": {
+      "rag.profile_window": {
+        "calls": 1,
+        "sum_host_interval_ms": 987.94
+      },
+      "rag.tokenization": {
+        "calls": 2,
+        "sum_host_interval_ms": 41.958400000000005
+      },
+      "rag.empty_cache": {
+        "calls": 1,
+        "sum_host_interval_ms": 10.066
+      },
+      "rag.model_generate": {
+        "calls": 1,
+        "sum_host_interval_ms": 934.3000999999999
+      },
+      "rag.prefill": {
+        "calls": 1,
+        "sum_host_interval_ms": 84.8155
+      },
+      "rag.decode": {
+        "calls": 7,
+        "sum_host_interval_ms": 234.57100000000003
+      },
+      "rag.text_decode": {
+        "calls": 1,
+        "sum_host_interval_ms": 0.21719999999999998
+      }
+    },
+    "top_kernels": [
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_tn",
+        "calls": 72,
+        "sum_us": 204618.30700000006
+      },
+      {
+        "name": "_Z40fmha_cutlassF_bf16_aligned_64x64_rf_sm80N22PyTorchMemEffAttention15AttentionKernelIN7cutlass10bfloat16_tENS1_4arch4Sm80ELb1ELi64ELi64ELi64ELb1ELb1EE6ParamsE",
+        "calls": 192,
+        "sum_us": 110856.13200000003
+      },
+      {
+        "name": "ampere_bf16_s1688gemm_bf16_128x128_ldg8_f2f_stages_32x1_tn",
+        "calls": 24,
+        "sum_us": 89866.88500000001
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE10_clEvEUlN3c108BFloat16EE_EEvS4_RKT_EUliE_EEviT1_",
+        "calls": 552,
+        "sum_us": 61829.44199999992
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_13BinaryFunctorIN3c108BFloat16ES4_S4_NS0_15binary_internal10MulFunctorIfEEEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 192,
+        "sum_us": 55230.24299999961
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZZZNS0_61_GLOBAL__N__bd18916b_23_ActivationSiluKernel_cu_b5be07b8_454011silu_kernelERNS_18TensorIteratorBaseEENKUlvE_clEvENKUlvE4_clEvEUlN3c108BFloat16EE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 192,
+        "sum_us": 35313.31100000007
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi4EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIN3c108BFloat16ES5_S5_NS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 1160,
+        "sum_us": 30367.3269999999
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZNS0_50_GLOBAL__N__f7789698_12_PowKernel_cu_31bb9268_646829pow_tensor_scalar_kernel_implIffEEvRNS_18TensorIteratorBaseET0_EUlfE_St5arrayIPcLy2EEEEviS6_T1_",
+        "calls": 392,
+        "sum_us": 26674.00799999965
+      },
+      {
+        "name": "_ZN2at6native18elementwise_kernelILi128ELi2EZNS0_22gpu_kernel_impl_nocastINS0_13BinaryFunctorIfffNS0_15binary_internal10MulFunctorIfEEEEEEvRNS_18TensorIteratorBaseERKT_EUliE_EEviT1_",
+        "calls": 392,
+        "sum_us": 24056.871999999774
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4EZNS0_25bfloat16_copy_kernel_cudaERNS_18TensorIteratorBaseEEUlfE_St5arrayIPcLy2EEEEviT0_T1_",
+        "calls": 408,
+        "sum_us": 22195.698999999633
+      },
+      {
+        "name": "_ZN2at6native27unrolled_elementwise_kernelIZZZNS0_23direct_copy_kernel_cudaERNS_18TensorIteratorBaseEENKUlvE1_clEvENKUlvE5_clEvEUlfE_St5arrayIPcLy2EELi4E23TrivialOffsetCalculatorILi1EjESB_NS0_6memory12LoadWithCastILi1EEENSC_13StoreWithCastILi1EEEEEviT_T0_T2_T3_T4_T5_",
+        "calls": 408,
+        "sum_us": 19279.48399999979
+      },
+      {
+        "name": "_ZN2at6native29vectorized_elementwise_kernelILi4ENS0_15CUDAFunctor_addIN3c108BFloat16EEESt5arrayIPcLy3EEEEviT0_T1_",
+        "calls": 720,
+        "sum_us": 19077.57999999974
+      }
+    ],
+    "kernels_by_forward_phase": {
+      "outside_forward_or_unmatched": {
+        "kernel_count": 364,
+        "kernel_sum_ms": 1.6007050000000007
+      },
+      "rag.prefill": {
+        "kernel_count": 1162,
+        "kernel_sum_ms": 674.2426549999994
+      },
+      "rag.decode": {
+        "kernel_count": 8590,
+        "kernel_sum_ms": 134.85337899999917
+      }
+    },
+    "note": "Kernel coverage is this process's traced activity in an instrumented host window, not global GPU utilization or SM occupancy. Host API intervals include waits, not just CPU execution.",
+    "variant": "sorted_batch32_combined",
+    "options": {
+      "batch_size": 32,
+      "clear_cuda_cache": true,
+      "min_new_tokens": 8,
+      "max_new_tokens": 8,
+      "collect_scores": false,
+      "sort_by_length": true,
+      "reuse_tokenization": true,
+      "decode_generated_only": true
+    },
+    "sort_by_length": true,
+    "question_ids": [
+      "test_1942",
+      "test_761",
+      "test_2999",
+      "test_2385",
+      "test_1261",
+      "test_837",
+      "test_2980",
+      "test_1696",
+      "test_3118",
+      "test_2952",
+      "test_3124",
+      "test_1103",
+      "test_2200",
+      "test_1021",
+      "test_2622",
+      "test_3345",
+      "test_3028",
+      "test_2058",
+      "test_1467",
+      "test_1720",
+      "test_2176",
+      "test_2997",
+      "test_2538",
+      "test_910",
+      "test_1284",
+      "test_2244",
+      "test_2900",
+      "test_1369",
+      "test_2144",
+      "test_322",
+      "test_3012",
+      "test_3188"
+    ],
+    "logical_output_tokens": 256,
+    "generation_profile": {
+      "sort_by_length": true,
+      "sorting_s": 0.026468500000191852,
+      "processing_order": [
+        24,
+        2,
+        7,
+        23,
+        28,
+        5,
+        20,
+        4,
+        11,
+        1,
+        8,
+        21,
+        9,
+        15,
+        3,
+        16,
+        25,
+        26,
+        12,
+        19,
+        27,
+        31,
+        30,
+        14,
+        22,
+        10,
+        13,
+        18,
+        6,
+        29,
+        17,
+        0
+      ],
+      "logical_input_tokens": 13270,
+      "padded_input_token_slots": 31264,
+      "generated_token_slots": 256,
+      "batches": 1,
+      "reuse_tokenization": true,
+      "decode_generated_only": true,
+      "batch_tokenization_s": 0.015578400001686532,
+      "text_decoding_s": 0.00033489999987068586
+    }
+  }
+]

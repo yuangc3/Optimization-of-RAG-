@@ -1,0 +1,17 @@
+{
+  "python": "3.11.9",
+  "torch": "2.11.0+cu128",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "generator_dtype": "torch.bfloat16",
+  "generator_batch_size": 8,
+  "sort_by_length": false,
+  "max_new_tokens": 32,
+  "cpu_threads": 8,
+  "policy_sha256": "95b53792a8b5861da5c40ea0f1bfaaf64ac24081a2d0cd6149d3a99be8c595da",
+  "generator_source_sha256": "a4d5cd47796f3a97dec7360bdcbc52a5f411d9fcb2d7ea0ee6c534ac154dd332",
+  "policy_source_sha256": "5a1f22c8420e6e2c622f774fb1b14cfa947eeaac28209281023f434ac1d26807",
+  "runner_sha256": "f63c2d1d3cfefc258172724e086cac667453196ffdbf5bab4fa4b9913315787c",
+  "corpus_sha256": "7cc3e74faf4f3a21171acb31a9eea5ce5faa0e2e982da3b7e1aa4f9c9f3c6cbe",
+  "index_sha256": "ee4ca51bc53d091311e092be82786a72cb140f9c18b6e45aaf63e870b6241d58"
+}

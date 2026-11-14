@@ -1,0 +1,18 @@
+# Minimal runtime for the HF + E5 + FAISS SequentialPipeline benchmark.
+# Install CUDA torch separately from the official cu128 index first.
+# Optional UI, training, vLLM, BM25, and multimodal backends are excluded.
+torch==2.11.0
+transformers==5.7.0
+faiss-cpu==1.15.1
+accelerate
+datasets
+numpy
+PyYAML
+tqdm
+langid
+openai
+tiktoken
+termcolor
+pillow
+reportlab==5.1.0
+psutil==7.2.2

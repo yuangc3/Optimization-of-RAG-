@@ -53,13 +53,16 @@ class BasicPipeline:
 
 
 class SequentialPipeline(BasicPipeline):
-    def __init__(self, config, prompt_template=None, retriever=None, generator=None, rewriter=None):
+    def __init__(self, config, prompt_template=None, retriever=None, generator=None, rewriter=None,
+                 retrieval_policy=None):
         """
         inference stage:
             query -> pre-retrieval -> retriever -> post-retrieval -> generator
 
         rewriter: Optional module whose batch_run(dataset) returns one rewritten
             query per question for retrieval. Answer prompts use the original questions.
+        retrieval_policy: Optional score-based policy with max_k and select(scores).
+            Retrieve max_k candidates once, then select a prefix before prompting.
         """
 
         super().__init__(config, prompt_template)
@@ -74,6 +77,7 @@ class SequentialPipeline(BasicPipeline):
             self.retriever = retriever
 
         self.rewriter = rewriter
+        self.retrieval_policy = retrieval_policy
         self.last_profile = {}
 
         self.use_fid = config["use_fid"]
@@ -101,9 +105,33 @@ class SequentialPipeline(BasicPipeline):
             dataset.update_output("rewrite_result", input_query)
         _synchronize_device(self.device)
         retrieval_start = time.perf_counter()
-        retrieval_results = self.retriever.batch_search(input_query)
+        if self.retrieval_policy is None:
+            retrieval_results = self.retriever.batch_search(input_query)
+        else:
+            retrieval_results, retrieval_scores = self.retriever.batch_search(
+                input_query, num=self.retrieval_policy.max_k, return_score=True
+            )
         _synchronize_device(self.device)
         retrieval_s = time.perf_counter() - retrieval_start
+
+        selection_s = 0.0
+        if self.retrieval_policy is not None:
+            selection_start = time.perf_counter()
+            if len(retrieval_results) != len(input_query) or len(retrieval_scores) != len(input_query):
+                raise ValueError("retriever must return one document and score list per query")
+            decisions = []
+            selected_results = []
+            for documents, scores in zip(retrieval_results, retrieval_scores):
+                if len(documents) != len(scores):
+                    raise ValueError("retrieval documents and scores must have matching lengths")
+                decision = self.retrieval_policy.select(scores)
+                decisions.append(decision)
+                selected_results.append(documents[: decision["selected_k"]])
+            dataset.update_output("retrieval_scores", retrieval_scores)
+            dataset.update_output("selected_k", [decision["selected_k"] for decision in decisions])
+            dataset.update_output("adaptive_decision", decisions)
+            retrieval_results = selected_results
+            selection_s = time.perf_counter() - selection_start
 
         print(f"[profile] retrieval_batch_s={retrieval_s:.4f}, queries={len(input_query)}")
         dataset.update_output("retrieval_result", retrieval_results)
@@ -158,6 +186,7 @@ class SequentialPipeline(BasicPipeline):
         generation_s = time.perf_counter() - generation_start
         self.last_profile = {
             "retrieval_s": retrieval_s,
+            "selection_s": selection_s,
             "prompt_s": locals().get("prompt_s"),
             "generation_s": generation_s,
         }

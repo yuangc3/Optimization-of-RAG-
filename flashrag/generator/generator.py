@@ -363,6 +363,11 @@ class HFCausalLMGenerator(BaseGenerator):
         batch_size=None,
         return_scores=False,
         return_dict=False,
+        collect_scores=False,
+        clear_cuda_cache=True,
+        sort_by_length=False,
+        reuse_tokenization=False,
+        decode_generated_only=False,
         **params,
     ):
         """Generate batches one by one. The generated content needs to exclude input."""
@@ -372,8 +377,34 @@ class HFCausalLMGenerator(BaseGenerator):
         if batch_size is None:
             batch_size = self.batch_size
 
+        sort_start = time.perf_counter()
+        order = list(range(len(input_list)))
+        encoded_inputs = None
+        if reuse_tokenization and input_list:
+            # Reuse exact truncated IDs for both sorting and model input. Padding
+            # remains per batch, so batch membership and tensor shapes are unchanged.
+            encoded_inputs = self.tokenizer(
+                input_list, padding=False, truncation=True, max_length=self.max_input_len,
+            )
+        if sort_by_length and len(input_list) > 1:
+            lengths = ([len(ids) for ids in encoded_inputs["input_ids"]] if encoded_inputs is not None
+                       else [len(self.tokenizer.encode(prompt, truncation=True, max_length=self.max_input_len))
+                             for prompt in input_list])
+            order.sort(key=lambda index: lengths[index])
+            input_list = [input_list[index] for index in order]
+        restore = sorted(range(len(order)), key=order.__getitem__)
+        self.last_generation_profile = {
+            "sort_by_length": sort_by_length, "sorting_s": time.perf_counter() - sort_start,
+            "processing_order": order, "logical_input_tokens": 0,
+            "padded_input_token_slots": 0, "generated_token_slots": 0, "batches": 0,
+            "reuse_tokenization": reuse_tokenization, "decode_generated_only": decode_generated_only,
+            "batch_tokenization_s": 0.0, "text_decoding_s": 0.0,
+        }
+
         generation_params = deepcopy(self.generation_params)
         generation_params.update(params)
+        # collect_scores enables the historical score path for A/B measurements.
+        need_scores = return_scores or return_dict or collect_scores
 
         # deal stop params
         stop_sym = None
@@ -412,34 +443,52 @@ class HFCausalLMGenerator(BaseGenerator):
         import torch
         for idx in trange(0, len(input_list), batch_size, desc="Generation process: "):
             with torch.inference_mode():
-                torch.cuda.empty_cache()
+                if clear_cuda_cache:
+                    torch.cuda.empty_cache()
                 batched_prompts = input_list[idx : idx + batch_size]
-                inputs = self.tokenizer(
-                    batched_prompts,
-                    return_tensors="pt",
-                    padding=True,
-                    truncation=True,
-                    max_length=self.max_input_len,
-                ).to(self.model.device)
+                tokenize_start = time.perf_counter()
+                if encoded_inputs is not None:
+                    batch_indexes = order[idx : idx + batch_size]
+                    inputs = self.tokenizer.pad(
+                        [{key: values[index] for key, values in encoded_inputs.items()}
+                         for index in batch_indexes], padding=True, return_tensors="pt",
+                    )
+                else:
+                    inputs = self.tokenizer(
+                        batched_prompts,
+                        return_tensors="pt",
+                        padding=True,
+                        truncation=True,
+                        max_length=self.max_input_len,
+                    )
+                self.last_generation_profile["batch_tokenization_s"] += time.perf_counter() - tokenize_start
+                self.last_generation_profile["padded_input_token_slots"] += inputs["input_ids"].numel()
+                self.last_generation_profile["logical_input_tokens"] += (
+                    int(inputs["attention_mask"].sum()) if "attention_mask" in inputs else inputs["input_ids"].numel()
+                )
+                self.last_generation_profile["batches"] += 1
+                inputs = inputs.to(self.model.device)
                 outputs = self.model.generate(
                     **inputs,
-                    output_scores=True,
+                    output_scores=need_scores,
                     return_dict_in_generate=True,
                     **generation_params,
                 )
 
                 generated_ids = outputs.sequences
-                # Finish generation before timing score post-processing.
-                if generated_ids.device.type == "mps":
-                    torch.mps.synchronize()
-                elif generated_ids.device.type == "cuda":
-                    torch.cuda.synchronize(generated_ids.device)
-                score_start = time.perf_counter()
-                logits = torch.stack(outputs.scores, dim=1).softmax(-1)
                 generated_ids = generated_ids[:, inputs["input_ids"].shape[-1] :]
-                gen_score = torch.gather(logits, 2, generated_ids[:, :, None]).squeeze(-1).cpu().tolist()
-                scores.extend(gen_score)
-                score_postprocess_s += time.perf_counter() - score_start
+                self.last_generation_profile["generated_token_slots"] += generated_ids.numel()
+                if need_scores:
+                    # Finish generation before timing score post-processing.
+                    if generated_ids.device.type == "mps":
+                        torch.mps.synchronize()
+                    elif generated_ids.device.type == "cuda":
+                        torch.cuda.synchronize(generated_ids.device)
+                    score_start = time.perf_counter()
+                    logits = torch.stack(outputs.scores, dim=1).softmax(-1)
+                    gen_score = torch.gather(logits, 2, generated_ids[:, :, None]).squeeze(-1).cpu().tolist()
+                    scores.extend(gen_score)
+                    score_postprocess_s += time.perf_counter() - score_start
                 print(
                     f"[tokens] input={inputs['input_ids'].shape[-1]}, "
                     f"generated={generated_ids.shape[-1]}"
@@ -479,25 +528,28 @@ class HFCausalLMGenerator(BaseGenerator):
                 generated_token_ids.append(batch_generated_token_ids)
                 generated_token_logits.append(batch_generated_token_logits)
 
-            for i, generated_sequence in enumerate(outputs.sequences):
-                input_ids = inputs["input_ids"][i]
-                text = self.tokenizer.decode(
-                    generated_sequence,
-                    skip_special_tokens=True,
+            decode_start = time.perf_counter()
+            if decode_generated_only:
+                # One device-to-host copy, no prompt decoding. Opt-in because
+                # some tokenizers decode differently across the prompt boundary.
+                batch_texts = self.tokenizer.batch_decode(
+                    generated_ids.detach().cpu().tolist(), skip_special_tokens=True,
                     clean_up_tokenization_spaces=False,
                 )
-                if input_ids is None:
-                    prompt_length = 0
-                else:
-                    prompt_length = len(
-                        self.tokenizer.decode(
-                            input_ids,
-                            skip_special_tokens=True,
-                            clean_up_tokenization_spaces=False,
-                        )
+            else:
+                batch_texts = []
+                for i, generated_sequence in enumerate(outputs.sequences):
+                    text = self.tokenizer.decode(
+                        generated_sequence, skip_special_tokens=True,
+                        clean_up_tokenization_spaces=False,
                     )
-                new_text = text[prompt_length:]
+                    prompt_length = len(self.tokenizer.decode(
+                        inputs["input_ids"][i], skip_special_tokens=True,
+                        clean_up_tokenization_spaces=False,
+                    ))
+                    batch_texts.append(text[prompt_length:])
 
+            for new_text in batch_texts:
                 if stop_sym is not None:
                     strip_stopword = True
                     # Find the first occurrence of any stop word
@@ -513,12 +565,21 @@ class HFCausalLMGenerator(BaseGenerator):
                     new_text = new_text[:lower_stop_index]
 
                 responses.append(new_text.strip())
+            self.last_generation_profile["text_decoding_s"] += time.perf_counter() - decode_start
 
         print(f"[profile] score_postprocess_batch_s={score_postprocess_s:.4f}")
+
+        if sort_by_length:
+            responses = [responses[index] for index in restore]
+            if need_scores:
+                scores = [scores[index] for index in restore]
 
         if return_dict:
             generated_token_ids = torch.cat(generated_token_ids, dim=0)
             generated_token_logits = torch.cat(generated_token_logits, dim=0)
+            if sort_by_length:
+                generated_token_ids = generated_token_ids[restore]
+                generated_token_logits = generated_token_logits[restore]
             return {
                 "generated_token_ids": generated_token_ids,
                 "generated_token_logits": generated_token_logits,

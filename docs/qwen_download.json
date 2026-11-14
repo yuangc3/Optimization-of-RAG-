@@ -1,0 +1,39 @@
+{
+  "model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+  "revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+  "local_directory": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\models\\Qwen2.5-0.5B-Instruct",
+  "files": [
+    {
+      "name": "config.json",
+      "bytes": 659
+    },
+    {
+      "name": "generation_config.json",
+      "bytes": 242
+    },
+    {
+      "name": "merges.txt",
+      "bytes": 1671839
+    },
+    {
+      "name": "model.safetensors",
+      "bytes": 988097824
+    },
+    {
+      "name": "README.md",
+      "bytes": 4917
+    },
+    {
+      "name": "tokenizer.json",
+      "bytes": 7031645
+    },
+    {
+      "name": "tokenizer_config.json",
+      "bytes": 7305
+    },
+    {
+      "name": "vocab.json",
+      "bytes": 2776833
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "adaptive_topk_adaptive_gap_20261113_191116_267336.json": {
+    "ids_match": true,
+    "selected_k_match": true,
+    "retrieved_documents_match": true,
+    "texts_changed_from_batch8": 77
+  },
+  "adaptive_topk_k5_20261113_191116_267336.json": {
+    "ids_match": true,
+    "selected_k_match": true,
+    "retrieved_documents_match": true,
+    "texts_changed_from_batch8": 89
+  }
+}

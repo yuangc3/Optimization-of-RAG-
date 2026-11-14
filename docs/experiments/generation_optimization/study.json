@@ -1,0 +1,213 @@
+{
+  "python": "3.11.9",
+  "torch": "2.11.0+cu128",
+  "transformers": "5.7.0",
+  "gpu": "NVIDIA GeForce RTX 4070 SUPER",
+  "dtype": "torch.bfloat16",
+  "sample_count": 100,
+  "repeats": 3,
+  "variants": {
+    "baseline": {
+      "clear_cuda_cache": true,
+      "collect_scores": false
+    },
+    "retain_allocator_cache": {
+      "clear_cuda_cache": false,
+      "collect_scores": false
+    },
+    "score_collection_on": {
+      "clear_cuda_cache": true,
+      "collect_scores": true
+    }
+  },
+  "summary": {
+    "baseline": {
+      "median_seconds": 32.93463200000042,
+      "runs": [
+        {
+          "repeat": 1,
+          "variant": "baseline",
+          "seconds": 33.0056354999997,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1103.6533203125,
+          "peak_reserved_mib": 1118.0,
+          "device_allocations": 339,
+          "device_frees": 344
+        },
+        {
+          "repeat": 2,
+          "variant": "baseline",
+          "seconds": 32.486277599999994,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1103.6533203125,
+          "peak_reserved_mib": 1118.0,
+          "device_allocations": 339,
+          "device_frees": 344
+        },
+        {
+          "repeat": 3,
+          "variant": "baseline",
+          "seconds": 32.93463200000042,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1103.6533203125,
+          "peak_reserved_mib": 1118.0,
+          "device_allocations": 339,
+          "device_frees": 344
+        }
+      ]
+    },
+    "retain_allocator_cache": {
+      "median_seconds": 32.25391430000036,
+      "runs": [
+        {
+          "repeat": 1,
+          "variant": "retain_allocator_cache",
+          "seconds": 33.32007160000012,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1103.6533203125,
+          "peak_reserved_mib": 1124.0,
+          "device_allocations": 2,
+          "device_frees": 0
+        },
+        {
+          "repeat": 2,
+          "variant": "retain_allocator_cache",
+          "seconds": 31.82764959999986,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1103.6533203125,
+          "peak_reserved_mib": 1124.0,
+          "device_allocations": 2,
+          "device_frees": 0
+        },
+        {
+          "repeat": 3,
+          "variant": "retain_allocator_cache",
+          "seconds": 32.25391430000036,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1103.6533203125,
+          "peak_reserved_mib": 1124.0,
+          "device_allocations": 2,
+          "device_frees": 0
+        }
+      ]
+    },
+    "score_collection_on": {
+      "median_seconds": 32.496161299999585,
+      "runs": [
+        {
+          "repeat": 1,
+          "variant": "score_collection_on",
+          "seconds": 33.353414999999586,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1114.232421875,
+          "peak_reserved_mib": 1138.0,
+          "device_allocations": 372,
+          "device_frees": 377
+        },
+        {
+          "repeat": 2,
+          "variant": "score_collection_on",
+          "seconds": 32.496161299999585,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1114.232421875,
+          "peak_reserved_mib": 1138.0,
+          "device_allocations": 372,
+          "device_frees": 377
+        },
+        {
+          "repeat": 3,
+          "variant": "score_collection_on",
+          "seconds": 31.885241599999972,
+          "text_mismatches_against_saved": 0,
+          "peak_allocated_mib": 1114.232421875,
+          "peak_reserved_mib": 1138.0,
+          "device_allocations": 372,
+          "device_frees": 377
+        }
+      ]
+    }
+  },
+  "profile_question_ids": [
+    "test_1284",
+    "test_3422",
+    "test_1942"
+  ],
+  "profile_input_lengths": [
+    76,
+    271,
+    977
+  ],
+  "diagnostic_annotations": [
+    {
+      "name": "rag.empty_cache",
+      "calls": 3,
+      "cpu_total_us": 1886.8000000000932,
+      "device_total_us": 0
+    },
+    {
+      "name": "rag.tokenization",
+      "calls": 3,
+      "cpu_total_us": 3995.800000000163,
+      "device_total_us": 0
+    },
+    {
+      "name": "rag.model_generate",
+      "calls": 3,
+      "cpu_total_us": 1896663.5,
+      "device_total_us": 207021.81399997429
+    },
+    {
+      "name": "rag.model_generate",
+      "calls": 3,
+      "cpu_total_us": 0,
+      "device_total_us": 1894250.057
+    },
+    {
+      "name": "rag.prefill",
+      "calls": 3,
+      "cpu_total_us": 191999.3999999999,
+      "device_total_us": 68099.7470000029
+    },
+    {
+      "name": "rag.prefill",
+      "calls": 3,
+      "cpu_total_us": 0,
+      "device_total_us": 199961.44199999995
+    },
+    {
+      "name": "rag.decode",
+      "calls": 30,
+      "cpu_total_us": 1648289.6000000003,
+      "device_total_us": 137148.69899997427
+    },
+    {
+      "name": "rag.decode",
+      "calls": 30,
+      "cpu_total_us": 0,
+      "device_total_us": 1660559.4290000002
+    },
+    {
+      "name": "rag.text_decode",
+      "calls": 6,
+      "cpu_total_us": 1317.700000000419,
+      "device_total_us": 7.136000000056811
+    },
+    {
+      "name": "rag.text_decode",
+      "calls": 6,
+      "cpu_total_us": 0,
+      "device_total_us": 7.136000000056811
+    }
+  ],
+  "diagnostic_forward_events": {
+    "prefill": {
+      "calls": 3,
+      "cuda_stream_interval_ms": 200.30051040649414
+    },
+    "decode": {
+      "calls": 30,
+      "cuda_stream_interval_ms": 1663.4555892944336
+    }
+  },
+  "note": "Profiler/event figures are diagnostic and instrumented; formal timings contain neither profiler nor forward hooks."
+}

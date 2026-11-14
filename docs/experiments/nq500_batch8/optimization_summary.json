@@ -1,0 +1,117 @@
+{
+  "k5": {
+    "before_seconds": 154.92173980000007,
+    "after_seconds": 50.33705530000043,
+    "speedup": 3.0776877764639274,
+    "latency_reduction_percent": 67.50807513200907,
+    "new_repeat_seconds": [
+      49.67224020000049,
+      50.33705530000043,
+      51.49207539999952
+    ],
+    "before_metrics": {
+      "em": 0.03,
+      "f1": 0.06477643073531296,
+      "acc": 0.068,
+      "avg_input_tokens": 503.354
+    },
+    "after_metrics": {
+      "em": 0.032,
+      "f1": 0.06834919402763295,
+      "acc": 0.07,
+      "avg_input_tokens": 503.354
+    },
+    "text_changed_questions": 87,
+    "quality_comparison": {
+      "em": {
+        "delta_after_minus_before": 0.002,
+        "bootstrap_95_ci": [
+          0.0,
+          0.006
+        ],
+        "better": 1,
+        "worse": 0,
+        "exact_mcnemar_two_sided_p": 1.0
+      },
+      "f1": {
+        "delta_after_minus_before": 0.0035727632923199756,
+        "bootstrap_95_ci": [
+          0.0007177888895115631,
+          0.008649420877092204
+        ],
+        "better": 12,
+        "worse": 2
+      },
+      "acc": {
+        "delta_after_minus_before": 0.002,
+        "bootstrap_95_ci": [
+          0.0,
+          0.006
+        ],
+        "better": 1,
+        "worse": 0,
+        "exact_mcnemar_two_sided_p": 1.0
+      }
+    },
+    "identical_retrieved_documents_and_k": true,
+    "new_predictions_stable_across_repeats": true
+  },
+  "adaptive_gap": {
+    "before_seconds": 162.34617019999996,
+    "after_seconds": 50.64250399999946,
+    "speedup": 3.2057295231689507,
+    "latency_reduction_percent": 68.80585237236507,
+    "new_repeat_seconds": [
+      51.962883400000464,
+      50.439280399999916,
+      50.64250399999946
+    ],
+    "before_metrics": {
+      "em": 0.022,
+      "f1": 0.05772454529973583,
+      "acc": 0.064,
+      "avg_input_tokens": 380.264
+    },
+    "after_metrics": {
+      "em": 0.022,
+      "f1": 0.058568442154890286,
+      "acc": 0.064,
+      "avg_input_tokens": 380.264
+    },
+    "text_changed_questions": 84,
+    "quality_comparison": {
+      "em": {
+        "delta_after_minus_before": 0.0,
+        "bootstrap_95_ci": [
+          0.0,
+          0.0
+        ],
+        "better": 0,
+        "worse": 0,
+        "exact_mcnemar_two_sided_p": 1.0
+      },
+      "f1": {
+        "delta_after_minus_before": 0.0008438968551544616,
+        "bootstrap_95_ci": [
+          -0.000744311130635331,
+          0.002614849973327677
+        ],
+        "better": 9,
+        "worse": 6
+      },
+      "acc": {
+        "delta_after_minus_before": 0.0,
+        "bootstrap_95_ci": [
+          -0.006,
+          0.006
+        ],
+        "better": 1,
+        "worse": 1,
+        "exact_mcnemar_two_sided_p": 1.0
+      }
+    },
+    "identical_retrieved_documents_and_k": true,
+    "new_predictions_stable_across_repeats": true
+  },
+  "note": "Full-500 before/after runs were in different sessions; controlled 100-prompt ablations provide same-session supporting evidence. No speedup CI from three repeats is claimed."
+}

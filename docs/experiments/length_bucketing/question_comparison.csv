@@ -1,0 +1,567 @@
+﻿id,question,k,original_prediction,sorted_prediction,original_em,sorted_em,original_f1,sorted_f1
+test_1942,the legend of heroes trails in the sky the 3rd vita,5,The legend of heroes trails in the sky the third life. (Doc 3),The legend of heroes trails in the sky the third life. (Doc 3),0.0,0.0,0,0
+test_761,how old was sasuke when his clan died,1,20,20,0.0,0.0,0,0
+test_2999,which city is called the manchester of north india,1,Lucknow,Lucknow,0.0,0.0,0,0
+test_2385,under article 1 what is the minimum age required to serve in the house of representatives,5,435,435,0.0,0.0,0,0
+test_1261,the german princes who chose the holy roman empire were called,2,Emperor Charles IV,Emperor Charles IV,0.0,0.0,0,0
+test_837,what was icq as related to instant messaging,1,instant messaging,instant messaging,0.0,0.0,0.8,0.8
+test_2980,from whose perspective is the story of all quiet on the western front told,5,From the perspective of the soldiers.,From the point of view of the characters themselves.,0.0,0.0,0,0
+test_1696,what album is help by the beatles on,1,A Hard Days Night,A Hard Days Night,0.0,0.0,0,0
+test_3118,who was the 19th c. artist who was both painter and graphic designer,5,Anselm Kiefer,Anselm Kiefer,0.0,0.0,0,0
+test_2952,which greek god flew too close to the sun,5,The Greek god Helios (Sun God) flew too close to the Sun.,The Greek god Helios (Sun God) flew too close to the Sun.,0.0,0.0,0,0
+test_3124,turkey stuffed with a duck stuffed with a chicken,5,"Yes, that's correct!","Yes, that's correct!",0.0,0.0,0,0
+test_1103,who was the book of philippians written to,1,None of the provided documents mention a specific book being written to.,None of the provided documents mention a specific book being written to.,0.0,0.0,0,0
+test_2200,where is the food stored in a yam plant,5,"In a yam plant, the food (starch) is stored in the tuberous roots.","In a yam plant, the food (starch) is stored in the tuberous roots.",0.0,0.0,0,0
+test_1021,who is the original singer of i write sins not tragedies,5,Dylan Thomas,Dylan Thomas,0.0,0.0,0,0
+test_2622,who plays voldemort in harry potter and the philosopher's stone,5,Orlando Bloom,Orlando Bloom,0.0,0.0,0,0
+test_3345,how much does a new gulfstream g650 cost,2,"$498,000","$498,000",0.0,0.0,0,0
+test_3028,when did sierra nevada brewery open in asheville,5,"December 18, 1969","December 18, 1969",0.0,0.0,0,0
+test_2058,who wins the final fight in real steel,5,Peter,Peter,0.0,0.0,0,0
+test_1467,who was the baby in ghost busters 2,5,Louise Brown,Louise Brown,0.0,0.0,0,0
+test_1720,who expanded the territory of china during the qing dynasty,5,"The Qing Dynasty (1644-1912) expanded the territory of China through several methods:
+
+1. Establishing trading posts along the Indian","The Qing Dynasty (1644-1912) saw the expansion of the territory of China mainly through the following methods:
+
+1. Establishing",0.0,0.0,0,0
+test_2176,when is chinese new year and what year is it,1,2023,2023,0.0,0.0,0,0
+test_2997,who took the first steps on the moon in 1969,3,Neil Armstrong,Neil Armstrong,1.0,1.0,1.0,1.0
+test_2538,the general term for software that is designed to damage disable or steal data is,5,Computer Virus,Computer Virus,0.0,0.0,0,0
+test_910,who sings i want to be a rockstar,1,Ricky Martin,Ricky Martin,0.0,0.0,0,0
+test_1284,when is i can only imagine coming out,1,2023-04-05,2023-04-05,0.0,0.0,0,0
+test_2244,how many different kinds of pokemon cards are there,5,2,2,0.0,0.0,0,0
+test_2900,when does like cage season 2 come out,5,"October 31, 2022","October 31, 2022",0.0,0.0,0,0
+test_1369,who plays the dad in the new beauty and the beast,5,Orlando Bloom,Orlando Bloom,0.0,0.0,0,0
+test_2144,what is the meaning of the dragon boat festival,1,"A festival is an event typically celebrated by a community and centering on some characteristic aspect of that community and its religion or culture, often marked as a local or",the dragon boat festival is a traditional Chinese festival celebrating the Dragon Boat Festival which falls in May or June.,0.0,0.0,0.06451612903225806,0
+test_322,dendrites and cell bodies are components of what type of matter found in the brain,5,Neurons,Neurons,0.0,0.0,0,0
+test_3012,who is in charge of new issues not mentioned in the constitution,5,The President,The President,0.0,0.0,0,0
+test_3188,how many seasons are in star wars the clone wars,5,1,1,0.0,0.0,0,0
+test_3568,how are leaders of the two parties in congress chosen,1,"The leaders of the two main political parties in India, the Bharatiya Janata Party (BJP) and the Indian National Congress (INC), are elected","The leaders of the two main political parties in India, the Bharatiya Janata Party (BJP) and the Indian National Congress (INC), are elected",0.0,0.0,0,0
+test_862,who is the present rajya sabha speaker of india,1,Narendra Modi,Narendra Modi,0.0,0.0,0,0
+test_2840,when is season 4 of flash coming out,5,2023,2023,0.0,0.0,0,0
+test_3099,who played shmuel in the boy in the striped pyjamas,5,Liam Neeson,Liam Neeson,0.0,0.0,0,0
+test_3588,the vast interior rural area of australia is known as the,1,Great Dividing Range,Great Dividing Range,0.0,0.0,0,0
+test_1936,who has the most rings in the nba right now 2017,2,The most successful team in the NBA as of 2017 was the Los Angeles Lakers.,LeBron James,0.0,0.0,0,0
+test_2921,who is the lead singer of collective soul,5,Kurt Cobain,Kurt Cobain,0.0,0.0,0,0
+test_3422,who played the female lead in the 1942 film casablanca,5,Kate Winslet,Kate Winslet,0.0,0.0,0,0
+test_2689,where was the new pete's dragon filmed,1,Bhutan,Bhutan,0.0,0.0,0,0
+test_624,who was the first black person to register to vote,5,Barack Obama,Barack Obama,0.0,0.0,0,0
+test_2194,who played junior on in the heat of the night,1,"Junior played the role of Junior in the TV show ""In the Heat of the Night.""","Junior played the role of Junior in the TV show ""In the Heat of the Night.""",0.0,0.0,0,0
+test_887,who will get ticket to finale in rising star 2,2,Emily,Emily,0.0,0.0,0,0
+test_1704,who wrote catch 22 (both names),5,J.R.R. Tolkien,J.D. Salinger,0.0,0.0,0,0
+test_256,when did the term sustainability start to be used,4,1970s,1970s,0.0,0.0,0,0
+test_3173,where is the heart of palm on a palm tree,1,on the trunk,on the trunk,0.0,0.0,0,0
+test_1448,where did this case of product tampering occur,5,"San Francisco, California and Washington, D.C.","San Francisco, California and Washington, D.C.",0.0,0.0,0,0
+test_2592,where is the suez canal located on a map,5,"On a map, the Suez Canal is located between Asia and Europe.","On a map, the Suez Canal is located between Asia and Europe.",0.0,0.0,0,0
+test_1723,who played ashley on the young and the restless,5,Jennifer Aniston,Jennifer Aniston,0.0,0.0,0,0
+test_1925,describe the various uses of forests to human beings,5,"Forests play several crucial roles in human life, including:
+
+- Providing food and fiber: Trees are used for producing wood, paper, furniture, and other products","Forests play numerous roles in human life, including:
+
+- Providing food and fiber
+- Producing wood and paper products
+- Supporting agriculture and animal husbandry",0.0,0.0,0.07142857142857142,0.07692307692307693
+test_525,who was the qb for the saints before drew brees,5,None of the provided documents mention a quarterback (QB) named Drew Brees for the Saints before Draw Breathers.,None of the provided documents mention a quarterback (QB) named Drew Brees for the Saints before Draw Breathers.,0.0,0.0,0,0
+test_2987,who makes the important government decisions in an autocracy,1,the ruler or leaders,"In an autocracy, the leaders or groups often make the important government decisions rather than the citizens.",0.0,0.0,0,0
+test_3062,when did the movie princess bride come out,5,1996,1996,0.0,0.0,0,0
+test_586,who wrote he ain't heavy he's my brother lyrics,5,"This lyric was written by the artist ""Migos"" from the album ""Migos.""","This lyric was written by the artist ""Migos"" from the album ""Migos.""",0.0,0.0,0,0
+test_3141,when does monday night raw come on hulu,1,Monday Night Raw comes on Hulu on Monday.,Monday Night Raw comes on Hulu on Monday.,0.0,0.0,0,0
+test_1356,who sang the song should have been a cowboy,5,Jeff Buckley,Jeff Buckley,0.0,0.0,0,0
+test_1615,when did the eagles play in the superbowl,5,June 1981,June 1981,0.0,0.0,0,0
+test_1372,what does the m number mean on a pint glass,5,"The Mach number on a pint glass refers to the ratio of the speed of an object (in this case, air) to the speed of sound in that medium","The Mach number on a pint glass refers to the ratio of the speed of an object (in this case, air) to the speed of sound in that medium",0.0,0.0,0,0
+test_1431,who sang let me tell you about the birds and the bees,5,Percy Bysshe Shelley,Percy Bysshe Shelley,0.0,0.0,0,0
+test_3267,what type of business is chamber of commerce,5,"A chamber of commerce is a non-profit organization focused on promoting economic development within its state or region. They typically focus on providing resources, education, and support to","A chamber of commerce is a non-profit organization focused on promoting economic development within its state or region. They typically focus on providing resources, education, and support to",0.0,0.0,0.06666666666666668,0.06666666666666668
+test_840,who took part in the american civil war,1,Confederate soldiers,Confederate soldiers,0.0,0.0,0,0
+test_1350,who has won more grand slam titles in tennis,2,Roger Federer,Roger Federer,1.0,1.0,1.0,1.0
+test_1765,why is the indian ocean the warmest in the world,1,"The Indian Ocean is the warmest in the world due to its proximity to the equator, which allows for more direct sunlight reaching the surface. Additionally, the","The Indian Ocean is the warmest in the world due to its proximity to the equator, which allows for more direct sunlight reaching the surface. Additionally, the",0.0,0.0,0,0
+test_1714,who sang from russia with love james bond,5,Michael Jackson,Michael Jackson,0.0,0.0,0,0
+test_1313,what was the book wealth of nations about,5,"The book ""Wealth of Nations"" by Adam Smith discusses the theory of comparative advantage and the benefits of trade.","The book ""Wealth of Nations"" by Adam Smith discusses the theory of comparative advantage and the benefits of trade.",0.0,0.0,0.2,0.2
+test_2342,who did the whistling in the muppet movie,1,A Howl-er!,A Howl-er!,0.0,0.0,0,0
+test_893,where was percy jackson and the olympians filmed,5,Athens,Athens,0.0,0.0,0,0
+test_1683,yeh hai mohabbatein serial star cast real name,5,Bhagat Singh,Bhagat Singh,0.0,0.0,0,0
+test_955,where did the cosbys live in new york,5,New York,New York,0.0,0.0,0.8,0.8
+test_854,who won the battle of stirling bridge 1297,1,The Battle of Stirling Bridge took place on 30 July 1297 during the Hundred Years' War between England and France. It is considered,The Battle of Stirling Bridge took place on 30 July 1297 during the Hundred Years' War between England and France. It is considered,0.0,0.0,0,0
+test_182,who starred in the movie natural born killers,5,Brad Pitt,Brad Pitt,0.0,0.0,0,0
+test_3088,what is the year round weather in dubai,5,"The year-round weather in Dubai is generally hot and dry. The highest recorded temperature has been around 100 degrees Fahrenheit (38 degrees Celsius), while","The year-round weather in Dubai is generally hot and dry. The highest recorded temperature has been around 100 degrees Fahrenheit (38 degrees Celsius), while",0.0,0.0,0,0
+test_939,communities of similar organisms found in a particular environment are called,1,habitats,communities of similar organisms found in a particular environment are called habitats.,0.0,0.0,0,0
+test_3137,a system of fortifications along france's border,2,"Belgium, Luxembourg, and Germany","Belgium, Luxembourg, and Germany",0.0,0.0,0,0
+test_96,the cast of a good day to die hard,1,Bruce Willis,Bruce Willis,1.0,1.0,1.0,1.0
+test_1077,where does the movie mothers day take place,3,"In the movie ""Mothers Day,"" the story takes place in a small rural town.","In the movie ""Mothers Day,"" the story takes place in a small rural town.",0.0,0.0,0,0
+test_3473,where is bigg boss tamil house is located,5,Kerala,Kerala,0.0,0.0,0,0
+test_2088,in texas how is the commissioner of insurance placed in office,5,The Commissioner of Insurance in Texas is appointed by the Governor of Texas.,The Commissioner of Insurance in Texas is appointed by the Governor of Texas.,0.0,0.0,0.16666666666666669,0.16666666666666669
+test_1324,what does fancy dress mean in the uk,1,Timeless,Timeless,0.0,0.0,0,0
+test_3180,who plays sven in the santa clarita diet,5,Keanu Reeves,Keanu Reeves,0.0,0.0,0,0
+test_2352,what happens when iron reacts with oxygen and water,5,"When iron reacts with oxygen and water, it undergoes an oxidation reaction. This means that iron gains electrons and becomes more oxidized, while water loses electrons and","When iron reacts with oxygen and water, it undergoes an oxidation reaction. This means that iron gains electrons and becomes more oxidized, while water loses electrons and",0.0,0.0,0,0
+test_3311,how many players on the line of scrimmage in american football,2,There are typically 11 players on the line of scrimmage in American football.,There are typically 11 players on the line of scrimmage in American football.,0.0,0.0,0.125,0.125
+test_2905,what hangs from the trees in the bayou,5,A tree hanging from the trees in the bayou is called a willow branch.,A tree hanging from the trees in the bayou is called a cypress tree.,0.0,0.0,0,0
+test_1741,when did the royal proclamation of 1763 end,5,1763,1763,0.0,0.0,0,0
+test_2530,what is the name for the ch3coo- ion,5,The name for the ch3coo- ion is ethyl acetate.,The name for the ch₃COO⁻ ion is ethyl acetate.,0.0,0.0,0,0
+test_475,actor who played caesar in dawn of the planet of the apes,5,Hugh Jackman,Hugh Jackman,0.0,0.0,0,0
+test_1373,other than water what else has hydrogen bonds,2,hydrogen sulfide,"other than water, water also has hydrogen bonds.",0.0,0.0,0,0.15384615384615385
+test_3504,what is the name of india 29 state,5,Arunachal Pradesh,Arunachal Pradesh,0.0,0.0,0,0
+test_2690,is it marley and me or marley and i,5,It's Marley and me.,It's Marley and me.,0.0,0.0,0.6666666666666666,0.6666666666666666
+test_2502,where is creatine phosphate found in the body,5,The creatine phosphate is found in the sarcoplasmic reticulum.,The creatine phosphate is found in the sarcoplasmic reticulum.,0.0,0.0,0,0
+test_3213,who played anna in once upon a time,1,Anna was played by actress Sarah Jessica Parker.,Anna was played by actress Sarah Jessica Parker.,0.0,0.0,0,0
+test_961,who proclaimed 5th october as world’s teachers day,1,Mahatma Gandhi,Mahatma Gandhi,0.0,0.0,0,0
+test_983,which state is located in the centre of india,5,Andhra Pradesh,Andhra Pradesh,0.0,0.0,0.5,0.5
+test_1918,when is the fa cup semi-finals being played,2,2023,2023,0.0,0.0,0,0
+test_1514,who killed missy in a bend in the road,5,Missy was killed by Tom Buchanan.,Missy was killed by Tom Buchanan.,0.0,0.0,0,0
+test_574,who was the winner of the first indianapolis 500,1,None of the provided documents mention a race called the Indianapolis 500 or its winner. The information in the given text is about an invention by E.,"The winner of the Indianapolis 500 was Dale Earnhardt Jr., a NASCAR driver from the United States.",0.0,0.0,0,0
+test_848,which term describes the replacement of damaged cells to mend a tissue,1,regeneration,regeneration,0.0,0.0,0,0
+test_1527,who is the sixth president of the united states,5,Abraham Lincoln was the 16th President of the United States.,The sixth president of the United States was Donald Trump.,0.0,0.0,0,0
+test_2037,who plays the voice of sulley in monsters inc,1,Voice actor for Sulley in Monsters Inc is John Krasinski.,Voice actor for Sulley in Monsters Inc is John Krasinski.,0.0,0.0,0.16666666666666669,0.16666666666666669
+test_2456,what are the first and second major religions in france,2,Christianity and Islam are the first and second major religions in France respectively.,Christianity and Islam are the first and second major religions in France respectively.,0.0,0.0,0.15384615384615385,0.15384615384615385
+test_3443,who wrote from now on from the greatest showman,5,Ralph Ellison,Ralph Ellison,0.0,0.0,0,0
+test_2589,spyder from once upon a time in venice,1,"Spyder is a fictional character from the TV series ""Once Upon a Time"" in Venice.","Spyder is a fictional character from the TV series ""Once Upon a Time"" in Venice.",0.0,0.0,0,0
+test_596,who has won the most games in nfl 2017,5,LeBron James,LeBron James,0.0,0.0,0,0
+test_1089,jawaharlal nehru centre for advanced scientific research jakkur campus,5,"No, the information provided does not mention a center called Jawaharlal Nehru Centre for Advanced Scientific Research (JNCHR) at the Jakkur campus","No, the information provided does not mention a center called Jawaharlal Nehru Centre for Advanced Scientific Research (JNCHR) at the Jakkur campus",0.0,0.0,0.09090909090909091,0.09090909090909091
+test_1603,who sings the skye boat song on outlander,5,The skye boat song on Outlander is sung by the character Claire Randall.,The skye boat song on Outlander is sung by the character Claire Randall.,0.0,0.0,0,0
+test_2571,what is the system of government in japan,5,Japan's system of government is a constitutional monarchy.,Japan's system of government is a constitutional monarchy.,0.0,0.0,0.4444444444444445,0.4444444444444445
+test_1398,what culture region is germany a part of,1,Germany is a part of Europe.,Germany is a part of Europe.,0.0,0.0,0.28571428571428575,0.28571428571428575
+test_1391,what was going on in the world in 1900,2,"The world changed overnight, unexpectedly.","The world changed overnight, unexpectedly.",0.0,0.0,0,0
+test_2919,who is given credit for the gnu initiative,5,Charles Babbage,Charles Babbage,0.0,0.0,0,0
+test_2936,when was united nations convention on the rights of the child created,1,1946,1946,0.0,0.0,0,0
+test_1921,who wrote papa got a brand new bag,5,Bankim Chandra Chattopadhyay,Bankim Chandra Chattopadhyay,0.0,0.0,0,0
+test_712,when did the uk and us become allies,5,December 1942 Answer: December 1942,December 1942 Answer: December 1942 Answer: December 1942 Answer: December 1942 Answer:,0.0,0.0,0,0
+test_2818,who plays the voice of chucky in seed of chucky,5,Tim Robbins,Tim Robbins,0.0,0.0,0,0
+test_2866,what are the main crops grown in the united states,5,"grapes, peaches, apricots, cherries, plums, pineapples, mangoes, watermelons, tomatoes, corn, wheat","grapes, peaches, apricots, cherries, plums, pineapples, mangoes, watermelons, tomatoes, corn, wheat",0.0,0.0,0.16666666666666669,0.16666666666666669
+test_3161,who were the major countries involved in the cold war,2,Nikita Khrushchev was the leader of the Soviet Union during the Cold War.,Nikita Khrushchev was the leader of the Soviet Union during the Cold War.,0.0,0.0,0.33333333333333337,0.33333333333333337
+test_557,who is the first indian woman to be canonized as a saint,1,Mother Teresa,Mother Teresa,0.0,0.0,0,0
+test_1376,what percentage of the population is naturally blonde,5,"According to the provided information, the percentage of the population that is naturally blonde is 0%.","According to the provided information, the percentage of the population that is naturally blonde is 1%.",0.0,0.0,0,0
+test_864,who plays meredith quill in guardians of the galaxy 2,1,Meredith Quill is played by actress Sarah Jessica Parker in Guardians of the Galaxy Vol. 2.,Meredith Quill is played by actress Sarah Jessica Parker in Guardians of the Galaxy Vol. 2.,0.0,0.0,0,0
+test_2396,when was the first mad max movie release,1,2015,2015,0.0,0.0,0,0
+test_2829,who wrote the song fly me to the moon,5,"Ludwig van Beethoven is the composer who wrote ""Moonlight Sonata"".","Ludwig van Beethoven is the composer who wrote ""Moonlight Sonata"".",0.0,0.0,0,0
+test_285,when did the united kingdom entered world war 2,7,"September 1, 1939. According to the provided information, the United Kingdom and France declared war on Germany in September 1939","September 1, 1939. According to the provided information, the United Kingdom and France declared war on Germany in September 1939",0.0,0.0,0.10526315789473684,0.10526315789473684
+test_418,in the early 1800s california society was dominated by which group,5,The early 1800s in California society was dominated by white men.,The early 1800s in California society was dominated by white men.,0.0,0.0,0,0
+test_3472,who sang the original song send in the clowns,5,"The original song ""Send in the Clowns"" was sung by The Troggs.","The original song ""Send in the Clowns"" was sung by The Troggs.",0.0,0.0,0,0
+test_728,where are the organ mountains in new mexico,5,The organ mountains are located in New Mexico.,The organ mountains are located in New Mexico.,0.0,0.0,0.4,0.4
+test_34,what is the name of manchester united stadium,1,Manchester United Stadium,Manchester United Stadium,0.0,0.0,0,0
+test_634,total goals scored by ronaldo in la liga,1,25,25,0.0,0.0,0,0
+test_1811,who has the best batting average in test cricket,2,Sachin Tendulkar,Sachin Tendulkar,0.0,0.0,0,0
+test_2899,what kind of beer is st pauli girl,5,White German Ale,White German Ale,0.0,0.0,0,0
+test_982,who is considered the father of modern cosmology,2,Albert Einstein is considered the father of modern cosmology.,Albert Einstein is considered the father of modern cosmology.,0.0,0.0,0,0
+test_1451,where is season 3 of the detour filmed,5,Los Angeles,Los Angeles,0.0,0.0,0,0
+test_953,what is the term for circular movement around a central point,5,centripetal force,centripetal force,0.0,0.0,0,0
+test_350,who plays jack skellington in nightmare before christmas,5,Hugh Jackman,Hugh Jackman,0.0,0.0,0,0
+test_818,who sings the song let me love you,3,"""The Song"" by The Beatles",Ricky Martin,0.0,0.0,0,0
+test_3306,when are the next commonwealth games going to be held,1,The next Commonwealth Games will be held in 2024.,2024,0.0,0.0,0,0
+test_1181,where is dia de los muertos celebrated in mexico,4,Mexico City,Mexico City,0.0,0.0,0,0
+test_997,when did dragon ball z air in australia,5,2000,2000,0.0,0.0,0,0
+test_2863,who sang the american anthem at the super bowl,5,Prince,Prince,0.0,0.0,0,0
+test_1905,during the first world war against which country germany did not fight,2,Germany did not fight in the First World War.,Germany did not fight in the First World War against Austria-Hungary.,0.0,0.0,0,0.18181818181818182
+test_2481,who plays addison shepherd on grey's anatomy,5,Reese Witherspoon plays Addison Shepherd on Grey's Anatomy.,Reese Witherspoon plays Addison Shepherd on Grey's Anatomy.,0.0,0.0,0,0
+test_1096,who played in the stanley cup finals last year,2,"None of the provided documents mention a Stanley Cup finals game or its outcome. Therefore, there is no information to answer this question with certainty.","None of the provided documents mention a Stanley Cup Finals. Therefore, there is no information to answer this question.",0.0,0.0,0,0
+test_1991,who sang the end of the world as we know it,5,Jeff Buckley,Jeff Buckley,0.0,0.0,0,0
+test_2162,when does the new season of lost in space come out,5,"October 17, 2023","October 17, 2023",0.0,0.0,0,0
+test_1802,the very last episode of that's so raven,5,"The very last episode of that's so raven is titled ""The End"".","The very last episode of that's so raven is titled ""The End"".",0.0,0.0,0,0
+test_2736,who did corbin dance with on dancing with the stars,5,Mark,Mark,0.0,0.0,0,0
+test_1716,architectural elements forming rib vaults eg wells cathedral,1,No.,triangles,0.0,0.0,0,0
+test_3548,when did bird is the word come out,5,1980,1960,0.0,0.0,0,0
+test_307,who started the state of the union address,5,President Obama,President Obama,0.0,0.0,0,0
+test_1251,which hormone is released from the ruptured follicle or corpus luteum,1,The hormones released from the ruptured follicle or corpus luteum are progesterone and estrogen respectively.,The hormones released from the ruptured follicle or corpus luteum are progesterone and estrogen respectively.,0.0,0.0,0.14285714285714288,0.14285714285714288
+test_1256,where does the last name hidalgo come from,1,Mexico,Mexico,0.0,0.0,0,0
+test_1157,who plays dusty in the movie pure country,2,"Vivien Leigh plays Dusty in the movie ""Pure Country"".","Vivien Leigh plays Dusty in the movie ""Pure Country"".",0.0,0.0,0,0
+test_573,where do rory and paris go to college,5,"Rory goes to college in London, England.","Rory goes to college in London, England.",0.0,0.0,0,0
+test_2329,who was originally cast to play indiana jones,1,the archaeologist,"The original cast for Indiana Jones in the film ""Indiana Jones and the Kingdom of the Crystal Skull"" was played by Harrison Ford.",0.0,0.0,0,0
+test_2726,when did the sims 4 toddlers come out,3,2018,2018,0.0,0.0,0,0
+test_3579,who is the minister of youth in namibia,5,Boris Johnson,Boris Johnson,0.0,0.0,0,0
+test_1041,when does the heart develop and begin pumping blood,1,The heart begins developing in the embryo around the 20th week of pregnancy.,The heart begins developing in the embryo around the 20th week and starts pumping blood at birth.,0.0,0.0,0.28571428571428575,0.11111111111111112
+test_3589,where is the love meaning of the song,5,"In the song ""The Love Song of J. Alfred Prufrock"" by T.S. Eliot, the main theme revolves around the concept of loneliness and","In the song ""The Love Song of J. Alfred Prufrock"" by T.S. Eliot, the main theme revolves around the concept of love as",0.0,0.0,0,0
+test_429,when does kc undercover season 3 episode 10 air,1,"The KC Undercover Season 3 Episode 10 is scheduled to air on March 2, 2024.","The KC Undercover Season 3 Episode 10 is scheduled to air on March 2, 2024.",0.0,0.0,0.11764705882352941,0.11764705882352941
+test_2045,who plays lois's dad on family guy,5,David Crane,David Crane,0.0,0.0,0,0
+test_912,who was the king of england in 1756,1,King George III,King George III,0.0,0.0,0.4,0.4
+test_817,creating appropriation bills falls under which power of congress,7,"The power of Congress that creates appropriation bills falls under the ""legislative"" branch.","The power of Congress that creates appropriation bills falls under the ""legislative"" branch.",0.0,0.0,0,0
+test_3229,where does fungi go on a food web,1,"on a food web, fungi typically live in soil or decaying organic matter.","on a food web, fungi typically live in symbiotic relationships with plants.",0.0,0.0,0,0
+test_1608,who has the most rushing yards in a super bowl,2,Jim Brady,Jim Brady,0.0,0.0,0,0
+test_738,to aru kagaku no railgun s episode 3,5,"The third episode of the series titled ""Kagaku no Railgun"" (The Gun of Kagakou) contains a climactic sequence involving a rocket launch","The third episode of the series titled ""Kagaku no Railgun"" (The Gun of Kagakou) contains a climactic sequence involving a rocket launch",0.0,0.0,0,0
+test_2127,who is the number one ranked golfer in the world right now,1,Roger Federer,Roger Federer,0.0,0.0,0,0
+test_931,what is the second book in the alchemyst series,1,"The second book in the Alchemyst series is ""The Little Prince.""","The second book in the Alchemist series is ""The Four Winds.""",0.0,0.0,0,0
+test_1327,who does the democratic republic of congo trade with,1,None of the provided documents mention the Democratic Republic of Congo (DRC) trading with anyone. The information provided focuses on Congolese culture and anthropology rather than,None of the provided documents mention the Democratic Republic of Congo's trade relations.,0.0,0.0,0.07692307692307691,0.14285714285714288
+test_1469,what type of rock dominates the earth's surface,2,igneous,igneous,0.0,0.0,0,0
+test_3089,when did john hart play the lone ranger,5,1979,1979,0.0,0.0,0,0
+test_2894,where did an independence movement occur because of the congress of vienna,5,The Congress of Vienna did not lead to an independence movement.,The Congress of Vienna did not lead to an independence movement.,0.0,0.0,0,0
+test_3292,when is the last time congress passed a complete budget,1,the last time congress passed a complete budget was in 2018.,the last time congress passed a complete budget was in 2018.,0.0,0.0,0,0
+test_203,what us president is the only president to become an eagle scout,5,George Washington,George Washington,0.0,0.0,0,0
+test_2388,the cold dry winds that blow over northern india in winter are called,5,Nuclear winter,Nuclear winter,0.0,0.0,0,0
+test_2794,guardians of the galaxy blue guy in prison,5,No such person exists.,No such person exists.,0.0,0.0,0,0
+test_2245,nearest metro station to gandhi nagar in delhi,5,Amritsar Central,Amritsar Central,0.0,0.0,0,0
+test_1561,which country has the most coastline in the world,5,Canada,Canada,1.0,1.0,1.0,1.0
+test_3053,what kind of national legislature did the constitution created,1,The French Constitution created a National Assembly.,The French Constitution created a National Assembly.,0.0,0.0,0,0
+test_2968,who played jennifer in back to the future,3,Jennifer Lawrence,Jennifer Lawrence,0.0,0.0,0,0
+test_2611,what engine is in a holden v8 supercar,5,A Holden V8 SuperCar uses a V8 engine.,A Holden V8 SuperCar uses a V8 engine.,0.0,0.0,0,0
+test_317,who wrote knock knock knocking on heavens door,5,"Dylan Thomas is the poet who wrote ""Knock, knock, knocking on heavens door"".","Dylan Thomas is the poet who wrote ""Knock, knock, knocking on heavens door"".",0.0,0.0,0.14285714285714285,0.14285714285714285
+test_502,prior to 1948 north and south vietnam were a part of,1,a united state,a separate country,0.0,0.0,0,0
+test_957,where did the beer hall putsch take place,1,New York City,New York City,0.0,0.0,0,0
+test_245,where does patience is a virtue come from,1,Patience is a virtue because it requires effort and commitment.,Patience is a virtue because it requires effort and commitment.,0.0,0.0,0,0
+test_2137,when will the next episode of flash be aired,5,October 12th,"October 16, 2023",0.0,0.0,0,0
+test_530,where was the first session of the assam association held in1905,5,Assam was the first state to hold an Association of States Conference in 1905.,Assam was the first session of the Assam Association held in 1905.,0.0,0.0,0,0
+test_3414,when was the last time giants won superbowl,5,The last time the Super Bowl was played was in 1983.,The last time the Super Bowl was played was in 1983.,0.0,0.0,0,0
+test_878,what role does the president play in foreign affairs,4,"The President plays a significant role in foreign affairs, overseeing the conduct of foreign policy and foreign relations. They lead the United States' foreign policy and foreign relations,","The president plays a significant role in foreign affairs, overseeing the implementation of policies and actions related to international relations and diplomacy. They lead the executive branch's efforts to",0.0,0.0,0.06896551724137931,0.06666666666666667
+test_2617,unsaturated fats are comprised of lipids that contain,5,double bonds,double bonds,0.0,0.0,0.5,0.5
+test_2535,who won game 4 of the 2000 nba finals,1,Al Gore won Game 4 of the 2000 NBA Finals.,Al Gore won Game 4 of the 2000 NBA Finals.,0.0,0.0,0,0
+test_376,where was the hindenburg scheduled to fly and how many passengers were on it,2,"The Hindenburg was scheduled to fly from St. Louis, Missouri, USA, on April 6, 1937. It was carrying 3","The Hindenburg was scheduled to fly from St. Louis, Missouri, on April 6, 1937. It was carrying 38 people",0.0,0.0,0,0
+test_2081,who is the father of lucius in gladiator,5,Lucius is the father of Lucius in Gladiator.,Lucius is the father of Lucius in Gladiator.,0.0,0.0,0.22222222222222224,0.22222222222222224
+test_3485,where did the first persian gulf war take place,5,Iran,Iran,0.0,0.0,0,0
+test_984,when was the last time an american won the new york marathon,3,2004,2004,0.0,0.0,0,0
+test_2016,who holds the record for most everest summits,2,Annapurna Peak holds the record for most everest summits with 8.,Annapurna Peak,0.0,0.0,0,0
+test_2408,what is the democracy of the united states,5,Democracy in the United States is characterized by a system of representative government where citizens elect representatives who then govern on behalf of the people. The U.S. Constitution,Democracy in the United States is characterized by a system of representative government where citizens elect representatives who then govern on behalf of the people. The U.S. Constitution,0.0,0.0,0,0
+test_3289,who does betty end up with on riverdale,5,"On Riverdale, Betty ends up with her best friend, Sarah.","On Riverdale, Betty ends up with her best friend, Sarah.",0.0,0.0,0,0
+test_3014,where is salt mined in the united states,5,The Mojave Desert is located in the southwestern United States.,The Mojave Desert is located in the southwestern United States.,0.0,0.0,0.15384615384615385,0.15384615384615385
+test_693,who used to present i'm a celebrity now,5,Ariana Grande,Ariana Grande,0.0,0.0,0,0
+test_680,who did the mavericks beat in the finals,5,The Mavericks lost to the Golden State Warriors in the Finals.,The Mavericks were defeated by the Golden State Warriors in the NBA Finals.,0.0,0.0,0,0
+test_372,where was the last scene of the danish girl filmed,1,Elsinore,Elsinore,0.0,0.0,0,0
+test_3425,when did radio shack change to the source,5,1970s,1970s,0.0,0.0,0,0
+test_2547,when did all night long come out lionel richie,1,2013,2013,0.0,0.0,0,0
+test_444,which abbott and costello movie has who on first,1,Willy Wonka and the Chocolate Factory,Willy Wonka and the Chocolate Factory,0.0,0.0,0,0
+test_3340,who sings the christmas song all i want for christmas is you,5,Ricky Martin,Ricky Martin,0.0,0.0,0,0
+test_2450,who won the first medal in olympics for india,5,Karnam Malleswari,Karnam Malleswari,0.0,0.0,0,0
+test_2317,who wrote the song what child is this,5,Jane Taylor,Jane Taylor,0.0,0.0,0,0
+test_3344,when did the song things that make you go hmmm come out,5,"The song ""Things That Make You Go Hmmm"" came out in Doc 4. According to the provided information, it is a song composed in the key","The song ""Things That Make You Go Hmmm"" came out in 2023. According to the provided information, it was released on July",0.0,0.0,0,0
+test_2492,what is the lead singers name of staind,5,Stained is the lead singer of the band Nirvana.,Stained is the lead singer of the band Nirvana.,0.0,0.0,0,0
+test_2603,how many episodes of the white princess will there be,2,There are 5 episodes of the White Princess anime series.,There are 5 episodes of the White Princess anime series.,0.0,0.0,0,0
+test_140,what are the band members names of the rolling stones,1,"The band members names of the Rolling Stones are Mick Jagger, Keith Richards, Brian Jones, and John Lennon.","The band members names of the Rolling Stones are Mick Jagger, Keith Richards, Brian Jones, and John Lennon.",0.0,0.0,0.2222222222222222,0.2222222222222222
+test_2455,where is the majority of phosphorous stored in the environment,5,The majority of phosphorus is stored in the soil.,The majority of phosphorus is stored in the soil.,0.0,0.0,0.18181818181818182,0.18181818181818182
+test_459,who presides over the joint sessions of parliament,5,Dr. B. R. Ambedkar,Dr. B. R. Ambedkar,0.0,0.0,0,0
+test_2310,where does summer of the monkeys take place,5,Central and South America,Central and South America,0.0,0.0,0,0
+test_753,where in the bible can i find the lord's prayer,1,"In Matthew 6:9-13, you can find the Lord's Prayer.","In Matthew 6:9-13, you can find the Lord's Prayer.",0.0,0.0,0.18181818181818182,0.18181818181818182
+test_2246,who sang the theme song for laverne and shirley,1,Laverne and Shirley's theme song was sung by The Weeknd.,Laverne and Shirley's theme song was sung by The Weeknd.,0.0,0.0,0,0
+test_2877,when was the first ford f 150 made,1,1996,1996,0.0,0.0,0,0
+test_1306,when does season 5 of the blacklist resume,5,Summer,Summer,0.0,0.0,0,0
+test_18,who is the current director of the us mint,5,Quentin Tarantino is the current director of the US Mint.,Quentin Tarantino is the current director of the US Mint.,0.0,0.0,0,0
+test_520,who invented the first home video security system,5,John Logie Baird,John Logie Baird,0.0,0.0,0,0
+test_1167,who won women's singles us open 2017,1,Saina Nehwal won women's singles at the US Open 2017.,Saina Nehwal won women's singles at the US Open 2017.,0.0,0.0,0,0
+test_135,what was the purpose of a revival meeting during the second great awakening,5,The purpose of a revival meeting during the Second Great Awakening was to address spiritual issues and promote religious renewal among the congregation.,The purpose of a revival meeting during the Second Great Awakening was to address spiritual issues and promote religious renewal among the congregation.,0.0,0.0,0,0
+test_763,who is the pastor of new birth missionary baptist church now,5,None of the provided documents contain information about a New Birth Missionary Baptist Church or its current pastor.,Justin Trudeau,0.0,0.0,0,0
+test_268,when was the last time.michigan beat ohio state,5,2008,2008,0.0,0.0,0,0
+test_442,what is the average height of a chinese man,5,The average height of a Chinese man is around 165 cm or 5 ft 10 in.,The average height of a Chinese man is around 165 cm or 5 ft 10 in.,0.0,0.0,0.3333333333333333,0.3333333333333333
+test_2619,when does a wrinkle in time come out in canada,1,2019,2019,0.0,0.0,0,0
+test_2576,who is the owner of the crowne plaza,1,None of the provided documents mention the ownership of the Crown Plaza Hotel.,None of the provided documents mention the ownership of the Crown Plaza Hotel.,0.0,0.0,0,0
+test_2775,who played mary in christmas with the kranks,5,Audrey Hepburn,Audrey Hepburn,0.0,0.0,0,0
+test_2555,who are the cast members of ncis new orleans,5,"Dylan O'Brien, Thomas Brodie-Sangster, Will Poulter, Kaya Scodelario, Ki Hong Lee, and Patricia Clarkson are the","Dylan O'Brien, Thomas Brodie-Sangster, Will Poulter, Kaya Scodelario, Ki Hong Lee, and Patricia Clarkson are the",0.0,0.0,0,0
+test_3024,who does april end up with on parks and rec,5,"Based on the information provided in the given text, April ends up with Tom on Parks and Rec. The passage states: ""Jack and Sarah, two of Vick","Based on the information provided in the given text, April ends up with Tom on Parks and Rec. The passage states: ""Jack and Sarah, two of Vick",0.0,0.0,0,0
+test_877,who was the ottoman governor who led egypt in the years following the napoleonic wars,5,Lieutenant General Sam Hormusji Framji Jamshedji Manekshaw,Lieutenant General Sam Hormusji Framji Jamshedji Manekshaw,0.0,0.0,0,0
+test_2389,how long has tom brady been the patriots quarterback,5,2 years,2 years,0.0,0.0,0,0
+test_868,when did bihar bifurcate from bengal and some parts of chota nagpur merged into bengal,5,1905,1905,0.0,0.0,0,0
+test_2657,who are the co hosts on the real,5,Martina Kauffman and David Crane,Martina Kauffman and David Crane,0.0,0.0,0,0
+test_795,where does the bob and tom show broadcast from,5,Doc 1,Doc 1,0.0,0.0,0,0
+test_3471,who was the successful commanding general of the northern forces in the civil war,6,Robert E. Lee,Robert E. Lee,0.0,0.0,0,0
+test_779,how many countries does cadbury sell its products,5,There is no information provided about Cadbury's sales figures or product distribution across different countries.,There is no information provided about Cadbury's sales figures or product distribution across different countries.,0.0,0.0,0.1,0.1
+test_1954,what is money as a medium of exchange,5,"Money serves as a medium of exchange, facilitating the transfer of goods and services between individuals or businesses. It acts as a unit of account, representing the worth of","Money serves as a medium of exchange, facilitating the transfer of goods and services between individuals or businesses. It acts as a store of value, allowing people to purchase",0.0,0.0,0.07407407407407407,0.07142857142857144
+test_1301,who sang you'll be a woman soon in pulp fiction,5,John Travolta,John Travolta,0.0,0.0,0,0
+test_1134,when did day light savings start in the us,5,1916,1916,0.0,0.0,0,0
+test_3017,when was the last time someone won the super bowl back to back,1,"The last time someone won the Super Bowl back-to-back was in 2016, when the New England Patriots defeated the Indianapolis Colts in a Super Bowl","The last time someone won the Super Bowl back-to-back was in 2016, when the New England Patriots defeated the Indianapolis Colts in a Super Bowl",0.0,0.0,0,0
+test_1876,who played zoe hart on hart of dixie,1,Vivien Leigh,Vivien Leigh,0.0,0.0,0,0
+test_2615,what are the 4 types of nitrogenous bases,4,"A nitrogenous base is one of the four types of bases found in DNA and RNA. These four types of nitrogenous bases are:
+
+1. Adenine","A nitrogenous base is one of the four types of bases found in DNA and RNA. These four types of bases are:
+
+1. Adenine (A",0.0,0.0,0.08333333333333333,0.08695652173913045
+test_1815,tad the lost explorer and the secret of king midas english cast,5,"Here's the English cast summary:
+
+Tad the Lost Explorer and the Secret of King Midas
+
+- Tad the Lost Explorer (played by Tom Hiddle","Here's the English cast summary:
+
+1. **Tad the Lost Explorer**  
+   - **Character:** Tad the Lost Explorer is a character from the",0.0,0.0,0,0
+test_2949,who was allowed to vote in the roman republic,1,Citizens of Rome were allowed to vote in the Roman Republic.,Citizens of Rome were allowed to vote in the Roman Republic.,0.0,0.0,0.18181818181818182,0.18181818181818182
+test_3317,who has won the 2018 formula one australia grand prix tournament,1,None of the provided documents contain information about a Formula One Australia Grand Prix tournament or its winner.,None of the provided documents contain information about a Formula One Australia Grand Prix tournament or its winner.,0.0,0.0,0,0
+test_906,when did they start vaccinating for whooping cough,5,Doc 4 (Title: Who is credited with developing the first vaccine for polio?) states that Jonas Salk is credited with developing the first vaccine for pol,1967,0.0,0.0,0,0
+test_1656,when is winter big brother going to start,5,"December 25, 2023","December 25, 2023",0.0,0.0,0,0
+test_2418,the initial unification of upper and lower egypt took place during which period,1,3150 BCE,3150 BCE,0.0,0.0,0,0
+test_1855,who won the fifth season of america's got talent,5,Jenny Holzer won the fifth season of America's Got Talent.,Jenny Holzer won the fifth season of America's Got Talent.,0.0,0.0,0,0
+test_1730,when do liam and annie get together season 3,1,Season 3 of the show is not mentioned in this document.,Season 3 of the show is not mentioned in this document.,0.0,0.0,0,0
+test_2451,where did the northernmost land action of the american civil war occur,4,Gettysburg,Gettysburg,0.0,0.0,0,0
+test_2896,when did the three little pigs come out,2,"The story of ""The Three Little Pigs"" came out in 1883.","The story of ""The Three Little Pigs"" came out in 1884.",0.0,0.0,0.15384615384615383,0.15384615384615383
+test_564,who is the team that beat the eagles this season,1,Bayern Munich,Bayern Munich,0.0,0.0,0,0
+test_875,where are trigger points located in the body,5,"trigger points are found in muscle tissue, particularly in areas of high tension or spasm. They can be felt during physical activity or when applying pressure to the affected","trigger points are found in muscle tissue, particularly in areas of high tension or spasm.",0.0,0.0,0,0
+test_673,who has played raoul in phantom of the opera,5,Anthony Hopkins,Anthony Hopkins,0.0,0.0,0,0
+test_1293,what languages are spoken in india the most,4,English,English,1.0,1.0,1.0,1.0
+test_1646,who sings you are a magnet and i am steel,1,Keri Hilson and Chris Brown.,Keri Hilson,0.0,0.0,0,0
+test_823,where do the signals for apoptosis come from,5,The signals for apoptosis (programmed cell death) come from the activation of the caspase family of proteases. Caspases are enzymes that cleave,The signals for apoptosis (programmed cell death) come from the activation of the caspase family of proteases. Caspases are enzymes that cleave,0.0,0.0,0.09090909090909091,0.09090909090909091
+test_3574,what year is it for the jewish calendar,5,1947,1947,0.0,0.0,0,0
+test_751,what is the maximum data rate for the 802.11a standard select one,2,802.11a supports a maximum data rate of 54 Mbps.,802.11a supports a maximum data rate of 54 Mbps.,0.0,0.0,0.2,0.2
+test_1477,when did the ouija board game come out,5,1960,1960,0.0,0.0,0,0
+test_1882,where was the salvation army's christmas collection kettle first introduced,5,England,England,0.0,0.0,0,0
+test_3489,what episode does caroline get turned into a vampire,5,"The episode where Caroline gets turned into a vampire is Episode 6 of the series. Specifically, it's the third episode of the season, titled ""Caroline","The episode where Caroline gets turned into a vampire is Episode 6 of the series. Specifically, it's the third episode of the season, titled ""The Vampire",0.0,0.0,0,0
+test_77,where would a subcutaneous injection be made in the skin,5,"The subcutaneous injection would typically be made in the outer layer of the skin, which is called the epidermis. This area is rich in blood vessels","The subcutaneous injection would typically be made in the skin, as it is located beneath the surface of the skin.",0.0,0.0,0,0
+test_505,when does star trek discovery season 1 end,1,It is currently not possible to determine the exact date of the end of Star Trek Discovery Season 1 as it has been released over several years since its initial release,It is currently not possible to determine the exact date of the end of Star Trek Discovery Season 1 as it has been released over several years since its initial release,0.0,0.0,0,0
+test_1390,who played anne in anne with an e,5,Vivien Leigh,Vivien Leigh,0.0,0.0,0,0
+test_2780,when was the book pride and prejudice written,1,1813,1813,1.0,1.0,1.0,1.0
+test_28,in which regions are most of africa petroleum and natural gas found,5,South Africa and Nigeria,"South Africa, Nigeria, and Egypt.",0.0,0.0,0.4,0.33333333333333337
+test_3182,who hosted and won the inagural world cup,2,France,France,0.0,0.0,0,0
+test_930,where does arsenic and old lace take place,5,"Arsenic and Old Lace take place in the fictional and mythical nation of Denmark, in and around the royal palace at Elsinore.","Arsenic and Old Lace take place in the fictional and mythical nation of Denmark, in and around the royal palace at Elsinore.",0.0,0.0,0,0
+test_3097,when did a wrinkle in time start filming,5,2016,2016,0.0,0.0,0.5,0.5
+test_2093,where did the tradition of the pinata come from,5,Mexico,America,0.0,0.0,0,0
+test_1734,when did mcgee became a regular on ncis,5,2019-08-07,2019-08-07,0.0,0.0,0,0
+test_2714,what type of joint connects the incus with the malleus,5,the temporomandibular joint,the temporomandibular joint,0.0,0.0,0.5,0.5
+test_170,when does the new season of law and order svu come on,5,"October 31, 2023","October 31, 2023",0.0,0.0,0,0
+test_894,when was the last amendment to the constitution passed,5,"November 22, 1963","November 22, 1963",0.0,0.0,0,0
+test_2509,when does shadowhunters season 2 episode 17 come out,5,"October 16, 2023","October 16, 2023",0.0,0.0,0,0
+test_1920,how many states have a cracker barrel restaurant,1,0,0,0.0,0.0,0,0
+test_2288,who plays the little girl in jurassic park,1,Scarlett Johansson,Scarlett Johansson,0.0,0.0,0,0
+test_2050,what is the purse for the senior open,1,"None of the provided documents contain information about a ""purse"" for the senior open.","None of the provided documents contain information about a ""purse"" for the senior open.",0.0,0.0,0,0
+test_2258,who was the original host of what's my line,1,"The original host of ""What's My Line"" was John F. Kennedy.","The original host of ""What's My Line"" was John F. Kennedy.",0.0,0.0,0.16666666666666669,0.16666666666666669
+test_3365,an influential religion to enter china along the silk route during the han dynasty was,1,Confucianism,Confucianism,0.0,0.0,0,0
+test_221,when was the defensive 3 second rule implemented,5,1986,1986,0.0,0.0,0,0
+test_1784,how many countries touches the land boundary of india,5,3,three,0.0,0.0,0,0
+test_1377,when was the last time miss texas won miss america,5,Miss Texas won Miss America in 2018.,Miss Texas won Miss America in 2018.,0.0,0.0,0,0
+test_60,who has been ranked no. 1 in the latest football rankings announced by fifa,3,France,France,0.0,0.0,0,0
+test_2105,who does eric end up with in that 70s show,5,"In the 70s TV show you mentioned, Eric ends up with a man named Tom.","In the 70s TV show you mentioned, Eric ends up with a man named Tom.",0.0,0.0,0,0
+test_1409,in 1945 which party came into power in england,5,The Conservative Party came into power in England in 1945.,The Conservative Party came into power in England in 1945.,0.0,0.0,0.19999999999999998,0.19999999999999998
+test_2282,who played maudie in the movie el dorado,5,Vivien Leigh,Vivien Leigh,0.0,0.0,0,0
+test_1064,who declared war on the united states four days after pearl harbor,5,"Pearl Harbor is the event that led to the declaration of war on the United States four days after it occurred. On December 7, 194","Pearl Harbor is the event that led to the declaration of war on the United States four days after it occurred. On December 7, 194",0.0,0.0,0,0
+test_2745,where does water come from in new york city,5,"New York City gets its water from several sources:
+
+1. Surface water:
+- Rivers and lakes provide fresh water for drinking, agriculture, and industry.
+- Ground","New York City gets its water from several sources:
+
+1. Surface water:
+   - From rivers, lakes, and reservoirs
+   - From groundwater
+
+2",0.0,0.0,0.07407407407407407,0.08695652173913045
+test_3019,who sings i'm going to soak up the sun,5,"The song ""I'm Going to Soak Up the Sun"" is sung by the band The Weeknd.","The song ""I'm Going to Soak Up the Sun"" is sung by the band The Weeknd.",0.0,0.0,0.11764705882352941,0.11764705882352941
+test_662,what are the value of style guides and style sheet,2,"style guides are guidelines that help developers maintain consistency across different projects by specifying common styling rules. style sheets, on the other hand, are files containing instructions for how","style guides are guidelines that help designers and developers maintain consistency across different projects by specifying common styles and formatting rules. style sheets, on the other hand, are files",0.0,0.0,0,0
+test_3536,where does the electron transport chain get its electrons from,3,NADH and FADH2,NADH and FADH2,0.0,0.0,0,0
+test_3402,who are the judges on the fisa court,1,"The judges on the FISA (Fugitive Information System) court are:
+
+- Judge: The judge presides over the proceedings.
+- Attorney 1:","The judges on the FISA (Fugitive Information System) court are:
+
+- Judge: The judge presides over the proceedings.
+- Attorney 1:",0.0,0.0,0,0
+test_457,who is the cast of despicable me 3,5,"Percy Pepperwood, Antoine Wildman, Kaya Scodelario","Percy Pepperwood, Antoine Wildman, Dylan O'Brien",0.0,0.0,0,0
+test_3275,what kind of book is where's waldo,1,A children's book,A children's book,0.0,0.0,0,0
+test_1782,how and why were serial novels a phenomenon in the nineteenth century,1,"Serial novels, also known as serials or serial stories, were a significant literary phenomenon during the 19th century. They emerged as a response to the","Serial novels, also known as serials or serial stories, were a significant literary phenomenon during the 19th century. They emerged as a response to the",0.0,0.0,0,0
+test_293,what type of song is what a wonderful world,5,lyric ballad,lyric ballad,0.0,0.0,0.5,0.5
+test_562,what is the full form of cfc's,5,Central Processing Unit,Central Processing Unit,0.0,0.0,0,0
+test_733,who built the first temple for god in jerusalem,5,Shah Jahan,Shah Jahan,0.0,0.0,0,0
+test_120,who wrote song what a friend we have in jesus,3,"The song ""What a Friend We Have in Jesus"" was written by The Beatles.","The song ""What a Friend We Have in Jesus"" was written by The Beatles.",0.0,0.0,0,0
+test_1401,who plays poppy in the beat goes on,5,Vivienne Leigh,Vivienne Leigh,0.0,0.0,0,0
+test_1276,who wrote the phantom of the opera music,5,Giuseppe Verdi,Giuseppe Verdi,0.0,0.0,0,0
+test_1050,who played tibbs on in the heat of the night,5,Tim Robbins,Tim Robbins,0.0,0.0,0,0
+test_2044,who played the music producer in pitch perfect 2,5,Bobby Lockhart played the music producer in Pitch Perfect 2.,Bobby Lockhart played the music producer in Pitch Perfect 2.,0.0,0.0,0,0
+test_678,how did long john silver lose his leg in treasure island,5,Long John Silver lost one of his legs in the treasure hunt by the beach during his search for the lost treasure of Captain Baldridge.,Long John Silver lost one of his legs in the treasure island because he accidentally stepped on a snake while exploring the island.,0.0,0.0,0.08,0.08695652173913045
+test_1503,what stations in seattle are owned by sinclair,1,"None of the provided documents mention Sinclair or any specific station in Seattle. The information provided focuses on the locations mentioned in the first document titled ""Name three places near","None of the provided documents mention Sinclair or any specific station in Seattle. The information provided focuses on the locations mentioned in the first document titled ""Name three places near",0.0,0.0,0,0
+test_1926,what does it mean to fuse the spine,5,It means to break down the spine.,It means to break down bone tissue.,0.0,0.0,0,0
+test_1794,who did the singing in into the woods,5,Richard,Richard,0.0,0.0,0,0
+test_2031,who played joey's agent estelle on friends,2,Jennifer Aniston,Jennifer Aniston,0.0,0.0,0,0
+test_2529,what is upstream project in oil and gas,5,Upstream project refers to the exploration and development activities related to crude oil and natural gas reserves.,Upstream project refers to the exploration and development activities related to crude oil and natural gas reserves.,0.0,0.0,0,0
+test_1353,how many gold medals did australia win in the 2000 olympics,1,Australia won 19 gold medals at the 2000 Sydney Olympic Games.,Australia won 19 gold medals at the 2000 Sydney Olympic Games.,0.0,0.0,0,0
+test_672,criminal minds episode where jj becomes a profiler,5,"A criminal mind episode where JJ becomes a profiler is ""The Case of the Missing Detective."" In this episode, JJ, played by actress Sarah Silverman, investigates","A criminal mind episode where JJ becomes a profiler is ""The Case of the Missing Detective."" In this episode, JJ, played by actress Sarah Silverman, investigates",0.0,0.0,0,0
+test_169,what material was used to build the roofs of houses in burzahom,1,Foam board insulation was used to build the roofs of houses in Burzohom.,Foam board insulation was used to build the roofs of houses in Burzohom.,0.0,0.0,0,0
+test_3172,who was first governor general of british india,5,No such information is provided in the given documents.,No such information is provided in the given documents.,0.0,0.0,0,0
+test_515,what is the word for clarified butter in the balkans and middle east,5,clarified butter,clarified butter,0.0,0.0,0,0
+test_3594,where did the world's largest recorded wave occur,1,near Hawaii,near Hawaii,0.0,0.0,0,0
+test_1505,when does flash come back on season 4 episode 17,5,"Panel 1: An old man is standing in a dimly lit room, staring ahead with a sad expression.  
+Panel 2: He notices a bright","Panel 1: An old man is standing in a dimly lit room, staring ahead with a sad expression.  
+Panel 2: He notices a bright",0.0,0.0,0.08695652173913045,0.08695652173913045
+test_1760,who won the gold for the men's figure skating,1,Abhinav Bindra,Abhinav Bindra,0.0,0.0,0,0
+test_2624,when is the last time the us lost the olympics,1,2000,2000,0.0,0.0,0,0
+test_756,who does eric end up with in gossip girl,5,"In the Gossip Girl episode titled ""Eric's Secret,"" Eric ends up with Sarah, a college student who is also a fan of the show.","In the show ""Gossip Girl,"" Eric ends up with Sarah Connor.",0.0,0.0,0,0
+test_2086,who was elected senator of illinois in 1858,2,Abraham Lincoln,Abraham Lincoln,0.0,0.0,0,0
+test_3526,what channel is celebrity big brother on in the usa,1,The channel where Celebrity Big Brother is broadcasted in the USA is ABC Family.,The channel where Celebrity Big Brother is broadcasted in the USA is ESPN.,0.0,0.0,0,0
+test_407,who is the original singer of just when i needed you most,5,Ariana Grande,Ariana Grande,0.0,0.0,0,0
+test_239,panic at the disco song about a wedding,5,"The song ""Panic at the Disco"" by Panic! At The Disco features a romantic theme and includes lyrics about weddings. The song's chorus reads:
+
+Ch","The song ""Panic at the Disco"" by Panic! At The Disco features a romantic theme and includes elements related to weddings. The lyrics describe a couple's",0.0,0.0,0,0
+test_2718,when did little polveir win the grand national,2,"June 18, 1815","June 18, 1815",0.0,0.0,0,0
+test_1801,ajay devgan preity zinta and madhuri dixit movie,2,"None of the provided documents mention the movies of Ajay Devgan, Priyanka Chopra, or Madhuri Dixit. The information in the given","None of the provided documents mention the movies of Ajay Devgan, Priyanka Chopra, or Madhuri Dixit. The information in the given",0.0,0.0,0,0
+test_124,where do the royalties for winnie the pooh go,5,to the copyright holder,to the copyright holder,0.0,0.0,0,0
+test_1136,what is the population of fayetteville north carolina,5,"The approximate population of Fayetteville, North Carolina is 100,000.","The population of Fayetteville, North Carolina is 100,000.",0.0,0.0,0,0
+test_962,when does season 6 of the next step start,5,"November 3, 2020","November 3, 2020",0.0,0.0,0,0
+test_498,how many episodes are in season 7 of pretty little liars,5,5,5,0.0,0.0,0,0
+test_1317,who was the original host of jokers wild,5,Matt Groening,Matt Groening,0.0,0.0,0,0
+test_2242,who coined the phrase let get ready to rumble,2,Winston Churchill,Winston Churchill,0.0,0.0,0,0
+test_2340,one piece english dubbed episode 564 release date,3,"May 18, 2023","May 18, 2023",0.0,0.0,0,0
+test_580,what does the ghost of christmas present sprinkle from his torch,5,The ghost of Christmas Present sprinkles a mist from his torch.,The ghost of Christmas Present sprinkles a white mist from his torch.,0.0,0.0,0,0
+test_886,who won mark and goal of the year 2017,2,"None of the provided documents mention a ""Mark and Goal of the Year"" award or winner for the 2017 season.","None of the provided documents mention a ""Mark and Goal of the Year"" award or winner for the 2017 season.",0.0,0.0,0,0
+test_2350,when was the internet introduced to the public,6,"The internet was introduced to the public in 1990. According to Doc 3, ""Today, the internet is a crucial part of modern life","The internet was introduced to the public in 1990. According to Doc 3, ""Today, the internet is a crucial part of modern life",0.0,0.0,0.08695652173913043,0.08695652173913043
+test_3415,who plays the voice of the hormone monster,1,The voice of the hormone monster is played by the actor Michael B. Jordan.,The voice of the hormone monster is played by the actor Michael B. Jordan.,0.0,0.0,0,0
+test_3398,who plays nikko in the wizard of oz,5,Tim Allen,Tom Hanks,0.0,0.0,0,0
+test_1783,who eliminated costa rica in world cup 2014,2,Costa Rica eliminated France in the 2014 World Cup.,Costa Rica eliminated France in the 2014 World Cup.,0.0,0.0,0,0
+test_437,who won the men's ice skating 2018,1,None of the provided documents mention a men's ice skating tournament or competition.,"None of the provided documents mention a men's ice skating tournament or competition. Therefore, there is no information to answer the question ""Who won the men's ice",0.0,0.0,0,0
+test_2467,who played bailey in the sisterhood of the traveling pants,5,Vivien Leigh played Bailey in the Sisterhood of the Traveling Pants.,Vivien Leigh played Bailey in the Sisterhood of the Traveling Pants.,0.0,0.0,0,0
+test_2908,number of films in lord of the rings,1,3,3,0.0,0.0,0,0
+test_3394,how many episodes in game if thrones season 7,1,20,20,0.0,0.0,0,0
+test_1106,who carried florida by 537 votes in 2000,1,Al Gore,Al Gore,0.0,0.0,0,0
+test_3300,when did the black death end in england,3,14th century,14th century,0.0,0.0,0,0
+test_2306,who proposed evolution in 1859 as the basis of biological development,5,Charles Darwin,Charles Darwin,1.0,1.0,1.0,1.0
+test_669,what happened at the 1939 worlds fair in regards to television,5,"In 1939, the world's fair was held in London, England. At this event, there were demonstrations of various inventions, including televisions","In 1939, the world's fair was held in London, England. At this event, there were demonstrations of various inventions, including televisions",0.0,0.0,0.16666666666666669,0.16666666666666669
+test_3145,to transplant a nucleus from one cell to another cell a scientist would use,5,a nuclear transmutation,a nuclear transmutation,0.0,0.0,0.3333333333333333,0.3333333333333333
+test_3279,where does the pulmonary trunk receive blood from,5,the right atrium,the right atrium,0.0,0.0,0.5,0.5
+test_17,where is gall bladder situated in human body,4,"The gall bladder is situated in the abdomen, specifically in the right upper quadrant of the abdominal cavity. It is part of the digestive system and plays a crucial role","The gall bladder is situated in the abdomen, specifically in the right upper quadrant of the abdominal cavity. It is part of the digestive system and plays a crucial role",0.0,0.0,0,0
+test_2123,who has been chosen as the brand ambassador of the campaign 'beti bachao-beti padhao,5,Subhash Chandra Bose,Subhash Chandra Bose,0.0,0.0,0,0
+test_526,when was harry potter and the philosophers stone published,1,2005,2005,0.0,0.0,0,0
+test_831,what is the meaning of the name mandy,5,"Mandy means ""beautiful"" in German.","Mandy means ""beautiful"" in English.",0.0,0.0,0,0
+test_1564,who played sarah hedley in when the boat comes in,5,Vivien Leigh,Vivien Leigh,0.0,0.0,0,0
+test_2209,what year is the deer hunter set in,5,2013,2013,0.0,0.0,0,0
+test_2364,the golden age of india took place during the rule of the,5,the East India Company,the East India Company,0.0,0.0,0,0
+test_3541,who does the voice of nala in the lion king,1,James Earl Jones,James Earl Jones,0.0,0.0,0,0
+test_1842,when does god of war ghost of sparta take place,2,480 BC,480 BC,0.0,0.0,0,0
+test_2363,the concept of micro financing was developed by who in 1976,1,Intel,Intel,0.0,0.0,0,0
+test_3246,where do they film take me out fernando's,5,They film at Fernando's restaurant in San Francisco.,They film at Fernando's restaurant in San Francisco.,0.0,0.0,0,0
+test_724,who sings the original windmills of your mind,1,"The original version of ""Windmills of Your Mind"" was sung by The Beatles.","The original version of ""Windmills of Your Mind"" was sung by The Beatles.",0.0,0.0,0,0
+test_3377,when did the first marvel vs capcom come out,5,1982,1982,0.0,0.0,0,0
+test_1029,which level of weight bearing often comes with a set number of pounds,5,Doc 4,Doc 4,0.0,0.0,0,0
+test_2278,when did hollywood become the centre of the film industry,1,1927,1927,0.0,0.0,0,0
+test_3151,anastomosis between the epididymis and the vas deferens,5,Anastomosis between the epididymis and the vas deferens is called anastomosis.,Anastomosis between the epididymis and the vas deferens is called tubal ligation.,0.0,0.0,0,0
+test_1212,who won the super heavyweight gold medal at the 2000 olympics,1,Al Hayat,Al Hayat,0.0,0.0,0,0
+test_1149,when's the last time scotland won the calcutta cup,1,The last time Scotland won the Calcatta Cup was in 2018.,The last time Scotland won the Calcatta Cup was in 2019.,0.0,0.0,0.19999999999999998,0
+test_2439,what type of economic system was utilized in the soviet union,1,socialism,socialism,0.0,0.0,0,0
+test_1478,who said i will not go quietly into the night,3,Dylan Thomas,Dylan Thomas,1.0,1.0,1.0,1.0
+test_1859,how did the dominican republic get its name,2,"The Dominican Republic got its name from Spanish, which means ""free"" or ""united."" It was named after the Dominican people who were free to live wherever","The Dominican Republic got its name from Spanish, which means ""free"" or ""united."" It was named after the Dominican people who were free to live wherever",0.0,0.0,0,0
+test_2628,where is final four being held this year,5,New York City,New York City,0.0,0.0,0,0
+test_473,when did the tradition of self government began in america,5,April 1775,April 1775,0.0,0.0,0,0
+test_1673,when was the first epistle of john written,5,100 AD,100 AD,0.0,0.0,0.5,0.5
+test_1647,which was the first village of karnataka which declared independence,5,Chandigarh,Chandigarh,0.0,0.0,0,0
+test_3133,who has the most gold gloves at shortstop,1,Derek Jeter,Derek Jeter,0.0,0.0,0,0
+test_1170,who is the owner of phoenix mall in chennai,5,None of the provided documents mention Phoenix Mall or its ownership.,None of the provided documents mention Phoenix Mall or its ownership.,0.0,0.0,0.15384615384615383,0.15384615384615383
+test_1320,who sang what are we doing in love,5,Ricky Martin,Ricky Martin,0.0,0.0,0,0
+test_2070,where does half life 2 episode 2 take place,5,Doc 5,Doc 2,0.0,0.0,0,0
+test_2155,how long prime minister stay in office canada,3,"The current Prime Minister of Canada, Justin Trudeau, has served as Prime Minister for five years.","The current Prime Minister of Canada, Justin Trudeau, has served as Prime Minister for five years.",0.0,0.0,0.11764705882352941,0.11764705882352941
+test_951,how long did it take to build the great pyramid of egypt,3,20 years,20 years,0.0,0.0,0,0
+test_992,who did puss in boots grew up with,2,Mrs. Potts,Mrs. Potts,0.0,0.0,0,0
+test_3210,who plays manny in diary of a wimpy kid,5,Billy Porter,Billy Porter,0.0,0.0,0,0
+test_1483,who sang oh annie i not your daddy,5,Aretha Franklin,Aretha Franklin,0.0,0.0,0,0
+test_946,who played bat masterson in the movie tombstone,5,Brad Pitt,Brad Pitt,0.0,0.0,0,0
+test_1742,the tenure of the office of the lokayukt of up,5,7,7,0.0,0.0,0,0
+test_1931,what olympic athlete has won the most medals,5,Karnam Malleswari,Karnam Malleswari,0.0,0.0,0,0
+test_3252,who played the mom in the partridge family,5,The mom in the Partridge Family was played by the actress Sarah Silverman.,The mom in the Partridge Family was played by actress Sarah Silverman.,0.0,0.0,0,0
+test_1281,where was the first sonic drive in located,5,North Carolina,North Carolina,0.0,0.0,0,0
+test_1189,who wrote i want to dance with somebody by whitney houston,1,Gary Youngshine,Gary Youngshine,0.0,0.0,0,0
+test_2783,who is the all time leading scorer in ncaa tournament history,1,"None of the provided documents contain information about an NCAA tournament or a player's career statistics. Therefore, there is no relevant information to answer this question.","None of the provided documents contain information about an ""all-time leading scorer in NCAA tournament history."" The given text appears to be unrelated to sports or basketball, and",0.0,0.0,0,0
+test_2823,when does middle-earth shadow of mordor come out,5,"October 31, 2023","October 31, 2023",0.0,0.0,0,0
+test_811,who does brant daugherty play in pretty little liars,5,"In the movie ""Pretty Little Liars,"" Brant Daugherty plays the role of the main antagonist, a wealthy businessman named James ""Bobby"" Lee","In the movie ""Pretty Little Liars,"" Brant Daugherty plays the role of the main antagonist, a wealthy businessman named James ""Bobby"" Lee",0.0,0.0,0,0
+test_1935,what grade was arnold from hey arnold in,1,A,A,0.0,0.0,0,0
+test_2659,most runs ever scored in a mlb inning,2,The MLB record for the most runs scored in an inning is 38 by Babe Ruth of the Boston Red Sox in their 1927 World Series,"The MLB record for the most runs scored in an inning is 38 by Babe Ruth of the Boston Red Sox on April 24, 19",0.0,0.0,0,0
+test_2232,how many kilometers of great wall of china,5,1,1,0.0,0.0,0,0
+test_237,who sings why does it hurt when i pee,1,"None of the provided documents mention a song titled ""Why does it hurt when I pee.""","None of the provided documents mention a song titled ""Why does it hurt when I pee.""",0.0,0.0,0,0
+test_3305,who grows the most coffee in the world,2,Brazil,Brazil,1.0,1.0,1.0,1.0
+test_1575,how long has tom brady been playing professional football,1,4 years,4 years,0.0,0.0,0,0
+test_2684,who played doctor smith in lost in space,2,"Doctor Smith was portrayed by actor Michael Fassbender in ""Lost in Space.""","Doctor Smith was portrayed by actor Michael Fassbender in ""Lost in Space.""",0.0,0.0,0,0
+test_3356,star cast of ab tumhare hawale watan sathiyon,3,"The main cast of ""The Maze Runner"" includes Dylan O'Brien, Thomas Brodie-Sangster, Will Poulter, Kaya Scodelario,","The main cast of ""The Maze Runner"" includes Dylan O'Brien, Thomas Brodie-Sangster, Will Poulter, Kaya Scodelario,",0.0,0.0,0,0
+test_1093,how do you spell padawan from star wars,5,P-adawan,P-adawan,1.0,1.0,1.0,1.0
+test_1710,when did the first episode of that 70s show air,5,1986,1986,0.0,0.0,0,0
+test_2138,when did the us not go to the olympics,1,2000,2000,0.0,0.0,0,0
+test_568,when does dragon ball super episode 130 comes out,1,2024,2024,0.0,0.0,0,0
+test_3569,three act puccini opera first performed in 1900,1,"No, according to the information provided in the given text, the opera ""Madama Butterfly"" was composed by Giacomo Puccini in 19","No, the information provided does not mention the premiere date for the opera ""Madama Butterfly"" by Giacomo Puccini. The text only states that",0.0,0.0,0,0
+test_1312,what kind of sentence contains an independent clause and a dependent clause,1,compound sentence,compound sentence,0.0,0.0,0.5,0.5
+test_1183,who wrote the country song i can only imagine,5,Jeff Buckley,"The country song ""I Can Only Imagine"" was written by John Lennon.",0.0,0.0,0,0
+test_2835,what is the term of an official in the house of representatives,5,The term of an official in the House of Representatives is four years.,The term of an official in the House of Representatives is four years.,0.0,0.0,0.30769230769230765,0.30769230769230765
+test_2220,what college does everyone in gossip girl go to,5,Gossip Girl goes to a small university.,Gossip Girl goes to a small university.,0.0,0.0,0.25,0.25
+test_566,who won the battle of saratoga in 1777,1,The surrender of British forces at Yorktown was won by the Continental Army led by General George Washington.,The surrender of British forces at Yorktown was won by the Americans.,0.0,0.0,0,0.18181818181818182
+test_3147,who played the girl in my two dads,5,Audrey Hepburn,Audrey Hepburn,0.0,0.0,0,0
+test_398,who played guitar on my guitar gently weeps,1,Gary Jules,Gary Jules,0.0,0.0,0,0
+test_3287,what was the purpose of the mall of america,2,The purpose of the mall of America was to provide shopping opportunities for consumers.,The purpose of the mall of America was to provide shopping opportunities for consumers.,0.0,0.0,0.15384615384615385,0.15384615384615385
+test_919,derek and meredith get back together season 3,5,"No, Derek and Meredith don't get back together in Season 3 of the show. The show is set before Season 3, so there's no information","No, Derek and Meredith don't get back together in Season 3 of the show. The show is set before Season 3, so there's no information",0.0,0.0,0,0
+test_1915,what does a heart rate of 131 mean,5,A heart rate of 131 means the person has a fast heart rate.,A heart rate of 131 means the person has a fast heart rate.,0.0,0.0,0,0
+test_2505,when did the cubs won a world series,5,1967,1967,0.0,0.0,0,0
+test_1168,what nfl team has the most expensive super bowl ring,2,"The NFL team that has the most expensive Super Bowl ring is the Dallas Cowboys. According to the provided information, the most expensive Super Bowl ring belongs to the Dallas","The NFL team that has the most expensive Super Bowl ring is the Dallas Cowboys. According to the provided information, the most expensive Super Bowl ring belongs to the Dallas",0.0,0.0,0,0
+test_1232,when did the ship hector arrived in pictou,5,"Once upon a time, there was a ship called Hector that arrived in the town of Picton, which is located in the Northwest Territories of Canada.","Once upon a time, there was a ship called Hector that arrived in the town of Picton, which is located in the Northwest Territories of Canada.",0.0,0.0,0,0
+test_1030,what river flows through charleston west virginia’s capital,5,"The river that flows through Charleston, West Virginia's capital, is the James River.","The river that flows through Charleston, West Virginia's capital, is the James River.",0.0,0.0,0.15384615384615385,0.15384615384615385
+test_2670,who was the german leader who signed the treaty of versailles,2,The German leader who signed the Treaty of Versailles was Adolf Hitler.,The German leader who signed the Treaty of Versailles was Adolf Hitler.,0.0,0.0,0,0
+test_2140,who has scored the most tries in rugby union,3,Lionel Messi,Lionel Messi,0.0,0.0,0,0
+test_1612,where is the tibia and fibula bone located,5,Turkey,Turkey,0.0,0.0,0,0
+test_3043,who sang the song if loving you is wrong i don't want to be right,2,Ricky Martin,Ricky Martin,0.0,0.0,0,0
+test_1171,a request to the supreme court that it review a case that was already decided is made via a(n),1,email,email,0.0,0.0,0,0
+test_769,who scored the most points in a single game in the nba,5,Lionel Messi scored the most points in a single game in the 2019-2020 season with 25 points.,Lionel Messi scored 25 goals in the 2019-2020 season.,0.0,0.0,0,0
+test_1982,where is the orinoco river located on a map,1,South America,South America,0.0,0.0,0.8,0.8
+test_1511,towns on the border of texas and oklahoma,1,None of the provided documents mention towns on the border of Texas and Oklahoma.,None of the provided documents mention towns on the border of Texas and Oklahoma.,0.0,0.0,0,0
+test_144,when was the first australian prime minister elected,2,1901,1901,1.0,1.0,1.0,1.0
+test_2464,who was originally cast as phoebe on charmed,3,Jennifer Aniston was originally cast as Phoebe on Charmed.,Jennifer Aniston was originally cast as Phoebe on Charmed.,0.0,0.0,0,0
+test_3248,when was the last year thanksgiving was on the 23rd,5,"December 20, 2023","December 20, 2023",0.0,0.0,0,0
+test_1553,what are some special products made in mississippi,5,"Mississippi has several notable special products:
+
+1. **Cotton Candy** - Mississippi is famous for its cotton candy, which is a popular treat enjoyed throughout the","Mississippi has several notable special products:
+
+1. **Cotton Candy** - Mississippi is famous for its cotton candy, which is a popular treat enjoyed throughout the",0.0,0.0,0,0
+test_2864,original cast of natasha pierre and the great comet of 1812,5,"Natasha Pierre's original cast included:
+
+- Henry Irving as Napoleon
+- William Holden as General Charles Buonaparte
+- Lionel Barrymore as General Joseph","Natasha Pierre's original cast included:
+
+- Henry Irving as Napoleon
+- William Holden as Frederick
+- Lionel Barrymore as General Jackson
+- George C.",0.0,0.0,0,0
+test_279,whats the difference between tomato paste and tomato puree,1,"tomato paste is made from finely chopped tomatoes, while tomato puree is made by blending tomatoes with water or another liquid.","tomato paste is made from finely chopped tomatoes, while tomato puree is made by blending tomatoes with water or another liquid.",0.0,0.0,0,0
+test_3112,when did the legal drinking age changed to 21,5,1984,1984,0.0,0.0,0,0
+test_2977,who said one man's vulgarity is another's lyric,5,Dylan Thomas,Dylan Thomas,0.0,0.0,0,0
+test_3357,who has won the cma entertainer of the year the most,1,None of the provided documents mention a Canadian musician named Drake or a CMA Entertainment Award winner. The information in Doc 1 only mentions Drake winning the Grammy Award,None of the provided documents mention a Canadian musician named Drake or a CMA Entertainment Award winner. The information in Doc 1 only mentions Drake winning the Grammy Award,0.0,0.0,0,0
+test_432,where do the phaeacians live in the odyssey,5,"The Phaeacians lived on the distant planet of Betelgeuse. This planet was known for its lush jungles and vibrant culture, which included traditions","The Phaeacians lived on the distant planet of Betelgeuse. This planet was known for its lush jungles and vibrant culture, which included traditions",0.0,0.0,0,0
+test_1751,which supreme court judge has surved in international court of justice,2,Vijaya Lakshmi Pandit,Vijaya Lakshmi Pandit,0.0,0.0,0,0
+test_2524,when was the peak to peak gondola built,5,"Doc 5 states ""Mount Everest is the highest mountain peak in the world."" Therefore, the peak to peak gondola was built in 195","Doc 5 states ""Mount Everest is the highest mountain peak in the world."" Therefore, the peak to peak gondola was built in 195",0.0,0.0,0.08333333333333334,0.08333333333333334
+test_1343,what is the job of the whip in congress,5,The whip in Congress is responsible for enforcing the rules and procedures of the chamber. They may also serve as a liaison between the Speaker of the House and the members,The whip in Congress is responsible for enforcing the rules and procedures of the chamber. They may also serve as a liaison between the Speaker of the House and the members,0.0,0.0,0,0
+test_798,who won the champions league final in 2016,1,Bayern Munich,Bayern Munich,0.0,0.0,0,0
+test_3159,why did kevin can't wait wife leave the show,1,Because he was waiting for her to leave.,Because he was waiting for her to leave.,0.0,0.0,0,0
+test_328,where does a wrinkle in time take place,1,the present day,in the present day,0.0,0.0,0,0
+test_3123,which nfl coach has the most superbowl rings,1,None of the NFL coaches have the most Super Bowl rings.,None of the NFL coaches have the most Super Bowl rings.,0.0,0.0,0,0
+test_2387,who plays at the prudential center in newark,5,The actor who played at the Prudential Center in Newark is John Travolta.,The actor who played at the Prudential Center in Newark is John Travolta.,0.0,0.0,0,0
+test_1058,when does walking dead season 8 second half start,5,"October 31, 2022","October 31, 2022",0.0,0.0,0.3333333333333333,0.3333333333333333
+test_151,who was on the first season of dwts,5,Karnam Malleswari,Karnam Malleswari,0.0,0.0,0,0
+test_2638,when does the good doctor episode 8 air,5,"October 31, 2023","October 31, 2023",0.0,0.0,0,0
+test_1087,who plays the beast on the new beauty and the beast,5,James Earl Jones,James Earl Jones,0.0,0.0,0,0
+test_2764,what is the origin of the name robinson,5,"The name Robinson comes from the Old English name ""Rohan,"" which means ""rope"" or ""string.""",The origin of the name Robinson is unclear. It could be a nickname or a misspelling of another name.,0.0,0.0,0.11764705882352941,0
+test_2149,when was theme from a summer place released,1,2018-05-14,2017,0.0,0.0,0,0
+test_792,who wrote the text for jeanie with the light brown hair,5,Ralph Ellison,Ralph Ellison,0.0,0.0,0,0
+test_1795,who was the viceroy when the simon commission visited india,5,Lord Curzon,Lord Curzon,0.0,0.0,0.5,0.5
+test_704,an object that moves around an external axis is said to be,2,rotating.,rotating.,0.0,0.0,0,0
+test_805,when did beryl markham fly across the atlantic,5,"December 17, 1903","December 17, 1903",0.0,0.0,0,0
+test_2941,who was the nfl first draft pick 2017,5,None of the provided documents mention a NFL draft or a specific year for the first draft pick in 2017. The information is consistent across all five,None of the provided documents mention a NFL draft or a specific year for the first draft pick in 2017. The information is consistent across all five,0.0,0.0,0,0
+test_1951,who is the robot in lost in space 2018,5,Elora,Elora,0.0,0.0,0,0
+test_1107,when did ohio state join the big 10,1,Ohio State University joined the Big Ten Conference in 2005.,Ohio State University joined the Big Ten Conference in 2005.,0.0,0.0,0,0
+test_300,who kills barry's mom in the flash,5,Barry's mother is killed by Tom Buchanan in Doc 3.,Barry's mother is killed by Tom Buchanan in Doc 3.,0.0,0.0,0,0
+test_1909,how many times have the golden state warriors been to the playoffs,1,0,0,0.0,0.0,0,0
+test_3558,who is directly elected according to the constitution,5,Dr. B. R. Ambedkar,Dr. B. R. Ambedkar,0.0,0.0,0,0
+test_427,what language is the olympic anthem sang in,1,English,English,0.0,0.0,0,0
+test_2446,who is the girl that died in eyes wide shut,1,Daisy,Daisy,0.0,0.0,0,0
+test_1114,where did the british empire control an entire continent,5,Asia,Asia,0.0,0.0,0,0
+test_550,who developed the central processing unit (cpu),2,Intel was the first company to develop the CPU.,Intel was the first company to develop the CPU.,0.0,0.0,0,0
+test_3087,points on a sphere or angles in a circle are measured in units called,5,degrees,degrees,0.0,0.0,0,0
+test_1595,when does the dlc for rainbow six siege come out,1,2019,2019,0.0,0.0,0,0
+test_2430,hyori bed and breakfast season 2 air date,1,"June 30, 2024","June 30, 2024",0.0,0.0,0,0
+test_2658,who is the longest serving chief minister in india as on jan 2015,1,"The longest-serving Chief Minister in India as of January 2015 was Sardar Vallabhbhai Patel, who served from 196","The longest-serving Chief Minister in India as of January 2015 was Sardar Vallabhbhai Patel, who served from 196",0.0,0.0,0,0
+test_417,what is the name of the under butler in downton abbey,1,Herbert Pocket,Herbert Pocket,0.0,0.0,0,0
+test_929,what is the time setting of game of thrones,5,the distant future,the distant future,0.0,0.0,0,0
+test_3110,list the seven gifts of the holy spirit,1,"The following are given documents.
+
+Doc 1(Title: List five spiritual practices?) Five spiritual practices are meditation, journaling, contingency exercises, gratitude practices,","The following are given documents.
+
+Doc 1(Title: List five spiritual practices?) Five spiritual practices are meditation, journaling, contingency exercises, gratitude practices,",0.0,0.0,0,0
+test_2409,the creation of human beings in the kumulipo happens during which wā or period of creation,2,the creation of human beings in the kumulipo happens during the 4. 5 billion years ago,the creation of human beings in the kumulipo happens during the 4. 5 billion years ago,0.0,0.0,0.125,0.125
+test_977,what is the order of the netflix marvel shows,2,"1. Netflix
+2. Hulu
+3. Amazon Prime
+4. Disney+
+5. HBO Max","1. Netflix
+2. Hulu
+3. Amazon Prime
+4. Disney+
+5. HBO Max",0.0,0.0,0,0
+test_690,when did tim hortons open in the usa,1,2005,2006,0.0,0.0,0,0
+test_1227,the secret of crickley hall how many episodes,1,5,5,0.0,0.0,0,0
+test_2679,how many seasons of ray donovan has there been,5,There have been 5 seasons of Ray Donovan.,There have been 5 seasons of Ray Donovan.,0.0,0.0,0.2222222222222222,0.2222222222222222
+test_581,who won the 2018 women's royal rumble match,5,Karnam Malleswari was the first Indian woman to win an Olympic medal.,Karnam Malleswari was the first Indian woman to win an Olympic medal.,0.0,0.0,0,0
+test_2860,how many writes does a flash drive have,6,0,0,0.0,0.0,0,0
+test_3554,who plays the prosecutor on law and order svu,5,Brock Yates,Brock Yates,0.0,0.0,0,0
+test_3347,how many seasons of the glades were made,2,2,2,0.0,0.0,0,0
+test_458,who wrote put your hand in the hand of the man who stilled the water,5,Dylan Thomas,Dylan Thomas,0.0,0.0,0,0
+test_552,what is the biggest determinant of climate in venezuela,5,deforestation,global climate change,0.0,0.0,0,0
+test_1403,how many ceos of fortune 500 companies are female,2,0,2,0.0,0.0,0,0
+test_1706,who votes to elect a rajya sabha memmber,5,The Rajya Sabha member is elected through a direct vote from the members of the Lok Sabha.,The Rajya Sabha member is elected through a direct vote from the members of the Lok Sabha.,0.0,0.0,0,0
+test_1362,who played king theoden in lord of the rings,1,Hugo Weaving played King Thedon in The Lord of the Rings.,Hugo Weaving,0.0,0.0,0,0
+test_2596,who sings i can't take my eyes off of you,5,"""The Backstreet Boys"" by the Backstreet Boys.","""The Backstreet Boys"" by the Backstreet Boys.",0.0,0.0,0,0
+test_2887,who played charles on when calls the heart,5,Sean Connery,Sean Connery,0.0,0.0,0,0
+test_1383,where did you go to drink during prohibition,5,You went to the bar.,You went to the bar.,0.0,0.0,0,0
+test_2257,who sang how can you mend a broken heart first,3,Shakespeare,Shakespeare,0.0,0.0,0,0
+test_3096,who was suite judy blue eyes written about,1,Monica,Monica,0.0,0.0,0,0
+test_3480,where does the thames river begin and end,3,"The Thames River begins at the River Avon, which flows into the River Ouse near the town of Weybridge. It then continues to flow through London","The Thames River begins at the River Avon, which flows into the River Ouse near the town of Weybridge. It then continues to flow through London",0.0,0.0,0.08333333333333334,0.08333333333333334
+test_99,what is the cross on a letter t called,5,A couch paw toe,A couch paw toe,0.0,0.0,0,0
+test_2485,which horse and jockey won the melbourne cup in 2002,5,Graceful,Graceful,0.0,0.0,0,0
+test_1158,when was the last easter that fell on april 1st,7,"April 1, 2023","April 1, 2023",0.0,0.0,0,0
+test_1581,when was the last time the womens hockey team won gold,5,"The last time the women's hockey team won a gold medal at the Olympics was in 2018, when they won the gold medal in men's","The last time the women's hockey team won a gold medal at the Olympics was in 2018, when they won the gold medal in men's",0.0,0.0,0.09523809523809523,0.09523809523809523
+test_587,when was the lupus foundation of america founded,1,2003,2003,0.0,0.0,0,0
+test_2349,where was the last world cup held and who won,2,"The last FIFA World Cup was held in Russia, and it was won by Germany.","The last FIFA World Cup was held in Russia, and it was won by Germany.",0.0,0.0,0.35294117647058826,0.35294117647058826

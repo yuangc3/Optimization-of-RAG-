@@ -1,0 +1,34 @@
+{
+  "wpr_executable": "C:/Windows/System32/wpr.exe",
+  "wpr_version": "10.0.26100 (CoreSystem)",
+  "wpr_cpu_profile_available": true,
+  "profile_keywords": [
+    "CSwitch",
+    "ReadyThread",
+    "SampledProfile",
+    "Loader",
+    "ProcessThread"
+  ],
+  "profile_stacks": [
+    "CSwitch",
+    "ReadyThread",
+    "SampledProfile"
+  ],
+  "administrator_token": false,
+  "attempts": [
+    {
+      "execution": "workspace sandbox",
+      "start_returncode": -984068079,
+      "error_hex": "0xc5585011"
+    },
+    {
+      "execution": "outside sandbox through approved tool escalation",
+      "start_returncode": -984068079,
+      "error_hex": "0xc5585011"
+    }
+  ],
+  "error": "Failed to enable the policy to profile system performance.",
+  "etl_captured": false,
+  "wpa_found_on_path_or_common_toolkit_paths": false,
+  "note": "Tool escalation executed; the remaining failure is a Windows profiling-privilege restriction, not an automatic approval-review rejection. No existing WPR recording was stopped."
+}

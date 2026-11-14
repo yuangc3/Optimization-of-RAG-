@@ -1,0 +1,2522 @@
+{
+  "metadata": {
+    "python": "3.11.9",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "torch": "2.11.0+cu128",
+    "transformers": "5.7.0",
+    "generator_device": "cuda:0",
+    "model_path": "models/Qwen2.5-0.5B-Instruct",
+    "retriever_path": "C:\\Users\\caiyu\\.cache\\huggingface\\hub\\models--intfloat--e5-base-v2\\snapshots\\f52bf8ec8c7124536f0efb74aca902b2995e5bcd",
+    "data_dir": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\examples\\quick_start\\dataset",
+    "index_path": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\examples\\quick_start\\indexes\\e5_Flat.index",
+    "corpus_path": "C:\\Users\\caiyu\\Desktop\\cs598APE\\Optimization-of-RAG-\\examples\\quick_start\\indexes\\general_knowledge.jsonl",
+    "collect_scores": false,
+    "generation_params": {
+      "do_sample": false,
+      "max_tokens": 32
+    },
+    "seed": 2024,
+    "input_tokens_note": "Evaluator tokenizer count; not necessarily generator tokenizer count",
+    "adaptive_policy": {
+      "min_k": 1,
+      "max_k": 10,
+      "fallback_k": 5,
+      "gap_threshold": 0.01,
+      "higher_is_better": true
+    }
+  },
+  "run_id": "20261113_150923_175397",
+  "k": 5,
+  "setting": "k5",
+  "policy": null,
+  "generator_avg_input_tokens": 462.11764705882354,
+  "selected_k_distribution": {
+    "5": 17
+  },
+  "sample_count": 17,
+  "warmups": 1,
+  "repeats": 3,
+  "metrics_by_repeat": [
+    {
+      "em": 0.0,
+      "f1": 0.07438330170777988,
+      "acc": 0.0,
+      "avg_input_tokens": 480.47058823529414
+    },
+    {
+      "em": 0.0,
+      "f1": 0.07438330170777988,
+      "acc": 0.0,
+      "avg_input_tokens": 480.47058823529414
+    },
+    {
+      "em": 0.0,
+      "f1": 0.07438330170777988,
+      "acc": 0.0,
+      "avg_input_tokens": 480.47058823529414
+    }
+  ],
+  "mean_metrics": {
+    "em": 0.0,
+    "f1": 0.07438330170777988,
+    "acc": 0.0,
+    "avg_input_tokens": 480.47058823529414
+  },
+  "mean_docs_per_query": 5,
+  "end_to_end_seconds_by_repeat": [
+    4.112075800000184,
+    3.7951782000000094,
+    4.358962899999824
+  ],
+  "stage_seconds_by_repeat": {
+    "retrieval_s": [
+      0.01681749999988824,
+      0.014729100000295148,
+      0.016662999999880412
+    ],
+    "selection_s": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "prompt_s": [
+      0.04552419999981794,
+      0.046751900000344904,
+      0.04438829999980953
+    ],
+    "generation_s": [
+      4.049511599999732,
+      3.7334897999999157,
+      4.297683199999938
+    ]
+  },
+  "median_end_to_end_s": 4.112075800000184,
+  "mean_end_to_end_s": 4.088738966666672,
+  "throughput_qps_at_median": 4.134165036548995,
+  "samples_by_repeat": [
+    [
+      {
+        "id": "test_0",
+        "question": "who got the first nobel prize in physics",
+        "golden_answers": [
+          "Wilhelm Conrad Röntgen"
+        ],
+        "prediction": "C. V. Raman",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 244
+        },
+        "retrieved_documents": [
+          {
+            "id": 3027,
+            "title": "Who was the first Indian to win the Nobel Prize in Physics?",
+            "contents": "Who was the first Indian to win the Nobel Prize in Physics?\nC. V. Raman was the first Indian to win the Nobel Prize in Physics."
+          },
+          {
+            "id": 2477,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 2443,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 4475,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 4656,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          }
+        ],
+        "input_tokens": 244,
+        "generator_input_tokens": 222,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_1",
+        "question": "when is the next deadpool movie being released",
+        "golden_answers": [
+          "May 18, 2018"
+        ],
+        "prediction": "2023",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 310
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          },
+          {
+            "id": 8168,
+            "title": "What was the highest grossing movie in 2018??",
+            "contents": "What was the highest grossing movie in 2018??\nThe highest grossing movie in 2018 was Avengers: Infinity War."
+          },
+          {
+            "id": 11744,
+            "title": "Create a review for the latest movie released by Disney.?",
+            "contents": "Create a review for the latest movie released by Disney.?\n\"Disneys latest movie is an absolute gem! The story is beautifully crafted and captivating, with dazzling visuals and a wonderful soundtrack. The characters are lovable and the cast does a great job of bringing them to life. The movie will bring a smile to your face and joy to your heart. Highly recommended!\""
+          },
+          {
+            "id": 7186,
+            "title": "Name a popular movie from 2019.?",
+            "contents": "Name a popular movie from 2019.?\nAvengers: Endgame."
+          }
+        ],
+        "input_tokens": 310,
+        "generator_input_tokens": 300,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_2",
+        "question": "which mode is used for short wave broadcast service",
+        "golden_answers": [
+          "Olivia",
+          "MFSK"
+        ],
+        "prediction": "IP over Asynchronous Transfer Mode (ATM)",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 568
+        },
+        "retrieved_documents": [
+          {
+            "id": 14825,
+            "title": "Explain the working principle of MediaTek Dimensity?",
+            "contents": "Explain the working principle of MediaTek Dimensity?\nMediaTek Dimensity is an integrated wireless 5G modem-to-antenna 5G system-on-chip (SoC) developed by MediaTek. It features an octa-core 64-bit ARM Cortex-A77/A55 CPU cluster and Imagination Technologies IMG9X-MP6 GPU, both of which are 5G-integrated and have 2.0GHz operating frequency. The integrated MediaTek 5G modem supports 2G, 3G, 4G and 5G networks, and handles up to 5Gbps download speeds and 2.5Gbps upload speeds. The chip also supports up to 8K Ultra HD video capturing and playback, as well as multi-camera systems. Additionally, MediaTek Dimensity also boasts low power consumption and machine learning technology."
+          },
+          {
+            "id": 1503,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that modulates and demodulates analog signals to allow digital data to be transmitted over telephone lines or other communication channels.\\n"
+          },
+          {
+            "id": 1460,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that converts digital data into a signal that can be transmitted over a phone line, cable, or other communication medium. It is used to connect a computer or network to the internet or another network."
+          },
+          {
+            "id": 1488,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that converts digital data to analog signals for transmission over telephone lines, and vice versa.\\n"
+          },
+          {
+            "id": 12080,
+            "title": "What is the main difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet)??",
+            "contents": "What is the main difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet)??\nThe key difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet) is in their basic underlying technology. Ethernet is a packet-switched technology based on CSMA/CD protocol and it uses Ethernet frames for data transmission. On the other hand, ATM is a connection-oriented technology that uses fixed-sized packets called cells for data transmission. \\nEthernet works on the principle of broadcasting, wherein data is sent out over all physical wires at the same time. But ATM is a point to point communication system, which means data is sent only to a specific destination. \\nEthernet is mostly used for local area networking and it is easier to configure. ATM is mostly used in wide area networking and is more secure than Ethernet."
+          }
+        ],
+        "input_tokens": 568,
+        "generator_input_tokens": 549,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_3",
+        "question": "the south west wind blows across nigeria between",
+        "golden_answers": [
+          "till September"
+        ],
+        "prediction": "the Niger Delta",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 277
+        },
+        "retrieved_documents": [
+          {
+            "id": 8993,
+            "title": "Describe the weather in the following city: Lagos, Nigeria?",
+            "contents": "Describe the weather in the following city: Lagos, Nigeria?\nThe weather in Lagos, Nigeria is usually hot, humid, and rainy. It is typically warm year round, with temperatures ranging from the high 70s to the mid-80s (Fahrenheit). The rainy season begins in April and ends in October. During this time, temperatures will be slightly cooler and there could be significant rainfall on some days. From November to March, the climate is much drier, but temperatures will remain warm."
+          },
+          {
+            "id": 2650,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2626,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2573,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2546,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          }
+        ],
+        "input_tokens": 277,
+        "generator_input_tokens": 257,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_4",
+        "question": "what does hp mean in war and order",
+        "golden_answers": [
+          "hit points or health points"
+        ],
+        "prediction": "HP stands for High Power, which is a term used in military contexts to denote high-ranking officers or commanders. In the context of war and orders, HP refers",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.06451612903225806,
+          "acc": 0.0,
+          "input_tokens": 846
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          },
+          {
+            "id": 13261,
+            "title": "Think of 3 new words and define them.?",
+            "contents": "Think of 3 new words and define them.?\n1. Moxie: Courage and determination \\n2. Splendiferous: Magnificent and amazing \\n3. Pluvious: Associated with rain and storms."
+          },
+          {
+            "id": 12427,
+            "title": "Create a Mad Lib story.?",
+            "contents": "Create a Mad Lib story.?\nOnce upon a time there was a brave(adjective) knight who lived in a(adjective) castle. Every morning he would awake at(time) and go off to fight (plural noun) with his trusty(noun) by his side. His arch nemesis, the evil(noun) would always be waiting to try and defeat him. But no matter how many times the evil(noun) challenged him, the knight would always triumph. Eventually the knight became so powerful that no one dared challenge him ever again, and he lived happily ever after in his grand (adjective) castle."
+          },
+          {
+            "id": 7748,
+            "title": "Generate a Mad Lib?",
+            "contents": "Generate a Mad Lib?\nOnce upon a time there was a brave (adjective) knight who wanted to go on a (adjective) adventure. He set off on a long and treacherous journey to the (noun) kingdom. As he approached, a terrible (noun) appeared and blocked his way. He fought bravely and managed to defeat the evil (noun) with help from his trusty (noun). After the (noun) was defeated, the knight returned to his (noun) victorious and with a newfound sense of (adjective)."
+          },
+          {
+            "id": 6148,
+            "title": "Write an original story with a beginning, middle, and end.?",
+            "contents": "Write an original story with a beginning, middle, and end.?\n\"Once upon a time, there lived a girl named Mona. Mona had a passion for adventure and a burning curiosity that was unmatched. Despite the warnings of her family, Mona ventured out on her own. She traveled the world in search of knowledge and experience. Everywhere she went, she encountered strange creatures, magical places, and mysterious people. \\n\\nMona eventually reached a majestic mountain that seemed to be the center of all the worlds energy. When she arrived, she learned that she had to ascend the mountain to reach the top. She was warned that if she couldnt make it to the top before nightfall, she would be stuck on the mountain forever.\\n\\nMona was determined to reach the peak, no matter what it took. She set off and climbed the mountain with all her might. She encountered storms, slippery rocks, and wild beasts, but nothing could stop her. By the time the sun set, Mona had reached the top. Despite her exhaustion, she felt fulfilled and proud of herself. \\n\\nMona had a newfound appreciation for the beauty of the world and the power of her own will. She was glad to have made it to the top, safe and sound. From that moment forward, she vowed to never forget the lessons she had learned on her journey.\""
+          }
+        ],
+        "input_tokens": 846,
+        "generator_input_tokens": 824,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_5",
+        "question": "who wrote the first declaration of human rights",
+        "golden_answers": [
+          "Cyrus"
+        ],
+        "prediction": "Aldous Huxley",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 628
+        },
+        "retrieved_documents": [
+          {
+            "id": 6081,
+            "title": "What values were promised in the United States Declaration of Independence??",
+            "contents": "What values were promised in the United States Declaration of Independence??\nThe United States Declaration of Independence promised life, liberty, and the pursuit of happiness."
+          },
+          {
+            "id": 12584,
+            "title": "Look up the biography of Malcolm X on Wikipedia.?",
+            "contents": "Look up the biography of Malcolm X on Wikipedia.?\nMalcolm X (May 19, 1925 – February 21, 1965), born Malcolm Little and later also known as El-Hajj Malik El-Shabazz, was an African-American Muslim minister and a human rights activist. Some of his ideals and teachings have since inspired many movements across the world. He is mostly known for his controversial views on black nationalism and civil rights, which were often applicable to other racial and socio-economic issues."
+          },
+          {
+            "id": 12763,
+            "title": "Describe the contributions of Benjamin Franklin to the world.?",
+            "contents": "Describe the contributions of Benjamin Franklin to the world.?\nBenjamin Franklin played an important role in the founding of the United States. He was a leading author, publisher, scientist, inventor, diplomat, and statesman. He developed the lightning rod and bifocals, among many other inventions. He was a diplomat who negotiated the Treaty of Paris, ending the American War of Independence. He also helped to draft the Declaration of Independence, the Constitution, and the Northwest Ordinance. He signed the Treaty of Alliance with France, helping the United States to win the war. He was a driving force in the formation of public institutions like libraries and hospitals."
+          },
+          {
+            "id": 4452,
+            "title": "Who wrote the novel \"Brave New World\"?",
+            "contents": "Who wrote the novel \"Brave New World\"?\n\"Brave New World\" was written by Aldous Huxley.\\n"
+          },
+          {
+            "id": 9922,
+            "title": "Describe the historic events that led to the formation of the United Nations.?",
+            "contents": "Describe the historic events that led to the formation of the United Nations.?\n\"The United Nations was established in 1945, at the conclusion of World War II. Its founders were determined to prevent future wars by promoting collective security, respecting one anothers sovereignty, and promoting economic progress. Its founding document, The Charter of the United Nations, laid out a vision for a peace-keeping organization dedicated to meditating international disputes and promoting global cooperation. The Charter also outlined the establishment of a Security Council, the General Assembly, and the International Court of Justice.\\n\\nThe signing of the Charter was followed by the ratification of the United Nations’ International Declaration of Human Rights in 1948. This document laid out fundamental human rights that would serve as the basis for many international treaties, and the implementation of these rights within the UN’s own system of protection.\\n\\nThe United Nations has since grown to include 193 members and has had a considerable effect on global affairs. It has taken a leading role in addressing issues such as global poverty, inequality and the spread of HIV/AIDS, as well as tackling the threats posed by climate change and terrorism.\""
+          }
+        ],
+        "input_tokens": 628,
+        "generator_input_tokens": 618,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_6",
+        "question": "who is the owner of reading football club",
+        "golden_answers": [
+          "Xiu Li Dai",
+          "Dai Xiuli",
+          "Dai Yongge",
+          "Yongge Dai"
+        ],
+        "prediction": "None of the provided documents mention the owner of Reading Football Club.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 213
+        },
+        "retrieved_documents": [
+          {
+            "id": 2041,
+            "title": "Who is the founder of the electric car company Lucid Motors?",
+            "contents": "Who is the founder of the electric car company Lucid Motors?\nPeter Rawlinson is one of the founders of the electric car company Lucid Motors.\\n"
+          },
+          {
+            "id": 1992,
+            "title": "Who is the founder of the Virgin Group?",
+            "contents": "Who is the founder of the Virgin Group?\nRichard Branson is the founder of the Virgin Group.\\n"
+          },
+          {
+            "id": 14217,
+            "title": "Name a renowned author of the 19th century.?",
+            "contents": "Name a renowned author of the 19th century.?\nCharles Dickens."
+          },
+          {
+            "id": 4354,
+            "title": "Who is the founder of Amazon?",
+            "contents": "Who is the founder of Amazon?\nThe founder of Amazon is Jeff Bezos.\\n"
+          },
+          {
+            "id": 4370,
+            "title": "Who is the founder of Microsoft?",
+            "contents": "Who is the founder of Microsoft?\nThe founder of Microsoft is Bill Gates.\\n"
+          }
+        ],
+        "input_tokens": 213,
+        "generator_input_tokens": 192,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_7",
+        "question": "when is the next scandal episode coming out",
+        "golden_answers": [
+          "February 1, 2018"
+        ],
+        "prediction": "October 31, 2023",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 371
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          },
+          {
+            "id": 13525,
+            "title": "Find out the date of the next full moon.?",
+            "contents": "Find out the date of the next full moon.?\nThe next full moon will be on October 31, 20"
+          },
+          {
+            "id": 10321,
+            "title": "Output a dialogue between two friends talking about current events.?",
+            "contents": "Output a dialogue between two friends talking about current events.?\n\"Friend 1: Did you hear about the new scandal involving the president?\\nFriend 2: Yeah, its pretty shocking. Did you see the news reports?\\nFriend 1: Yeah, I cant believe how so many people are in favor of it.\\nFriend 2: Me neither. Its a shame it happened in the first place.\""
+          },
+          {
+            "id": 14706,
+            "title": "\"What was the first song released from Taylor Swifts album folklore?\"?",
+            "contents": "\"What was the first song released from Taylor Swifts album folklore?\"?\nThe first single released from Taylor Swift\\s album folklore was \"Cardigan.\" It was released on July 24, 2020 along with an accompanying music video. The song debuted atop the Billboard Hot 100 chart, becoming Swift\\s sixth number one hit on the chart."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          }
+        ],
+        "input_tokens": 371,
+        "generator_input_tokens": 362,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_8",
+        "question": "when is the last time the philadelphia won the superbowl",
+        "golden_answers": [
+          "Super Bowl LII,",
+          "2017"
+        ],
+        "prediction": "June 19, 1996",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 343
+        },
+        "retrieved_documents": [
+          {
+            "id": 11253,
+            "title": "Name five major cities in the United States.?",
+            "contents": "Name five major cities in the United States.?\nFive major cities in the United States are New York City, Los Angeles, Chicago, Houston, and Philadelphia."
+          },
+          {
+            "id": 5767,
+            "title": "Describe the 1981 NBA MVP award ceremony?",
+            "contents": "Describe the 1981 NBA MVP award ceremony?\nThe 1981 NBA MVP award ceremony took place in June of that year. The award was presented to Julius Erving at the banquet, held at the Spectrum in Philadelphia. Erving made a speech, thanking his coaches and teammates for helping him reach his goal. The audience cheered and applauded for Julius, bringing a joyful atmosphere to the event. This memorable ceremony was certainly a great honor for Erving."
+          },
+          {
+            "id": 13640,
+            "title": "Provide a list of five species of birds found in the United States.?",
+            "contents": "Provide a list of five species of birds found in the United States.?\nThe five species of birds found in the United States are Bald Eagles, Mallards, Quakers, Cardinals, and Pigeons."
+          },
+          {
+            "id": 11252,
+            "title": "Come up with a celebratory phrase for a team that has achieved a goal.?",
+            "contents": "Come up with a celebratory phrase for a team that has achieved a goal.?\nTeamwork makes the dream work!"
+          },
+          {
+            "id": 10734,
+            "title": "Name a few symbols of American independence.?",
+            "contents": "Name a few symbols of American independence.?\nThe American Flag, the Statue of Liberty, the Liberty Bell, the Bald Eagle, the Revolutionary Era Minutemen, and the Signing of the Declaration of Independence."
+          }
+        ],
+        "input_tokens": 343,
+        "generator_input_tokens": 325,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_9",
+        "question": "who was the first lady nominated member of the rajya sabha",
+        "golden_answers": [
+          "Mary Kom"
+        ],
+        "prediction": "Annie Besant",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 376
+        },
+        "retrieved_documents": [
+          {
+            "id": 2971,
+            "title": "Who was the first woman President of the Indian National Congress?",
+            "contents": "Who was the first woman President of the Indian National Congress?\nAnnie Besant was the first woman President of the Indian National Congress."
+          },
+          {
+            "id": 2959,
+            "title": "Who was the first female Prime Minister of India?",
+            "contents": "Who was the first female Prime Minister of India?\nIndira Gandhi was the first female Prime Minister of India."
+          },
+          {
+            "id": 2238,
+            "title": "Who was the first female President of India?",
+            "contents": "Who was the first female President of India?\nPratibha Patil was the first female President of India.\\n"
+          },
+          {
+            "id": 2168,
+            "title": "Who was the first female President of India?",
+            "contents": "Who was the first female President of India?\nPratibha Patil was the first female President of India.\\n"
+          },
+          {
+            "id": 3159,
+            "title": "\"Who were some of the prominent women leaders in Indias freedom movement?\"",
+            "contents": "\"Who were some of the prominent women leaders in Indias freedom movement?\"\n\"Several women played pivotal roles in Indias freedom movement. Sarojini Naidu, known as the Nightingale of India, was a prominent poet, politician, and activist who actively participated in the freedom struggle. She was the first Indian woman to become the President of the Indian National Congress. Another notable figure was Annie Besant, a British activist who became deeply involved in the Indian nationalist movement and fought for Indias independence. Other prominent women leaders included Kamala Nehru, Kasturba Gandhi, and Aruna Asaf Ali, who actively contributed to the freedom movement through their participation in protests, public speeches, and organizational activities. These women leaders played a crucial role in inspiring and mobilizing women in the struggle for freedom.\""
+          }
+        ],
+        "input_tokens": 376,
+        "generator_input_tokens": 354,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_10",
+        "question": "what is the most current adobe flash player version",
+        "golden_answers": [
+          "28.0.0.137"
+        ],
+        "prediction": "16",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 321
+        },
+        "retrieved_documents": [
+          {
+            "id": 8474,
+            "title": "What is the latest version of Android??",
+            "contents": "What is the latest version of Android??\nThe latest version of Android is 11.0 (released in 2020)."
+          },
+          {
+            "id": 8971,
+            "title": "What is the most popular production language currently in the software development industry??",
+            "contents": "What is the most popular production language currently in the software development industry??\nJavaScript is the most popular language for software development currently, followed by Java, Python, C++, and C#."
+          },
+          {
+            "id": 11087,
+            "title": "Name five popular computer software?",
+            "contents": "Name five popular computer software?\nFive popular computer software include: Microsoft Office, Google Chrome, Adobe Creative Cloud, Mozilla Firefox, and Apple iTunes."
+          },
+          {
+            "id": 14087,
+            "title": "Tell me the title of the most popular song released in 2020 so far.?",
+            "contents": "Tell me the title of the most popular song released in 2020 so far.?\nThe most popular song released in 2020 so far is \"The Box\" by Roddy Rich."
+          },
+          {
+            "id": 8455,
+            "title": "Name two popular web browsers and explain why they are preferred.?",
+            "contents": "Name two popular web browsers and explain why they are preferred.?\nTwo popular web browsers are Google Chrome and Mozilla Firefox. Google Chrome is preferred due to its speed, user-friendly interface, and its integration with other Google services. Mozilla Firefox is preferred for its security features, customizable user interface, and its support of open-source technology. Both are excellent choices for their respective features and ease of use."
+          }
+        ],
+        "input_tokens": 321,
+        "generator_input_tokens": 306,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_11",
+        "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+        "golden_answers": [
+          "Pyotr Ilyich Tchaikovsky"
+        ],
+        "prediction": "Pavel Ilyich Tchaikovsky",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.6666666666666666,
+          "acc": 0.0,
+          "input_tokens": 439
+        },
+        "retrieved_documents": [
+          {
+            "id": 2428,
+            "title": "Who is the composer who wrote \"Swan Lake\"?",
+            "contents": "Who is the composer who wrote \"Swan Lake\"?\nPyotr Ilyich Tchaikovsky is the composer who wrote \"Swan Lake\".\\n"
+          },
+          {
+            "id": 6742,
+            "title": "Name three famous paintings by Pablo Picasso.?",
+            "contents": "Name three famous paintings by Pablo Picasso.?\n\"Three famous paintings by Pablo Picasso are Guernica, The Weeping Woman, and Les Demoiselles dAvignon.\""
+          },
+          {
+            "id": 10109,
+            "title": "Name three famous American work of literature.?",
+            "contents": "Name three famous American work of literature.?\nThree famous American works of literature are \"The Great Gatsby\" by F. Scott Fitzgerald, \"To Kill a Mockingbird\" by Harper Lee, and \"The Adventures of Huckleberry Finn\" by Mark Twain."
+          },
+          {
+            "id": 7837,
+            "title": "Name five famous paintings?",
+            "contents": "Name five famous paintings?\n1. Mona Lisa by Leonardo da Vinci \\n2. The Starry Night by Vincent van Gogh\\n3. The Scream by Edvard Munch\\n4. Guernica by Pablo Picasso\\n5. The Sistine Chapel ceiling by Michelangelo"
+          },
+          {
+            "id": 14016,
+            "title": "Summarize the book \"The Lion, the Witch, and the Wardrobe\".?",
+            "contents": "Summarize the book \"The Lion, the Witch, and the Wardrobe\".?\nThe Lion, the Witch, and the Wardrobe is a classic fantasy novel written by C.S. Lewis. It tells the story of four siblings—Peter, Susan, Edmund, and Lucy— who discover a magical wardrobe that leads them to a world of Narnia, filled with talking animals, mythical creatures, and the evil White Witch. With the help of the wise and powerful lion Aslan, the children ultimately restore peace to Narnia. Along the way, they learn the power of bravery, friendship, and faith. The story offers an enchanting journey of courage and self-discovery."
+          }
+        ],
+        "input_tokens": 439,
+        "generator_input_tokens": 417,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_12",
+        "question": "how many episodes are there in dragon ball z",
+        "golden_answers": [
+          "291 episodes",
+          "291"
+        ],
+        "prediction": "There are 5 episodes in Dragon Ball Z.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.2,
+          "acc": 0.0,
+          "input_tokens": 873
+        },
+        "retrieved_documents": [
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          },
+          {
+            "id": 9071,
+            "title": "Identify the pattern in the following series: 1, 4, 7, 11, ??",
+            "contents": "Identify the pattern in the following series: 1, 4, 7, 11, ??\n14 (each number is 3 more than the previous number)"
+          },
+          {
+            "id": 8290,
+            "title": "Generate a memorable story that the audience can relate to.?",
+            "contents": "Generate a memorable story that the audience can relate to.?\n\"Once there was a young girl whose parents were always busy. Though she was surrounded by people, she often found herself feeling alone.\\n\\nOne day as she was out exploring in the woods, she encountered a magical creature – a dragon. The dragon was scared and hid in the shadows at first, but the girl spoke to it in a gentle voice, trying to reassure it.\\n\\nThey spent hours talking, from the moment the sun rose to when it disappeared beyond the horizon. They talked about their hopes, their dreams, their fears and their desires. The dragon showed her its magical powers, and the girl taught it about the world.\\n\\nThe girl had never felt so connected to anyone before, and soon they became best friends. The time they spent together was filled with laughter, stories and adventures, and before long the girl was truly happy.\\n\\nThe young girl and the dragon had created a bond that could never be broken. They were two souls who had grown close in a short time, and even if they were ever parted, they would never forget the other.\\n\\nThis is the story of a young girl who found joy and friendship in the most unexpected places. Its a reminder to never close your heart to new possibilities... because sometimes wonderful things come in unexpected packages.\""
+          },
+          {
+            "id": 6838,
+            "title": "Write a short story about a dragon in 200 words.?",
+            "contents": "Write a short story about a dragon in 200 words.?\nOnce upon a time, there was an ancient and powerful dragon named Kazik. He had lived in the shadows of the forest for as long as anyone could remember.\\n\\nKazik was a peaceful creature, and he eked out an existence, avoiding the humans and other beasts that ventured into his home. One day, Kazik was out exploring the forest and he came across a small village. He watched in awe as the people went about their daily lives. He was fascinated by their ingenuity and decided to offer his friendship to the villagers.\\n\\nKazik offered his assistance, using his knowledge of the forest to help them navigate unfamiliar terrain, and his strength to carry heavy objects. In return, the villagers provided him with food and gifts. As time went on, the friendship between Kazik and the villagers became stronger, and his reputation began to spread. People from far and wide came to Kazik seeking help, and he never refused them.\\n\\nKazik remained a fixture in the village, offering protection and guidance to the villagers. They respected him and his wisdom, and Kazik was fondly known as the Keeper of the Forest from then on."
+          }
+        ],
+        "input_tokens": 873,
+        "generator_input_tokens": 859,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_13",
+        "question": "cast of law & order special victim unit",
+        "golden_answers": [
+          "Kelli Giddish",
+          "Richard Belzer",
+          "Stephanie March",
+          "Diane Neal",
+          "Ice-T",
+          "Danny Pino",
+          "Dann Florek",
+          "Tamara Tunie",
+          "Michaela McManus",
+          "Mariska Hargitay",
+          "Adam Beach",
+          "B. D. Wong",
+          "Christopher Meloni",
+          "Raúl Esparza",
+          "Michelle Hurd",
+          "Peter Scanavino"
+        ],
+        "prediction": "Brock Yates",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 812
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          },
+          {
+            "id": 11560,
+            "title": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone.?",
+            "contents": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone.?\nWhat did the vampire lawyer say when he lost his cellphone? \"What do you mean I\\m gonna have to litigate this?!\""
+          },
+          {
+            "id": 7097,
+            "title": "Write a script for a scene in a court trial.?",
+            "contents": "Write a script for a scene in a court trial.?\n\"Judge: This court is now in session.\\nAttorney 1: Your Honor, we believe the defendant is guilty of the charges against them. We have witnesses, evidence, and compelling testimony to back up our case. \\n\\nAttorney 2: Your Honor, we disagree. We believe the defendant is innocent and did not commit the crime hes being accused of. We also have our own evidence and testimonies to support our argument. \\n\\nJudge: Very well. Lets hear from the witnesses.\""
+          },
+          {
+            "id": 8470,
+            "title": "Generate a theme song for a movie about a police officer.?",
+            "contents": "Generate a theme song for a movie about a police officer.?\n\"Verse 1\\nTake to the streets and spread the news\\nHes the one that keeps us safe and sound\\nHer badge will show they must comply\\nHer justice and courage cant be denied\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\\n\\nVerse 2\\nRisking her life to protect us all\\nWisdom and courage, she will never fall\\nAgainst evil doers, she rises to the call\\nWith courage and grace, she stands so tall\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\\n\\nBridge\\nShedding light in the darkness, never fear\\nBringing justice, with courage, her determination is clear\\nAnd we are safe, for she is here\\nA hero, a cop, and faithful protectors\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\""
+          },
+          {
+            "id": 13409,
+            "title": "Name a few members of the LGBTQ+ community?",
+            "contents": "Name a few members of the LGBTQ+ community?\n- Elton John\\n- Pose star Indya Moore\\n- Laverne Cox \\n- Margaret Cho\\n- Marlene Dietrich\\n- Jazz Jennings\\n- Harvey Milk \\n- Ellen DeGeneres \\n- Brock Yates \\n- Alan Turing \\n- Billy Porter"
+          }
+        ],
+        "input_tokens": 812,
+        "generator_input_tokens": 790,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_14",
+        "question": "who designed the garden city of new earswick",
+        "golden_answers": [
+          "planner Raymond Unwin",
+          "architect Barry Parker",
+          "Raymond Unwin"
+        ],
+        "prediction": "Johannes Vermeer",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 266
+        },
+        "retrieved_documents": [
+          {
+            "id": 3083,
+            "title": "Which Indian city is known as the \"Garden City\"?",
+            "contents": "Which Indian city is known as the \"Garden City\"?\nBengaluru is known as the \"Garden City\" in India."
+          },
+          {
+            "id": 2248,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 2227,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 2158,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 10590,
+            "title": "Give me a creative title for a story about a person who discovers a hidden gem in their backyard.?",
+            "contents": "Give me a creative title for a story about a person who discovers a hidden gem in their backyard.?\nThe Garden of Unexpected Wonders."
+          }
+        ],
+        "input_tokens": 266,
+        "generator_input_tokens": 244,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_15",
+        "question": "what is the first step in the evolution of the eye",
+        "golden_answers": [
+          "photoreceptor proteins that sense light",
+          "eyespots"
+        ],
+        "prediction": "Variation",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 663
+        },
+        "retrieved_documents": [
+          {
+            "id": 12418,
+            "title": "Describe the four stages of natural selection.?",
+            "contents": "Describe the four stages of natural selection.?\nThe four stages of natural selection are variation, heritability, selection, and adaptation. Variation occurs when individuals in a species have unique attributes. Heritability is the transfer of a trait from parents to their offspring. Selection is the process of different traits becoming more abundant or rare in a population depending on the environment. Finally, adaptation is when heritable traits that are advantageous become more common in a population."
+          },
+          {
+            "id": 6181,
+            "title": "Explain the basic principles of the theory of evolution.?",
+            "contents": "Explain the basic principles of the theory of evolution.?\nThe basic principles of the theory of evolution, proposed by Charles Darwin, are that all life on Earth has descended from a common ancestor and that this evolution occurs over time via the process of natural selection. Natural selection is the process by which individuals who are better adapted to their environment are more likely to survive, reproduce, and pass on their traits to their offspring. This process leads to the formation of new species and allows for adaptation in a changing environment. \\n\\nIn addition, the theory of evolution explains how new genetic variations arise, how organisms acquire inherited traits, and how species diverge with time."
+          },
+          {
+            "id": 9118,
+            "title": "How would you explain the concept of evolution to a child??",
+            "contents": "How would you explain the concept of evolution to a child??\nEvolution is the process by which living things change over time. It is how species become adapted to their environments and how new species are formed. Evolution is a process that happens over thousands of years and is driven by natural selection. It means that the animals and plants that are best adapted to their environment will survive and pass on their genes to the next generation."
+          },
+          {
+            "id": 3417,
+            "title": "Tell me a joke",
+            "contents": "Tell me a joke\nQuestion:Why did the biology teacher wear glasses?Answer:To help her focus!\\n\\n"
+          },
+          {
+            "id": 14348,
+            "title": "Create a short story about a fictional alien species?",
+            "contents": "Create a short story about a fictional alien species?\nOnce upon a time, there was a species of aliens living on the distant planet of Betelgeuse. These aliens were blue-skinned, with large, bulging eyes and four long arms. The Betelgeans lived in tribal societies, their culture rich with tradition and myths. They lived off the land, drawing sustenance from the vast jungles that blanketed the planet, and they had a deep respect for all life. Yet, they were a mysterious species, as no one had ever seen a Betelgean in person. Then one day, a spacecraft arrived carrying a small alien with blue skin and large eyes. His name was Kevlas, and he was the first Betelgean to ever visit Earth. As the days went on, Kevlas and a group of humans explored the planet of Betelgeuse, discovering new technology and uncovering mysteries about the alien culture. In the end, the Betelgeans and humans forged an alliance, enriching the lives of both species through mutual understanding."
+          }
+        ],
+        "input_tokens": 663,
+        "generator_input_tokens": 641,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_16",
+        "question": "where is the tv show the curse of oak island filmed",
+        "golden_answers": [
+          "Oak Island"
+        ],
+        "prediction": "Island of the Dolls, Mexico",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.3333333333333333,
+          "acc": 0.0,
+          "input_tokens": 618
+        },
+        "retrieved_documents": [
+          {
+            "id": 7881,
+            "title": "Create a new setting for a story.?",
+            "contents": "Create a new setting for a story.?\nThe story takes place on a small island off the coast of Maine, surrounded by mist and cloaked in mystery. Native inhabitants of the island have been known to tell tales of strange and otherworldly creatures living in the depths of the shadows cast by the surrounding trees."
+          },
+          {
+            "id": 11813,
+            "title": "\"Write a script for a 5 second bumper for a childrens cartoon.\"?",
+            "contents": "\"Write a script for a 5 second bumper for a childrens cartoon.\"?\nThe scene opens on a lush forest with a single magical tree at its center. A flock of brightly colored birds fly overhead and the sun sits high above in a brilliant sky. A voiceover begins: \"Welcome to the world of imagination, where every day is a new adventure. Join us and discover your hidden powers!\" As the voiceover finishes, the camera zooms in on the magical tree and the scene fades to the show\\s logo."
+          },
+          {
+            "id": 7503,
+            "title": "Generate a list of 5 spooky places in the world.?",
+            "contents": "Generate a list of 5 spooky places in the world.?\n1. Island of the Dolls (Xochimilco, Mexico)\\n2. The Catacombs of Paris (Paris, France)\\n3. The Tower of London (London, England)\\n4. Pluckley Village (Kent, England)\\n5. Bhangarh Fort (Rajasthan, India)"
+          },
+          {
+            "id": 12527,
+            "title": "Give a description of the setting of a horror movie.?",
+            "contents": "Give a description of the setting of a horror movie.?\nThe setting of the horror movie is in a town isolated in the mountains. It is raining heavily outside and the darkness of the stormy night sets the perfect atmosphere for fear and suspense. The town is eerily empty, the absence of street lights adding to the feeling of dread as shadows move in between the buildings, creating an even darker atmosphere."
+          },
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          }
+        ],
+        "input_tokens": 618,
+        "generator_input_tokens": 596,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      }
+    ],
+    [
+      {
+        "id": "test_0",
+        "question": "who got the first nobel prize in physics",
+        "golden_answers": [
+          "Wilhelm Conrad Röntgen"
+        ],
+        "prediction": "C. V. Raman",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 244
+        },
+        "retrieved_documents": [
+          {
+            "id": 3027,
+            "title": "Who was the first Indian to win the Nobel Prize in Physics?",
+            "contents": "Who was the first Indian to win the Nobel Prize in Physics?\nC. V. Raman was the first Indian to win the Nobel Prize in Physics."
+          },
+          {
+            "id": 2477,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 2443,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 4475,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 4656,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          }
+        ],
+        "input_tokens": 244,
+        "generator_input_tokens": 222,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_1",
+        "question": "when is the next deadpool movie being released",
+        "golden_answers": [
+          "May 18, 2018"
+        ],
+        "prediction": "2023",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 310
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          },
+          {
+            "id": 8168,
+            "title": "What was the highest grossing movie in 2018??",
+            "contents": "What was the highest grossing movie in 2018??\nThe highest grossing movie in 2018 was Avengers: Infinity War."
+          },
+          {
+            "id": 11744,
+            "title": "Create a review for the latest movie released by Disney.?",
+            "contents": "Create a review for the latest movie released by Disney.?\n\"Disneys latest movie is an absolute gem! The story is beautifully crafted and captivating, with dazzling visuals and a wonderful soundtrack. The characters are lovable and the cast does a great job of bringing them to life. The movie will bring a smile to your face and joy to your heart. Highly recommended!\""
+          },
+          {
+            "id": 7186,
+            "title": "Name a popular movie from 2019.?",
+            "contents": "Name a popular movie from 2019.?\nAvengers: Endgame."
+          }
+        ],
+        "input_tokens": 310,
+        "generator_input_tokens": 300,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_2",
+        "question": "which mode is used for short wave broadcast service",
+        "golden_answers": [
+          "Olivia",
+          "MFSK"
+        ],
+        "prediction": "IP over Asynchronous Transfer Mode (ATM)",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 568
+        },
+        "retrieved_documents": [
+          {
+            "id": 14825,
+            "title": "Explain the working principle of MediaTek Dimensity?",
+            "contents": "Explain the working principle of MediaTek Dimensity?\nMediaTek Dimensity is an integrated wireless 5G modem-to-antenna 5G system-on-chip (SoC) developed by MediaTek. It features an octa-core 64-bit ARM Cortex-A77/A55 CPU cluster and Imagination Technologies IMG9X-MP6 GPU, both of which are 5G-integrated and have 2.0GHz operating frequency. The integrated MediaTek 5G modem supports 2G, 3G, 4G and 5G networks, and handles up to 5Gbps download speeds and 2.5Gbps upload speeds. The chip also supports up to 8K Ultra HD video capturing and playback, as well as multi-camera systems. Additionally, MediaTek Dimensity also boasts low power consumption and machine learning technology."
+          },
+          {
+            "id": 1503,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that modulates and demodulates analog signals to allow digital data to be transmitted over telephone lines or other communication channels.\\n"
+          },
+          {
+            "id": 1460,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that converts digital data into a signal that can be transmitted over a phone line, cable, or other communication medium. It is used to connect a computer or network to the internet or another network."
+          },
+          {
+            "id": 1488,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that converts digital data to analog signals for transmission over telephone lines, and vice versa.\\n"
+          },
+          {
+            "id": 12080,
+            "title": "What is the main difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet)??",
+            "contents": "What is the main difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet)??\nThe key difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet) is in their basic underlying technology. Ethernet is a packet-switched technology based on CSMA/CD protocol and it uses Ethernet frames for data transmission. On the other hand, ATM is a connection-oriented technology that uses fixed-sized packets called cells for data transmission. \\nEthernet works on the principle of broadcasting, wherein data is sent out over all physical wires at the same time. But ATM is a point to point communication system, which means data is sent only to a specific destination. \\nEthernet is mostly used for local area networking and it is easier to configure. ATM is mostly used in wide area networking and is more secure than Ethernet."
+          }
+        ],
+        "input_tokens": 568,
+        "generator_input_tokens": 549,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_3",
+        "question": "the south west wind blows across nigeria between",
+        "golden_answers": [
+          "till September"
+        ],
+        "prediction": "the Niger Delta",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 277
+        },
+        "retrieved_documents": [
+          {
+            "id": 8993,
+            "title": "Describe the weather in the following city: Lagos, Nigeria?",
+            "contents": "Describe the weather in the following city: Lagos, Nigeria?\nThe weather in Lagos, Nigeria is usually hot, humid, and rainy. It is typically warm year round, with temperatures ranging from the high 70s to the mid-80s (Fahrenheit). The rainy season begins in April and ends in October. During this time, temperatures will be slightly cooler and there could be significant rainfall on some days. From November to March, the climate is much drier, but temperatures will remain warm."
+          },
+          {
+            "id": 2650,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2626,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2573,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2546,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          }
+        ],
+        "input_tokens": 277,
+        "generator_input_tokens": 257,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_4",
+        "question": "what does hp mean in war and order",
+        "golden_answers": [
+          "hit points or health points"
+        ],
+        "prediction": "HP stands for High Power, which is a term used in military contexts to denote high-ranking officers or commanders. In the context of war and orders, HP refers",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.06451612903225806,
+          "acc": 0.0,
+          "input_tokens": 846
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          },
+          {
+            "id": 13261,
+            "title": "Think of 3 new words and define them.?",
+            "contents": "Think of 3 new words and define them.?\n1. Moxie: Courage and determination \\n2. Splendiferous: Magnificent and amazing \\n3. Pluvious: Associated with rain and storms."
+          },
+          {
+            "id": 12427,
+            "title": "Create a Mad Lib story.?",
+            "contents": "Create a Mad Lib story.?\nOnce upon a time there was a brave(adjective) knight who lived in a(adjective) castle. Every morning he would awake at(time) and go off to fight (plural noun) with his trusty(noun) by his side. His arch nemesis, the evil(noun) would always be waiting to try and defeat him. But no matter how many times the evil(noun) challenged him, the knight would always triumph. Eventually the knight became so powerful that no one dared challenge him ever again, and he lived happily ever after in his grand (adjective) castle."
+          },
+          {
+            "id": 7748,
+            "title": "Generate a Mad Lib?",
+            "contents": "Generate a Mad Lib?\nOnce upon a time there was a brave (adjective) knight who wanted to go on a (adjective) adventure. He set off on a long and treacherous journey to the (noun) kingdom. As he approached, a terrible (noun) appeared and blocked his way. He fought bravely and managed to defeat the evil (noun) with help from his trusty (noun). After the (noun) was defeated, the knight returned to his (noun) victorious and with a newfound sense of (adjective)."
+          },
+          {
+            "id": 6148,
+            "title": "Write an original story with a beginning, middle, and end.?",
+            "contents": "Write an original story with a beginning, middle, and end.?\n\"Once upon a time, there lived a girl named Mona. Mona had a passion for adventure and a burning curiosity that was unmatched. Despite the warnings of her family, Mona ventured out on her own. She traveled the world in search of knowledge and experience. Everywhere she went, she encountered strange creatures, magical places, and mysterious people. \\n\\nMona eventually reached a majestic mountain that seemed to be the center of all the worlds energy. When she arrived, she learned that she had to ascend the mountain to reach the top. She was warned that if she couldnt make it to the top before nightfall, she would be stuck on the mountain forever.\\n\\nMona was determined to reach the peak, no matter what it took. She set off and climbed the mountain with all her might. She encountered storms, slippery rocks, and wild beasts, but nothing could stop her. By the time the sun set, Mona had reached the top. Despite her exhaustion, she felt fulfilled and proud of herself. \\n\\nMona had a newfound appreciation for the beauty of the world and the power of her own will. She was glad to have made it to the top, safe and sound. From that moment forward, she vowed to never forget the lessons she had learned on her journey.\""
+          }
+        ],
+        "input_tokens": 846,
+        "generator_input_tokens": 824,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_5",
+        "question": "who wrote the first declaration of human rights",
+        "golden_answers": [
+          "Cyrus"
+        ],
+        "prediction": "Aldous Huxley",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 628
+        },
+        "retrieved_documents": [
+          {
+            "id": 6081,
+            "title": "What values were promised in the United States Declaration of Independence??",
+            "contents": "What values were promised in the United States Declaration of Independence??\nThe United States Declaration of Independence promised life, liberty, and the pursuit of happiness."
+          },
+          {
+            "id": 12584,
+            "title": "Look up the biography of Malcolm X on Wikipedia.?",
+            "contents": "Look up the biography of Malcolm X on Wikipedia.?\nMalcolm X (May 19, 1925 – February 21, 1965), born Malcolm Little and later also known as El-Hajj Malik El-Shabazz, was an African-American Muslim minister and a human rights activist. Some of his ideals and teachings have since inspired many movements across the world. He is mostly known for his controversial views on black nationalism and civil rights, which were often applicable to other racial and socio-economic issues."
+          },
+          {
+            "id": 12763,
+            "title": "Describe the contributions of Benjamin Franklin to the world.?",
+            "contents": "Describe the contributions of Benjamin Franklin to the world.?\nBenjamin Franklin played an important role in the founding of the United States. He was a leading author, publisher, scientist, inventor, diplomat, and statesman. He developed the lightning rod and bifocals, among many other inventions. He was a diplomat who negotiated the Treaty of Paris, ending the American War of Independence. He also helped to draft the Declaration of Independence, the Constitution, and the Northwest Ordinance. He signed the Treaty of Alliance with France, helping the United States to win the war. He was a driving force in the formation of public institutions like libraries and hospitals."
+          },
+          {
+            "id": 4452,
+            "title": "Who wrote the novel \"Brave New World\"?",
+            "contents": "Who wrote the novel \"Brave New World\"?\n\"Brave New World\" was written by Aldous Huxley.\\n"
+          },
+          {
+            "id": 9922,
+            "title": "Describe the historic events that led to the formation of the United Nations.?",
+            "contents": "Describe the historic events that led to the formation of the United Nations.?\n\"The United Nations was established in 1945, at the conclusion of World War II. Its founders were determined to prevent future wars by promoting collective security, respecting one anothers sovereignty, and promoting economic progress. Its founding document, The Charter of the United Nations, laid out a vision for a peace-keeping organization dedicated to meditating international disputes and promoting global cooperation. The Charter also outlined the establishment of a Security Council, the General Assembly, and the International Court of Justice.\\n\\nThe signing of the Charter was followed by the ratification of the United Nations’ International Declaration of Human Rights in 1948. This document laid out fundamental human rights that would serve as the basis for many international treaties, and the implementation of these rights within the UN’s own system of protection.\\n\\nThe United Nations has since grown to include 193 members and has had a considerable effect on global affairs. It has taken a leading role in addressing issues such as global poverty, inequality and the spread of HIV/AIDS, as well as tackling the threats posed by climate change and terrorism.\""
+          }
+        ],
+        "input_tokens": 628,
+        "generator_input_tokens": 618,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_6",
+        "question": "who is the owner of reading football club",
+        "golden_answers": [
+          "Xiu Li Dai",
+          "Dai Xiuli",
+          "Dai Yongge",
+          "Yongge Dai"
+        ],
+        "prediction": "None of the provided documents mention the owner of Reading Football Club.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 213
+        },
+        "retrieved_documents": [
+          {
+            "id": 2041,
+            "title": "Who is the founder of the electric car company Lucid Motors?",
+            "contents": "Who is the founder of the electric car company Lucid Motors?\nPeter Rawlinson is one of the founders of the electric car company Lucid Motors.\\n"
+          },
+          {
+            "id": 1992,
+            "title": "Who is the founder of the Virgin Group?",
+            "contents": "Who is the founder of the Virgin Group?\nRichard Branson is the founder of the Virgin Group.\\n"
+          },
+          {
+            "id": 14217,
+            "title": "Name a renowned author of the 19th century.?",
+            "contents": "Name a renowned author of the 19th century.?\nCharles Dickens."
+          },
+          {
+            "id": 4354,
+            "title": "Who is the founder of Amazon?",
+            "contents": "Who is the founder of Amazon?\nThe founder of Amazon is Jeff Bezos.\\n"
+          },
+          {
+            "id": 4370,
+            "title": "Who is the founder of Microsoft?",
+            "contents": "Who is the founder of Microsoft?\nThe founder of Microsoft is Bill Gates.\\n"
+          }
+        ],
+        "input_tokens": 213,
+        "generator_input_tokens": 192,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_7",
+        "question": "when is the next scandal episode coming out",
+        "golden_answers": [
+          "February 1, 2018"
+        ],
+        "prediction": "October 31, 2023",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 371
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          },
+          {
+            "id": 13525,
+            "title": "Find out the date of the next full moon.?",
+            "contents": "Find out the date of the next full moon.?\nThe next full moon will be on October 31, 20"
+          },
+          {
+            "id": 10321,
+            "title": "Output a dialogue between two friends talking about current events.?",
+            "contents": "Output a dialogue between two friends talking about current events.?\n\"Friend 1: Did you hear about the new scandal involving the president?\\nFriend 2: Yeah, its pretty shocking. Did you see the news reports?\\nFriend 1: Yeah, I cant believe how so many people are in favor of it.\\nFriend 2: Me neither. Its a shame it happened in the first place.\""
+          },
+          {
+            "id": 14706,
+            "title": "\"What was the first song released from Taylor Swifts album folklore?\"?",
+            "contents": "\"What was the first song released from Taylor Swifts album folklore?\"?\nThe first single released from Taylor Swift\\s album folklore was \"Cardigan.\" It was released on July 24, 2020 along with an accompanying music video. The song debuted atop the Billboard Hot 100 chart, becoming Swift\\s sixth number one hit on the chart."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          }
+        ],
+        "input_tokens": 371,
+        "generator_input_tokens": 362,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_8",
+        "question": "when is the last time the philadelphia won the superbowl",
+        "golden_answers": [
+          "Super Bowl LII,",
+          "2017"
+        ],
+        "prediction": "June 19, 1996",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 343
+        },
+        "retrieved_documents": [
+          {
+            "id": 11253,
+            "title": "Name five major cities in the United States.?",
+            "contents": "Name five major cities in the United States.?\nFive major cities in the United States are New York City, Los Angeles, Chicago, Houston, and Philadelphia."
+          },
+          {
+            "id": 5767,
+            "title": "Describe the 1981 NBA MVP award ceremony?",
+            "contents": "Describe the 1981 NBA MVP award ceremony?\nThe 1981 NBA MVP award ceremony took place in June of that year. The award was presented to Julius Erving at the banquet, held at the Spectrum in Philadelphia. Erving made a speech, thanking his coaches and teammates for helping him reach his goal. The audience cheered and applauded for Julius, bringing a joyful atmosphere to the event. This memorable ceremony was certainly a great honor for Erving."
+          },
+          {
+            "id": 13640,
+            "title": "Provide a list of five species of birds found in the United States.?",
+            "contents": "Provide a list of five species of birds found in the United States.?\nThe five species of birds found in the United States are Bald Eagles, Mallards, Quakers, Cardinals, and Pigeons."
+          },
+          {
+            "id": 11252,
+            "title": "Come up with a celebratory phrase for a team that has achieved a goal.?",
+            "contents": "Come up with a celebratory phrase for a team that has achieved a goal.?\nTeamwork makes the dream work!"
+          },
+          {
+            "id": 10734,
+            "title": "Name a few symbols of American independence.?",
+            "contents": "Name a few symbols of American independence.?\nThe American Flag, the Statue of Liberty, the Liberty Bell, the Bald Eagle, the Revolutionary Era Minutemen, and the Signing of the Declaration of Independence."
+          }
+        ],
+        "input_tokens": 343,
+        "generator_input_tokens": 325,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_9",
+        "question": "who was the first lady nominated member of the rajya sabha",
+        "golden_answers": [
+          "Mary Kom"
+        ],
+        "prediction": "Annie Besant",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 376
+        },
+        "retrieved_documents": [
+          {
+            "id": 2971,
+            "title": "Who was the first woman President of the Indian National Congress?",
+            "contents": "Who was the first woman President of the Indian National Congress?\nAnnie Besant was the first woman President of the Indian National Congress."
+          },
+          {
+            "id": 2959,
+            "title": "Who was the first female Prime Minister of India?",
+            "contents": "Who was the first female Prime Minister of India?\nIndira Gandhi was the first female Prime Minister of India."
+          },
+          {
+            "id": 2238,
+            "title": "Who was the first female President of India?",
+            "contents": "Who was the first female President of India?\nPratibha Patil was the first female President of India.\\n"
+          },
+          {
+            "id": 2168,
+            "title": "Who was the first female President of India?",
+            "contents": "Who was the first female President of India?\nPratibha Patil was the first female President of India.\\n"
+          },
+          {
+            "id": 3159,
+            "title": "\"Who were some of the prominent women leaders in Indias freedom movement?\"",
+            "contents": "\"Who were some of the prominent women leaders in Indias freedom movement?\"\n\"Several women played pivotal roles in Indias freedom movement. Sarojini Naidu, known as the Nightingale of India, was a prominent poet, politician, and activist who actively participated in the freedom struggle. She was the first Indian woman to become the President of the Indian National Congress. Another notable figure was Annie Besant, a British activist who became deeply involved in the Indian nationalist movement and fought for Indias independence. Other prominent women leaders included Kamala Nehru, Kasturba Gandhi, and Aruna Asaf Ali, who actively contributed to the freedom movement through their participation in protests, public speeches, and organizational activities. These women leaders played a crucial role in inspiring and mobilizing women in the struggle for freedom.\""
+          }
+        ],
+        "input_tokens": 376,
+        "generator_input_tokens": 354,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_10",
+        "question": "what is the most current adobe flash player version",
+        "golden_answers": [
+          "28.0.0.137"
+        ],
+        "prediction": "16",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 321
+        },
+        "retrieved_documents": [
+          {
+            "id": 8474,
+            "title": "What is the latest version of Android??",
+            "contents": "What is the latest version of Android??\nThe latest version of Android is 11.0 (released in 2020)."
+          },
+          {
+            "id": 8971,
+            "title": "What is the most popular production language currently in the software development industry??",
+            "contents": "What is the most popular production language currently in the software development industry??\nJavaScript is the most popular language for software development currently, followed by Java, Python, C++, and C#."
+          },
+          {
+            "id": 11087,
+            "title": "Name five popular computer software?",
+            "contents": "Name five popular computer software?\nFive popular computer software include: Microsoft Office, Google Chrome, Adobe Creative Cloud, Mozilla Firefox, and Apple iTunes."
+          },
+          {
+            "id": 14087,
+            "title": "Tell me the title of the most popular song released in 2020 so far.?",
+            "contents": "Tell me the title of the most popular song released in 2020 so far.?\nThe most popular song released in 2020 so far is \"The Box\" by Roddy Rich."
+          },
+          {
+            "id": 8455,
+            "title": "Name two popular web browsers and explain why they are preferred.?",
+            "contents": "Name two popular web browsers and explain why they are preferred.?\nTwo popular web browsers are Google Chrome and Mozilla Firefox. Google Chrome is preferred due to its speed, user-friendly interface, and its integration with other Google services. Mozilla Firefox is preferred for its security features, customizable user interface, and its support of open-source technology. Both are excellent choices for their respective features and ease of use."
+          }
+        ],
+        "input_tokens": 321,
+        "generator_input_tokens": 306,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_11",
+        "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+        "golden_answers": [
+          "Pyotr Ilyich Tchaikovsky"
+        ],
+        "prediction": "Pavel Ilyich Tchaikovsky",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.6666666666666666,
+          "acc": 0.0,
+          "input_tokens": 439
+        },
+        "retrieved_documents": [
+          {
+            "id": 2428,
+            "title": "Who is the composer who wrote \"Swan Lake\"?",
+            "contents": "Who is the composer who wrote \"Swan Lake\"?\nPyotr Ilyich Tchaikovsky is the composer who wrote \"Swan Lake\".\\n"
+          },
+          {
+            "id": 6742,
+            "title": "Name three famous paintings by Pablo Picasso.?",
+            "contents": "Name three famous paintings by Pablo Picasso.?\n\"Three famous paintings by Pablo Picasso are Guernica, The Weeping Woman, and Les Demoiselles dAvignon.\""
+          },
+          {
+            "id": 10109,
+            "title": "Name three famous American work of literature.?",
+            "contents": "Name three famous American work of literature.?\nThree famous American works of literature are \"The Great Gatsby\" by F. Scott Fitzgerald, \"To Kill a Mockingbird\" by Harper Lee, and \"The Adventures of Huckleberry Finn\" by Mark Twain."
+          },
+          {
+            "id": 7837,
+            "title": "Name five famous paintings?",
+            "contents": "Name five famous paintings?\n1. Mona Lisa by Leonardo da Vinci \\n2. The Starry Night by Vincent van Gogh\\n3. The Scream by Edvard Munch\\n4. Guernica by Pablo Picasso\\n5. The Sistine Chapel ceiling by Michelangelo"
+          },
+          {
+            "id": 14016,
+            "title": "Summarize the book \"The Lion, the Witch, and the Wardrobe\".?",
+            "contents": "Summarize the book \"The Lion, the Witch, and the Wardrobe\".?\nThe Lion, the Witch, and the Wardrobe is a classic fantasy novel written by C.S. Lewis. It tells the story of four siblings—Peter, Susan, Edmund, and Lucy— who discover a magical wardrobe that leads them to a world of Narnia, filled with talking animals, mythical creatures, and the evil White Witch. With the help of the wise and powerful lion Aslan, the children ultimately restore peace to Narnia. Along the way, they learn the power of bravery, friendship, and faith. The story offers an enchanting journey of courage and self-discovery."
+          }
+        ],
+        "input_tokens": 439,
+        "generator_input_tokens": 417,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_12",
+        "question": "how many episodes are there in dragon ball z",
+        "golden_answers": [
+          "291 episodes",
+          "291"
+        ],
+        "prediction": "There are 5 episodes in Dragon Ball Z.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.2,
+          "acc": 0.0,
+          "input_tokens": 873
+        },
+        "retrieved_documents": [
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          },
+          {
+            "id": 9071,
+            "title": "Identify the pattern in the following series: 1, 4, 7, 11, ??",
+            "contents": "Identify the pattern in the following series: 1, 4, 7, 11, ??\n14 (each number is 3 more than the previous number)"
+          },
+          {
+            "id": 8290,
+            "title": "Generate a memorable story that the audience can relate to.?",
+            "contents": "Generate a memorable story that the audience can relate to.?\n\"Once there was a young girl whose parents were always busy. Though she was surrounded by people, she often found herself feeling alone.\\n\\nOne day as she was out exploring in the woods, she encountered a magical creature – a dragon. The dragon was scared and hid in the shadows at first, but the girl spoke to it in a gentle voice, trying to reassure it.\\n\\nThey spent hours talking, from the moment the sun rose to when it disappeared beyond the horizon. They talked about their hopes, their dreams, their fears and their desires. The dragon showed her its magical powers, and the girl taught it about the world.\\n\\nThe girl had never felt so connected to anyone before, and soon they became best friends. The time they spent together was filled with laughter, stories and adventures, and before long the girl was truly happy.\\n\\nThe young girl and the dragon had created a bond that could never be broken. They were two souls who had grown close in a short time, and even if they were ever parted, they would never forget the other.\\n\\nThis is the story of a young girl who found joy and friendship in the most unexpected places. Its a reminder to never close your heart to new possibilities... because sometimes wonderful things come in unexpected packages.\""
+          },
+          {
+            "id": 6838,
+            "title": "Write a short story about a dragon in 200 words.?",
+            "contents": "Write a short story about a dragon in 200 words.?\nOnce upon a time, there was an ancient and powerful dragon named Kazik. He had lived in the shadows of the forest for as long as anyone could remember.\\n\\nKazik was a peaceful creature, and he eked out an existence, avoiding the humans and other beasts that ventured into his home. One day, Kazik was out exploring the forest and he came across a small village. He watched in awe as the people went about their daily lives. He was fascinated by their ingenuity and decided to offer his friendship to the villagers.\\n\\nKazik offered his assistance, using his knowledge of the forest to help them navigate unfamiliar terrain, and his strength to carry heavy objects. In return, the villagers provided him with food and gifts. As time went on, the friendship between Kazik and the villagers became stronger, and his reputation began to spread. People from far and wide came to Kazik seeking help, and he never refused them.\\n\\nKazik remained a fixture in the village, offering protection and guidance to the villagers. They respected him and his wisdom, and Kazik was fondly known as the Keeper of the Forest from then on."
+          }
+        ],
+        "input_tokens": 873,
+        "generator_input_tokens": 859,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_13",
+        "question": "cast of law & order special victim unit",
+        "golden_answers": [
+          "Kelli Giddish",
+          "Richard Belzer",
+          "Stephanie March",
+          "Diane Neal",
+          "Ice-T",
+          "Danny Pino",
+          "Dann Florek",
+          "Tamara Tunie",
+          "Michaela McManus",
+          "Mariska Hargitay",
+          "Adam Beach",
+          "B. D. Wong",
+          "Christopher Meloni",
+          "Raúl Esparza",
+          "Michelle Hurd",
+          "Peter Scanavino"
+        ],
+        "prediction": "Brock Yates",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 812
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          },
+          {
+            "id": 11560,
+            "title": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone.?",
+            "contents": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone.?\nWhat did the vampire lawyer say when he lost his cellphone? \"What do you mean I\\m gonna have to litigate this?!\""
+          },
+          {
+            "id": 7097,
+            "title": "Write a script for a scene in a court trial.?",
+            "contents": "Write a script for a scene in a court trial.?\n\"Judge: This court is now in session.\\nAttorney 1: Your Honor, we believe the defendant is guilty of the charges against them. We have witnesses, evidence, and compelling testimony to back up our case. \\n\\nAttorney 2: Your Honor, we disagree. We believe the defendant is innocent and did not commit the crime hes being accused of. We also have our own evidence and testimonies to support our argument. \\n\\nJudge: Very well. Lets hear from the witnesses.\""
+          },
+          {
+            "id": 8470,
+            "title": "Generate a theme song for a movie about a police officer.?",
+            "contents": "Generate a theme song for a movie about a police officer.?\n\"Verse 1\\nTake to the streets and spread the news\\nHes the one that keeps us safe and sound\\nHer badge will show they must comply\\nHer justice and courage cant be denied\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\\n\\nVerse 2\\nRisking her life to protect us all\\nWisdom and courage, she will never fall\\nAgainst evil doers, she rises to the call\\nWith courage and grace, she stands so tall\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\\n\\nBridge\\nShedding light in the darkness, never fear\\nBringing justice, with courage, her determination is clear\\nAnd we are safe, for she is here\\nA hero, a cop, and faithful protectors\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\""
+          },
+          {
+            "id": 13409,
+            "title": "Name a few members of the LGBTQ+ community?",
+            "contents": "Name a few members of the LGBTQ+ community?\n- Elton John\\n- Pose star Indya Moore\\n- Laverne Cox \\n- Margaret Cho\\n- Marlene Dietrich\\n- Jazz Jennings\\n- Harvey Milk \\n- Ellen DeGeneres \\n- Brock Yates \\n- Alan Turing \\n- Billy Porter"
+          }
+        ],
+        "input_tokens": 812,
+        "generator_input_tokens": 790,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_14",
+        "question": "who designed the garden city of new earswick",
+        "golden_answers": [
+          "planner Raymond Unwin",
+          "architect Barry Parker",
+          "Raymond Unwin"
+        ],
+        "prediction": "Johannes Vermeer",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 266
+        },
+        "retrieved_documents": [
+          {
+            "id": 3083,
+            "title": "Which Indian city is known as the \"Garden City\"?",
+            "contents": "Which Indian city is known as the \"Garden City\"?\nBengaluru is known as the \"Garden City\" in India."
+          },
+          {
+            "id": 2248,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 2227,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 2158,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 10590,
+            "title": "Give me a creative title for a story about a person who discovers a hidden gem in their backyard.?",
+            "contents": "Give me a creative title for a story about a person who discovers a hidden gem in their backyard.?\nThe Garden of Unexpected Wonders."
+          }
+        ],
+        "input_tokens": 266,
+        "generator_input_tokens": 244,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_15",
+        "question": "what is the first step in the evolution of the eye",
+        "golden_answers": [
+          "photoreceptor proteins that sense light",
+          "eyespots"
+        ],
+        "prediction": "Variation",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 663
+        },
+        "retrieved_documents": [
+          {
+            "id": 12418,
+            "title": "Describe the four stages of natural selection.?",
+            "contents": "Describe the four stages of natural selection.?\nThe four stages of natural selection are variation, heritability, selection, and adaptation. Variation occurs when individuals in a species have unique attributes. Heritability is the transfer of a trait from parents to their offspring. Selection is the process of different traits becoming more abundant or rare in a population depending on the environment. Finally, adaptation is when heritable traits that are advantageous become more common in a population."
+          },
+          {
+            "id": 6181,
+            "title": "Explain the basic principles of the theory of evolution.?",
+            "contents": "Explain the basic principles of the theory of evolution.?\nThe basic principles of the theory of evolution, proposed by Charles Darwin, are that all life on Earth has descended from a common ancestor and that this evolution occurs over time via the process of natural selection. Natural selection is the process by which individuals who are better adapted to their environment are more likely to survive, reproduce, and pass on their traits to their offspring. This process leads to the formation of new species and allows for adaptation in a changing environment. \\n\\nIn addition, the theory of evolution explains how new genetic variations arise, how organisms acquire inherited traits, and how species diverge with time."
+          },
+          {
+            "id": 9118,
+            "title": "How would you explain the concept of evolution to a child??",
+            "contents": "How would you explain the concept of evolution to a child??\nEvolution is the process by which living things change over time. It is how species become adapted to their environments and how new species are formed. Evolution is a process that happens over thousands of years and is driven by natural selection. It means that the animals and plants that are best adapted to their environment will survive and pass on their genes to the next generation."
+          },
+          {
+            "id": 3417,
+            "title": "Tell me a joke",
+            "contents": "Tell me a joke\nQuestion:Why did the biology teacher wear glasses?Answer:To help her focus!\\n\\n"
+          },
+          {
+            "id": 14348,
+            "title": "Create a short story about a fictional alien species?",
+            "contents": "Create a short story about a fictional alien species?\nOnce upon a time, there was a species of aliens living on the distant planet of Betelgeuse. These aliens were blue-skinned, with large, bulging eyes and four long arms. The Betelgeans lived in tribal societies, their culture rich with tradition and myths. They lived off the land, drawing sustenance from the vast jungles that blanketed the planet, and they had a deep respect for all life. Yet, they were a mysterious species, as no one had ever seen a Betelgean in person. Then one day, a spacecraft arrived carrying a small alien with blue skin and large eyes. His name was Kevlas, and he was the first Betelgean to ever visit Earth. As the days went on, Kevlas and a group of humans explored the planet of Betelgeuse, discovering new technology and uncovering mysteries about the alien culture. In the end, the Betelgeans and humans forged an alliance, enriching the lives of both species through mutual understanding."
+          }
+        ],
+        "input_tokens": 663,
+        "generator_input_tokens": 641,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_16",
+        "question": "where is the tv show the curse of oak island filmed",
+        "golden_answers": [
+          "Oak Island"
+        ],
+        "prediction": "Island of the Dolls, Mexico",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.3333333333333333,
+          "acc": 0.0,
+          "input_tokens": 618
+        },
+        "retrieved_documents": [
+          {
+            "id": 7881,
+            "title": "Create a new setting for a story.?",
+            "contents": "Create a new setting for a story.?\nThe story takes place on a small island off the coast of Maine, surrounded by mist and cloaked in mystery. Native inhabitants of the island have been known to tell tales of strange and otherworldly creatures living in the depths of the shadows cast by the surrounding trees."
+          },
+          {
+            "id": 11813,
+            "title": "\"Write a script for a 5 second bumper for a childrens cartoon.\"?",
+            "contents": "\"Write a script for a 5 second bumper for a childrens cartoon.\"?\nThe scene opens on a lush forest with a single magical tree at its center. A flock of brightly colored birds fly overhead and the sun sits high above in a brilliant sky. A voiceover begins: \"Welcome to the world of imagination, where every day is a new adventure. Join us and discover your hidden powers!\" As the voiceover finishes, the camera zooms in on the magical tree and the scene fades to the show\\s logo."
+          },
+          {
+            "id": 7503,
+            "title": "Generate a list of 5 spooky places in the world.?",
+            "contents": "Generate a list of 5 spooky places in the world.?\n1. Island of the Dolls (Xochimilco, Mexico)\\n2. The Catacombs of Paris (Paris, France)\\n3. The Tower of London (London, England)\\n4. Pluckley Village (Kent, England)\\n5. Bhangarh Fort (Rajasthan, India)"
+          },
+          {
+            "id": 12527,
+            "title": "Give a description of the setting of a horror movie.?",
+            "contents": "Give a description of the setting of a horror movie.?\nThe setting of the horror movie is in a town isolated in the mountains. It is raining heavily outside and the darkness of the stormy night sets the perfect atmosphere for fear and suspense. The town is eerily empty, the absence of street lights adding to the feeling of dread as shadows move in between the buildings, creating an even darker atmosphere."
+          },
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          }
+        ],
+        "input_tokens": 618,
+        "generator_input_tokens": 596,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      }
+    ],
+    [
+      {
+        "id": "test_0",
+        "question": "who got the first nobel prize in physics",
+        "golden_answers": [
+          "Wilhelm Conrad Röntgen"
+        ],
+        "prediction": "C. V. Raman",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 244
+        },
+        "retrieved_documents": [
+          {
+            "id": 3027,
+            "title": "Who was the first Indian to win the Nobel Prize in Physics?",
+            "contents": "Who was the first Indian to win the Nobel Prize in Physics?\nC. V. Raman was the first Indian to win the Nobel Prize in Physics."
+          },
+          {
+            "id": 2477,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 2443,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 4475,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          },
+          {
+            "id": 4656,
+            "title": "Who was the first woman to win a Nobel Prize?",
+            "contents": "Who was the first woman to win a Nobel Prize?\nMarie Curie was the first woman to win a Nobel Prize.\\n"
+          }
+        ],
+        "input_tokens": 244,
+        "generator_input_tokens": 222,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_1",
+        "question": "when is the next deadpool movie being released",
+        "golden_answers": [
+          "May 18, 2018"
+        ],
+        "prediction": "2023",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 310
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          },
+          {
+            "id": 8168,
+            "title": "What was the highest grossing movie in 2018??",
+            "contents": "What was the highest grossing movie in 2018??\nThe highest grossing movie in 2018 was Avengers: Infinity War."
+          },
+          {
+            "id": 11744,
+            "title": "Create a review for the latest movie released by Disney.?",
+            "contents": "Create a review for the latest movie released by Disney.?\n\"Disneys latest movie is an absolute gem! The story is beautifully crafted and captivating, with dazzling visuals and a wonderful soundtrack. The characters are lovable and the cast does a great job of bringing them to life. The movie will bring a smile to your face and joy to your heart. Highly recommended!\""
+          },
+          {
+            "id": 7186,
+            "title": "Name a popular movie from 2019.?",
+            "contents": "Name a popular movie from 2019.?\nAvengers: Endgame."
+          }
+        ],
+        "input_tokens": 310,
+        "generator_input_tokens": 300,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_2",
+        "question": "which mode is used for short wave broadcast service",
+        "golden_answers": [
+          "Olivia",
+          "MFSK"
+        ],
+        "prediction": "IP over Asynchronous Transfer Mode (ATM)",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 568
+        },
+        "retrieved_documents": [
+          {
+            "id": 14825,
+            "title": "Explain the working principle of MediaTek Dimensity?",
+            "contents": "Explain the working principle of MediaTek Dimensity?\nMediaTek Dimensity is an integrated wireless 5G modem-to-antenna 5G system-on-chip (SoC) developed by MediaTek. It features an octa-core 64-bit ARM Cortex-A77/A55 CPU cluster and Imagination Technologies IMG9X-MP6 GPU, both of which are 5G-integrated and have 2.0GHz operating frequency. The integrated MediaTek 5G modem supports 2G, 3G, 4G and 5G networks, and handles up to 5Gbps download speeds and 2.5Gbps upload speeds. The chip also supports up to 8K Ultra HD video capturing and playback, as well as multi-camera systems. Additionally, MediaTek Dimensity also boasts low power consumption and machine learning technology."
+          },
+          {
+            "id": 1503,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that modulates and demodulates analog signals to allow digital data to be transmitted over telephone lines or other communication channels.\\n"
+          },
+          {
+            "id": 1460,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that converts digital data into a signal that can be transmitted over a phone line, cable, or other communication medium. It is used to connect a computer or network to the internet or another network."
+          },
+          {
+            "id": 1488,
+            "title": "What is a modem?",
+            "contents": "What is a modem?\nA modem is a device that converts digital data to analog signals for transmission over telephone lines, and vice versa.\\n"
+          },
+          {
+            "id": 12080,
+            "title": "What is the main difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet)??",
+            "contents": "What is the main difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet)??\nThe key difference between IP over Asynchronous Transfer Mode (ATM) and IP over Ethernet (Ethernet) is in their basic underlying technology. Ethernet is a packet-switched technology based on CSMA/CD protocol and it uses Ethernet frames for data transmission. On the other hand, ATM is a connection-oriented technology that uses fixed-sized packets called cells for data transmission. \\nEthernet works on the principle of broadcasting, wherein data is sent out over all physical wires at the same time. But ATM is a point to point communication system, which means data is sent only to a specific destination. \\nEthernet is mostly used for local area networking and it is easier to configure. ATM is mostly used in wide area networking and is more secure than Ethernet."
+          }
+        ],
+        "input_tokens": 568,
+        "generator_input_tokens": 549,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_3",
+        "question": "the south west wind blows across nigeria between",
+        "golden_answers": [
+          "till September"
+        ],
+        "prediction": "the Niger Delta",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 277
+        },
+        "retrieved_documents": [
+          {
+            "id": 8993,
+            "title": "Describe the weather in the following city: Lagos, Nigeria?",
+            "contents": "Describe the weather in the following city: Lagos, Nigeria?\nThe weather in Lagos, Nigeria is usually hot, humid, and rainy. It is typically warm year round, with temperatures ranging from the high 70s to the mid-80s (Fahrenheit). The rainy season begins in April and ends in October. During this time, temperatures will be slightly cooler and there could be significant rainfall on some days. From November to March, the climate is much drier, but temperatures will remain warm."
+          },
+          {
+            "id": 2650,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2626,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2573,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          },
+          {
+            "id": 2546,
+            "title": "What is the capital of Nigeria?",
+            "contents": "What is the capital of Nigeria?\nAbuja is the capital of Nigeria.\\n"
+          }
+        ],
+        "input_tokens": 277,
+        "generator_input_tokens": 257,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_4",
+        "question": "what does hp mean in war and order",
+        "golden_answers": [
+          "hit points or health points"
+        ],
+        "prediction": "HP stands for High Power, which is a term used in military contexts to denote high-ranking officers or commanders. In the context of war and orders, HP refers",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.06451612903225806,
+          "acc": 0.0,
+          "input_tokens": 846
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          },
+          {
+            "id": 13261,
+            "title": "Think of 3 new words and define them.?",
+            "contents": "Think of 3 new words and define them.?\n1. Moxie: Courage and determination \\n2. Splendiferous: Magnificent and amazing \\n3. Pluvious: Associated with rain and storms."
+          },
+          {
+            "id": 12427,
+            "title": "Create a Mad Lib story.?",
+            "contents": "Create a Mad Lib story.?\nOnce upon a time there was a brave(adjective) knight who lived in a(adjective) castle. Every morning he would awake at(time) and go off to fight (plural noun) with his trusty(noun) by his side. His arch nemesis, the evil(noun) would always be waiting to try and defeat him. But no matter how many times the evil(noun) challenged him, the knight would always triumph. Eventually the knight became so powerful that no one dared challenge him ever again, and he lived happily ever after in his grand (adjective) castle."
+          },
+          {
+            "id": 7748,
+            "title": "Generate a Mad Lib?",
+            "contents": "Generate a Mad Lib?\nOnce upon a time there was a brave (adjective) knight who wanted to go on a (adjective) adventure. He set off on a long and treacherous journey to the (noun) kingdom. As he approached, a terrible (noun) appeared and blocked his way. He fought bravely and managed to defeat the evil (noun) with help from his trusty (noun). After the (noun) was defeated, the knight returned to his (noun) victorious and with a newfound sense of (adjective)."
+          },
+          {
+            "id": 6148,
+            "title": "Write an original story with a beginning, middle, and end.?",
+            "contents": "Write an original story with a beginning, middle, and end.?\n\"Once upon a time, there lived a girl named Mona. Mona had a passion for adventure and a burning curiosity that was unmatched. Despite the warnings of her family, Mona ventured out on her own. She traveled the world in search of knowledge and experience. Everywhere she went, she encountered strange creatures, magical places, and mysterious people. \\n\\nMona eventually reached a majestic mountain that seemed to be the center of all the worlds energy. When she arrived, she learned that she had to ascend the mountain to reach the top. She was warned that if she couldnt make it to the top before nightfall, she would be stuck on the mountain forever.\\n\\nMona was determined to reach the peak, no matter what it took. She set off and climbed the mountain with all her might. She encountered storms, slippery rocks, and wild beasts, but nothing could stop her. By the time the sun set, Mona had reached the top. Despite her exhaustion, she felt fulfilled and proud of herself. \\n\\nMona had a newfound appreciation for the beauty of the world and the power of her own will. She was glad to have made it to the top, safe and sound. From that moment forward, she vowed to never forget the lessons she had learned on her journey.\""
+          }
+        ],
+        "input_tokens": 846,
+        "generator_input_tokens": 824,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_5",
+        "question": "who wrote the first declaration of human rights",
+        "golden_answers": [
+          "Cyrus"
+        ],
+        "prediction": "Aldous Huxley",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 628
+        },
+        "retrieved_documents": [
+          {
+            "id": 6081,
+            "title": "What values were promised in the United States Declaration of Independence??",
+            "contents": "What values were promised in the United States Declaration of Independence??\nThe United States Declaration of Independence promised life, liberty, and the pursuit of happiness."
+          },
+          {
+            "id": 12584,
+            "title": "Look up the biography of Malcolm X on Wikipedia.?",
+            "contents": "Look up the biography of Malcolm X on Wikipedia.?\nMalcolm X (May 19, 1925 – February 21, 1965), born Malcolm Little and later also known as El-Hajj Malik El-Shabazz, was an African-American Muslim minister and a human rights activist. Some of his ideals and teachings have since inspired many movements across the world. He is mostly known for his controversial views on black nationalism and civil rights, which were often applicable to other racial and socio-economic issues."
+          },
+          {
+            "id": 12763,
+            "title": "Describe the contributions of Benjamin Franklin to the world.?",
+            "contents": "Describe the contributions of Benjamin Franklin to the world.?\nBenjamin Franklin played an important role in the founding of the United States. He was a leading author, publisher, scientist, inventor, diplomat, and statesman. He developed the lightning rod and bifocals, among many other inventions. He was a diplomat who negotiated the Treaty of Paris, ending the American War of Independence. He also helped to draft the Declaration of Independence, the Constitution, and the Northwest Ordinance. He signed the Treaty of Alliance with France, helping the United States to win the war. He was a driving force in the formation of public institutions like libraries and hospitals."
+          },
+          {
+            "id": 4452,
+            "title": "Who wrote the novel \"Brave New World\"?",
+            "contents": "Who wrote the novel \"Brave New World\"?\n\"Brave New World\" was written by Aldous Huxley.\\n"
+          },
+          {
+            "id": 9922,
+            "title": "Describe the historic events that led to the formation of the United Nations.?",
+            "contents": "Describe the historic events that led to the formation of the United Nations.?\n\"The United Nations was established in 1945, at the conclusion of World War II. Its founders were determined to prevent future wars by promoting collective security, respecting one anothers sovereignty, and promoting economic progress. Its founding document, The Charter of the United Nations, laid out a vision for a peace-keeping organization dedicated to meditating international disputes and promoting global cooperation. The Charter also outlined the establishment of a Security Council, the General Assembly, and the International Court of Justice.\\n\\nThe signing of the Charter was followed by the ratification of the United Nations’ International Declaration of Human Rights in 1948. This document laid out fundamental human rights that would serve as the basis for many international treaties, and the implementation of these rights within the UN’s own system of protection.\\n\\nThe United Nations has since grown to include 193 members and has had a considerable effect on global affairs. It has taken a leading role in addressing issues such as global poverty, inequality and the spread of HIV/AIDS, as well as tackling the threats posed by climate change and terrorism.\""
+          }
+        ],
+        "input_tokens": 628,
+        "generator_input_tokens": 618,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_6",
+        "question": "who is the owner of reading football club",
+        "golden_answers": [
+          "Xiu Li Dai",
+          "Dai Xiuli",
+          "Dai Yongge",
+          "Yongge Dai"
+        ],
+        "prediction": "None of the provided documents mention the owner of Reading Football Club.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 213
+        },
+        "retrieved_documents": [
+          {
+            "id": 2041,
+            "title": "Who is the founder of the electric car company Lucid Motors?",
+            "contents": "Who is the founder of the electric car company Lucid Motors?\nPeter Rawlinson is one of the founders of the electric car company Lucid Motors.\\n"
+          },
+          {
+            "id": 1992,
+            "title": "Who is the founder of the Virgin Group?",
+            "contents": "Who is the founder of the Virgin Group?\nRichard Branson is the founder of the Virgin Group.\\n"
+          },
+          {
+            "id": 14217,
+            "title": "Name a renowned author of the 19th century.?",
+            "contents": "Name a renowned author of the 19th century.?\nCharles Dickens."
+          },
+          {
+            "id": 4354,
+            "title": "Who is the founder of Amazon?",
+            "contents": "Who is the founder of Amazon?\nThe founder of Amazon is Jeff Bezos.\\n"
+          },
+          {
+            "id": 4370,
+            "title": "Who is the founder of Microsoft?",
+            "contents": "Who is the founder of Microsoft?\nThe founder of Microsoft is Bill Gates.\\n"
+          }
+        ],
+        "input_tokens": 213,
+        "generator_input_tokens": 192,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_7",
+        "question": "when is the next scandal episode coming out",
+        "golden_answers": [
+          "February 1, 2018"
+        ],
+        "prediction": "October 31, 2023",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 371
+        },
+        "retrieved_documents": [
+          {
+            "id": 9443,
+            "title": "Tell me the name, release date, and director of the latest Spiderman movie.?",
+            "contents": "Tell me the name, release date, and director of the latest Spiderman movie.?\nThe latest Spiderman movie is Spider-Man: Into the Spider-Verse, released in 2018 and directed by Bob Persichetti, Peter Ramsey, and Rodney Rothman."
+          },
+          {
+            "id": 13525,
+            "title": "Find out the date of the next full moon.?",
+            "contents": "Find out the date of the next full moon.?\nThe next full moon will be on October 31, 20"
+          },
+          {
+            "id": 10321,
+            "title": "Output a dialogue between two friends talking about current events.?",
+            "contents": "Output a dialogue between two friends talking about current events.?\n\"Friend 1: Did you hear about the new scandal involving the president?\\nFriend 2: Yeah, its pretty shocking. Did you see the news reports?\\nFriend 1: Yeah, I cant believe how so many people are in favor of it.\\nFriend 2: Me neither. Its a shame it happened in the first place.\""
+          },
+          {
+            "id": 14706,
+            "title": "\"What was the first song released from Taylor Swifts album folklore?\"?",
+            "contents": "\"What was the first song released from Taylor Swifts album folklore?\"?\nThe first single released from Taylor Swift\\s album folklore was \"Cardigan.\" It was released on July 24, 2020 along with an accompanying music video. The song debuted atop the Billboard Hot 100 chart, becoming Swift\\s sixth number one hit on the chart."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          }
+        ],
+        "input_tokens": 371,
+        "generator_input_tokens": 362,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_8",
+        "question": "when is the last time the philadelphia won the superbowl",
+        "golden_answers": [
+          "Super Bowl LII,",
+          "2017"
+        ],
+        "prediction": "June 19, 1996",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 343
+        },
+        "retrieved_documents": [
+          {
+            "id": 11253,
+            "title": "Name five major cities in the United States.?",
+            "contents": "Name five major cities in the United States.?\nFive major cities in the United States are New York City, Los Angeles, Chicago, Houston, and Philadelphia."
+          },
+          {
+            "id": 5767,
+            "title": "Describe the 1981 NBA MVP award ceremony?",
+            "contents": "Describe the 1981 NBA MVP award ceremony?\nThe 1981 NBA MVP award ceremony took place in June of that year. The award was presented to Julius Erving at the banquet, held at the Spectrum in Philadelphia. Erving made a speech, thanking his coaches and teammates for helping him reach his goal. The audience cheered and applauded for Julius, bringing a joyful atmosphere to the event. This memorable ceremony was certainly a great honor for Erving."
+          },
+          {
+            "id": 13640,
+            "title": "Provide a list of five species of birds found in the United States.?",
+            "contents": "Provide a list of five species of birds found in the United States.?\nThe five species of birds found in the United States are Bald Eagles, Mallards, Quakers, Cardinals, and Pigeons."
+          },
+          {
+            "id": 11252,
+            "title": "Come up with a celebratory phrase for a team that has achieved a goal.?",
+            "contents": "Come up with a celebratory phrase for a team that has achieved a goal.?\nTeamwork makes the dream work!"
+          },
+          {
+            "id": 10734,
+            "title": "Name a few symbols of American independence.?",
+            "contents": "Name a few symbols of American independence.?\nThe American Flag, the Statue of Liberty, the Liberty Bell, the Bald Eagle, the Revolutionary Era Minutemen, and the Signing of the Declaration of Independence."
+          }
+        ],
+        "input_tokens": 343,
+        "generator_input_tokens": 325,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_9",
+        "question": "who was the first lady nominated member of the rajya sabha",
+        "golden_answers": [
+          "Mary Kom"
+        ],
+        "prediction": "Annie Besant",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 376
+        },
+        "retrieved_documents": [
+          {
+            "id": 2971,
+            "title": "Who was the first woman President of the Indian National Congress?",
+            "contents": "Who was the first woman President of the Indian National Congress?\nAnnie Besant was the first woman President of the Indian National Congress."
+          },
+          {
+            "id": 2959,
+            "title": "Who was the first female Prime Minister of India?",
+            "contents": "Who was the first female Prime Minister of India?\nIndira Gandhi was the first female Prime Minister of India."
+          },
+          {
+            "id": 2238,
+            "title": "Who was the first female President of India?",
+            "contents": "Who was the first female President of India?\nPratibha Patil was the first female President of India.\\n"
+          },
+          {
+            "id": 2168,
+            "title": "Who was the first female President of India?",
+            "contents": "Who was the first female President of India?\nPratibha Patil was the first female President of India.\\n"
+          },
+          {
+            "id": 3159,
+            "title": "\"Who were some of the prominent women leaders in Indias freedom movement?\"",
+            "contents": "\"Who were some of the prominent women leaders in Indias freedom movement?\"\n\"Several women played pivotal roles in Indias freedom movement. Sarojini Naidu, known as the Nightingale of India, was a prominent poet, politician, and activist who actively participated in the freedom struggle. She was the first Indian woman to become the President of the Indian National Congress. Another notable figure was Annie Besant, a British activist who became deeply involved in the Indian nationalist movement and fought for Indias independence. Other prominent women leaders included Kamala Nehru, Kasturba Gandhi, and Aruna Asaf Ali, who actively contributed to the freedom movement through their participation in protests, public speeches, and organizational activities. These women leaders played a crucial role in inspiring and mobilizing women in the struggle for freedom.\""
+          }
+        ],
+        "input_tokens": 376,
+        "generator_input_tokens": 354,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_10",
+        "question": "what is the most current adobe flash player version",
+        "golden_answers": [
+          "28.0.0.137"
+        ],
+        "prediction": "16",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 321
+        },
+        "retrieved_documents": [
+          {
+            "id": 8474,
+            "title": "What is the latest version of Android??",
+            "contents": "What is the latest version of Android??\nThe latest version of Android is 11.0 (released in 2020)."
+          },
+          {
+            "id": 8971,
+            "title": "What is the most popular production language currently in the software development industry??",
+            "contents": "What is the most popular production language currently in the software development industry??\nJavaScript is the most popular language for software development currently, followed by Java, Python, C++, and C#."
+          },
+          {
+            "id": 11087,
+            "title": "Name five popular computer software?",
+            "contents": "Name five popular computer software?\nFive popular computer software include: Microsoft Office, Google Chrome, Adobe Creative Cloud, Mozilla Firefox, and Apple iTunes."
+          },
+          {
+            "id": 14087,
+            "title": "Tell me the title of the most popular song released in 2020 so far.?",
+            "contents": "Tell me the title of the most popular song released in 2020 so far.?\nThe most popular song released in 2020 so far is \"The Box\" by Roddy Rich."
+          },
+          {
+            "id": 8455,
+            "title": "Name two popular web browsers and explain why they are preferred.?",
+            "contents": "Name two popular web browsers and explain why they are preferred.?\nTwo popular web browsers are Google Chrome and Mozilla Firefox. Google Chrome is preferred due to its speed, user-friendly interface, and its integration with other Google services. Mozilla Firefox is preferred for its security features, customizable user interface, and its support of open-source technology. Both are excellent choices for their respective features and ease of use."
+          }
+        ],
+        "input_tokens": 321,
+        "generator_input_tokens": 306,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_11",
+        "question": "swan lake the sleeping beauty and the nutcracker are three famous ballets by",
+        "golden_answers": [
+          "Pyotr Ilyich Tchaikovsky"
+        ],
+        "prediction": "Pavel Ilyich Tchaikovsky",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.6666666666666666,
+          "acc": 0.0,
+          "input_tokens": 439
+        },
+        "retrieved_documents": [
+          {
+            "id": 2428,
+            "title": "Who is the composer who wrote \"Swan Lake\"?",
+            "contents": "Who is the composer who wrote \"Swan Lake\"?\nPyotr Ilyich Tchaikovsky is the composer who wrote \"Swan Lake\".\\n"
+          },
+          {
+            "id": 6742,
+            "title": "Name three famous paintings by Pablo Picasso.?",
+            "contents": "Name three famous paintings by Pablo Picasso.?\n\"Three famous paintings by Pablo Picasso are Guernica, The Weeping Woman, and Les Demoiselles dAvignon.\""
+          },
+          {
+            "id": 10109,
+            "title": "Name three famous American work of literature.?",
+            "contents": "Name three famous American work of literature.?\nThree famous American works of literature are \"The Great Gatsby\" by F. Scott Fitzgerald, \"To Kill a Mockingbird\" by Harper Lee, and \"The Adventures of Huckleberry Finn\" by Mark Twain."
+          },
+          {
+            "id": 7837,
+            "title": "Name five famous paintings?",
+            "contents": "Name five famous paintings?\n1. Mona Lisa by Leonardo da Vinci \\n2. The Starry Night by Vincent van Gogh\\n3. The Scream by Edvard Munch\\n4. Guernica by Pablo Picasso\\n5. The Sistine Chapel ceiling by Michelangelo"
+          },
+          {
+            "id": 14016,
+            "title": "Summarize the book \"The Lion, the Witch, and the Wardrobe\".?",
+            "contents": "Summarize the book \"The Lion, the Witch, and the Wardrobe\".?\nThe Lion, the Witch, and the Wardrobe is a classic fantasy novel written by C.S. Lewis. It tells the story of four siblings—Peter, Susan, Edmund, and Lucy— who discover a magical wardrobe that leads them to a world of Narnia, filled with talking animals, mythical creatures, and the evil White Witch. With the help of the wise and powerful lion Aslan, the children ultimately restore peace to Narnia. Along the way, they learn the power of bravery, friendship, and faith. The story offers an enchanting journey of courage and self-discovery."
+          }
+        ],
+        "input_tokens": 439,
+        "generator_input_tokens": 417,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_12",
+        "question": "how many episodes are there in dragon ball z",
+        "golden_answers": [
+          "291 episodes",
+          "291"
+        ],
+        "prediction": "There are 5 episodes in Dragon Ball Z.",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.2,
+          "acc": 0.0,
+          "input_tokens": 873
+        },
+        "retrieved_documents": [
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          },
+          {
+            "id": 9388,
+            "title": "What is the name of the anime movie released in 2019??",
+            "contents": "What is the name of the anime movie released in 2019??\nThe anime movie released in 2019 is \" Weathering With You\"."
+          },
+          {
+            "id": 9071,
+            "title": "Identify the pattern in the following series: 1, 4, 7, 11, ??",
+            "contents": "Identify the pattern in the following series: 1, 4, 7, 11, ??\n14 (each number is 3 more than the previous number)"
+          },
+          {
+            "id": 8290,
+            "title": "Generate a memorable story that the audience can relate to.?",
+            "contents": "Generate a memorable story that the audience can relate to.?\n\"Once there was a young girl whose parents were always busy. Though she was surrounded by people, she often found herself feeling alone.\\n\\nOne day as she was out exploring in the woods, she encountered a magical creature – a dragon. The dragon was scared and hid in the shadows at first, but the girl spoke to it in a gentle voice, trying to reassure it.\\n\\nThey spent hours talking, from the moment the sun rose to when it disappeared beyond the horizon. They talked about their hopes, their dreams, their fears and their desires. The dragon showed her its magical powers, and the girl taught it about the world.\\n\\nThe girl had never felt so connected to anyone before, and soon they became best friends. The time they spent together was filled with laughter, stories and adventures, and before long the girl was truly happy.\\n\\nThe young girl and the dragon had created a bond that could never be broken. They were two souls who had grown close in a short time, and even if they were ever parted, they would never forget the other.\\n\\nThis is the story of a young girl who found joy and friendship in the most unexpected places. Its a reminder to never close your heart to new possibilities... because sometimes wonderful things come in unexpected packages.\""
+          },
+          {
+            "id": 6838,
+            "title": "Write a short story about a dragon in 200 words.?",
+            "contents": "Write a short story about a dragon in 200 words.?\nOnce upon a time, there was an ancient and powerful dragon named Kazik. He had lived in the shadows of the forest for as long as anyone could remember.\\n\\nKazik was a peaceful creature, and he eked out an existence, avoiding the humans and other beasts that ventured into his home. One day, Kazik was out exploring the forest and he came across a small village. He watched in awe as the people went about their daily lives. He was fascinated by their ingenuity and decided to offer his friendship to the villagers.\\n\\nKazik offered his assistance, using his knowledge of the forest to help them navigate unfamiliar terrain, and his strength to carry heavy objects. In return, the villagers provided him with food and gifts. As time went on, the friendship between Kazik and the villagers became stronger, and his reputation began to spread. People from far and wide came to Kazik seeking help, and he never refused them.\\n\\nKazik remained a fixture in the village, offering protection and guidance to the villagers. They respected him and his wisdom, and Kazik was fondly known as the Keeper of the Forest from then on."
+          }
+        ],
+        "input_tokens": 873,
+        "generator_input_tokens": 859,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_13",
+        "question": "cast of law & order special victim unit",
+        "golden_answers": [
+          "Kelli Giddish",
+          "Richard Belzer",
+          "Stephanie March",
+          "Diane Neal",
+          "Ice-T",
+          "Danny Pino",
+          "Dann Florek",
+          "Tamara Tunie",
+          "Michaela McManus",
+          "Mariska Hargitay",
+          "Adam Beach",
+          "B. D. Wong",
+          "Christopher Meloni",
+          "Raúl Esparza",
+          "Michelle Hurd",
+          "Peter Scanavino"
+        ],
+        "prediction": "Brock Yates",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 812
+        },
+        "retrieved_documents": [
+          {
+            "id": 11098,
+            "title": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?",
+            "contents": "Imagine you are a strong yet kind-hearted soldier on the battlefield. Write a scene about your experience.?\n\"I strode through the battlefield, my heart heavy with the weight of what I had seen and done. I wanted to put an end to the violence, but I knew that my strength and bravery were required if I was to protect my comrades. I stood firm against our enemies, no fear in my heart, and yet when I struck down the enemy, it was with compassion. I remembered the enemy were someones brother, son, or father, and even in the midst of battle, I could feel my humanity. \\n \\nFinally, the battle had ended. I was relieved to see my comrades safe, and yet saddened by the loss on both sides. I vowed to never forget the innocent lives that had been sacrificed, never forget the cost of war.\""
+          },
+          {
+            "id": 11560,
+            "title": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone.?",
+            "contents": "You are given three words and you need to generate a joke from them. The three words are: lawyer, vampire, cellphone.?\nWhat did the vampire lawyer say when he lost his cellphone? \"What do you mean I\\m gonna have to litigate this?!\""
+          },
+          {
+            "id": 7097,
+            "title": "Write a script for a scene in a court trial.?",
+            "contents": "Write a script for a scene in a court trial.?\n\"Judge: This court is now in session.\\nAttorney 1: Your Honor, we believe the defendant is guilty of the charges against them. We have witnesses, evidence, and compelling testimony to back up our case. \\n\\nAttorney 2: Your Honor, we disagree. We believe the defendant is innocent and did not commit the crime hes being accused of. We also have our own evidence and testimonies to support our argument. \\n\\nJudge: Very well. Lets hear from the witnesses.\""
+          },
+          {
+            "id": 8470,
+            "title": "Generate a theme song for a movie about a police officer.?",
+            "contents": "Generate a theme song for a movie about a police officer.?\n\"Verse 1\\nTake to the streets and spread the news\\nHes the one that keeps us safe and sound\\nHer badge will show they must comply\\nHer justice and courage cant be denied\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\\n\\nVerse 2\\nRisking her life to protect us all\\nWisdom and courage, she will never fall\\nAgainst evil doers, she rises to the call\\nWith courage and grace, she stands so tall\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\\n\\nBridge\\nShedding light in the darkness, never fear\\nBringing justice, with courage, her determination is clear\\nAnd we are safe, for she is here\\nA hero, a cop, and faithful protectors\\n\\nChorus\\nA hero, a cop, and faithful protectors\\nLoyal to the mission, her service wont be forgotten\\nHer mission is justice, in battle she wont relent\\nFighting for justice and protecting the innocent\""
+          },
+          {
+            "id": 13409,
+            "title": "Name a few members of the LGBTQ+ community?",
+            "contents": "Name a few members of the LGBTQ+ community?\n- Elton John\\n- Pose star Indya Moore\\n- Laverne Cox \\n- Margaret Cho\\n- Marlene Dietrich\\n- Jazz Jennings\\n- Harvey Milk \\n- Ellen DeGeneres \\n- Brock Yates \\n- Alan Turing \\n- Billy Porter"
+          }
+        ],
+        "input_tokens": 812,
+        "generator_input_tokens": 790,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_14",
+        "question": "who designed the garden city of new earswick",
+        "golden_answers": [
+          "planner Raymond Unwin",
+          "architect Barry Parker",
+          "Raymond Unwin"
+        ],
+        "prediction": "Johannes Vermeer",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 266
+        },
+        "retrieved_documents": [
+          {
+            "id": 3083,
+            "title": "Which Indian city is known as the \"Garden City\"?",
+            "contents": "Which Indian city is known as the \"Garden City\"?\nBengaluru is known as the \"Garden City\" in India."
+          },
+          {
+            "id": 2248,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 2227,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 2158,
+            "title": "Who is the artist who painted \"Girl with a Pearl Earring\"?",
+            "contents": "Who is the artist who painted \"Girl with a Pearl Earring\"?\nJohannes Vermeer is the artist who painted \"Girl with a Pearl Earring\".\\n"
+          },
+          {
+            "id": 10590,
+            "title": "Give me a creative title for a story about a person who discovers a hidden gem in their backyard.?",
+            "contents": "Give me a creative title for a story about a person who discovers a hidden gem in their backyard.?\nThe Garden of Unexpected Wonders."
+          }
+        ],
+        "input_tokens": 266,
+        "generator_input_tokens": 244,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_15",
+        "question": "what is the first step in the evolution of the eye",
+        "golden_answers": [
+          "photoreceptor proteins that sense light",
+          "eyespots"
+        ],
+        "prediction": "Variation",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0,
+          "acc": 0.0,
+          "input_tokens": 663
+        },
+        "retrieved_documents": [
+          {
+            "id": 12418,
+            "title": "Describe the four stages of natural selection.?",
+            "contents": "Describe the four stages of natural selection.?\nThe four stages of natural selection are variation, heritability, selection, and adaptation. Variation occurs when individuals in a species have unique attributes. Heritability is the transfer of a trait from parents to their offspring. Selection is the process of different traits becoming more abundant or rare in a population depending on the environment. Finally, adaptation is when heritable traits that are advantageous become more common in a population."
+          },
+          {
+            "id": 6181,
+            "title": "Explain the basic principles of the theory of evolution.?",
+            "contents": "Explain the basic principles of the theory of evolution.?\nThe basic principles of the theory of evolution, proposed by Charles Darwin, are that all life on Earth has descended from a common ancestor and that this evolution occurs over time via the process of natural selection. Natural selection is the process by which individuals who are better adapted to their environment are more likely to survive, reproduce, and pass on their traits to their offspring. This process leads to the formation of new species and allows for adaptation in a changing environment. \\n\\nIn addition, the theory of evolution explains how new genetic variations arise, how organisms acquire inherited traits, and how species diverge with time."
+          },
+          {
+            "id": 9118,
+            "title": "How would you explain the concept of evolution to a child??",
+            "contents": "How would you explain the concept of evolution to a child??\nEvolution is the process by which living things change over time. It is how species become adapted to their environments and how new species are formed. Evolution is a process that happens over thousands of years and is driven by natural selection. It means that the animals and plants that are best adapted to their environment will survive and pass on their genes to the next generation."
+          },
+          {
+            "id": 3417,
+            "title": "Tell me a joke",
+            "contents": "Tell me a joke\nQuestion:Why did the biology teacher wear glasses?Answer:To help her focus!\\n\\n"
+          },
+          {
+            "id": 14348,
+            "title": "Create a short story about a fictional alien species?",
+            "contents": "Create a short story about a fictional alien species?\nOnce upon a time, there was a species of aliens living on the distant planet of Betelgeuse. These aliens were blue-skinned, with large, bulging eyes and four long arms. The Betelgeans lived in tribal societies, their culture rich with tradition and myths. They lived off the land, drawing sustenance from the vast jungles that blanketed the planet, and they had a deep respect for all life. Yet, they were a mysterious species, as no one had ever seen a Betelgean in person. Then one day, a spacecraft arrived carrying a small alien with blue skin and large eyes. His name was Kevlas, and he was the first Betelgean to ever visit Earth. As the days went on, Kevlas and a group of humans explored the planet of Betelgeuse, discovering new technology and uncovering mysteries about the alien culture. In the end, the Betelgeans and humans forged an alliance, enriching the lives of both species through mutual understanding."
+          }
+        ],
+        "input_tokens": 663,
+        "generator_input_tokens": 641,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      },
+      {
+        "id": "test_16",
+        "question": "where is the tv show the curse of oak island filmed",
+        "golden_answers": [
+          "Oak Island"
+        ],
+        "prediction": "Island of the Dolls, Mexico",
+        "metric_scores": {
+          "em": 0.0,
+          "f1": 0.3333333333333333,
+          "acc": 0.0,
+          "input_tokens": 618
+        },
+        "retrieved_documents": [
+          {
+            "id": 7881,
+            "title": "Create a new setting for a story.?",
+            "contents": "Create a new setting for a story.?\nThe story takes place on a small island off the coast of Maine, surrounded by mist and cloaked in mystery. Native inhabitants of the island have been known to tell tales of strange and otherworldly creatures living in the depths of the shadows cast by the surrounding trees."
+          },
+          {
+            "id": 11813,
+            "title": "\"Write a script for a 5 second bumper for a childrens cartoon.\"?",
+            "contents": "\"Write a script for a 5 second bumper for a childrens cartoon.\"?\nThe scene opens on a lush forest with a single magical tree at its center. A flock of brightly colored birds fly overhead and the sun sits high above in a brilliant sky. A voiceover begins: \"Welcome to the world of imagination, where every day is a new adventure. Join us and discover your hidden powers!\" As the voiceover finishes, the camera zooms in on the magical tree and the scene fades to the show\\s logo."
+          },
+          {
+            "id": 7503,
+            "title": "Generate a list of 5 spooky places in the world.?",
+            "contents": "Generate a list of 5 spooky places in the world.?\n1. Island of the Dolls (Xochimilco, Mexico)\\n2. The Catacombs of Paris (Paris, France)\\n3. The Tower of London (London, England)\\n4. Pluckley Village (Kent, England)\\n5. Bhangarh Fort (Rajasthan, India)"
+          },
+          {
+            "id": 12527,
+            "title": "Give a description of the setting of a horror movie.?",
+            "contents": "Give a description of the setting of a horror movie.?\nThe setting of the horror movie is in a town isolated in the mountains. It is raining heavily outside and the darkness of the stormy night sets the perfect atmosphere for fear and suspense. The town is eerily empty, the absence of street lights adding to the feeling of dread as shadows move in between the buildings, creating an even darker atmosphere."
+          },
+          {
+            "id": 14032,
+            "title": "Write down the titles and descriptions for 5 episodes of an animated adventure?",
+            "contents": "Write down the titles and descriptions for 5 episodes of an animated adventure?\nEpisode 1: Out of the Jungle - The group embarks on an adventure to face unknown dangers as they are stranded in a wild and unfamiliar jungle.\\n\\nEpisode 2: Trouble in the City - When the group enters a bustling city, they must rely on their wits and skills to make it out alive.\\n\\nEpisode 3: Under the Sea- The group dives into the depths of the ocean, encountering beautiful creatures and treacherous underwater obstacles.\\n\\nEpisode 4: Into the Mountains - The group navigates treacherous terrain as they find themselves traversing the snow-covered peaks of distant mountains.\\n\\nEpisode 5: Back Home - After an arduous journey, the group returns home in triumph and is welcomed back by their family and friends."
+          }
+        ],
+        "input_tokens": 618,
+        "generator_input_tokens": 596,
+        "selected_k": 5,
+        "candidate_scores": null,
+        "adaptive_decision": null
+      }
+    ]
+  ]
+}

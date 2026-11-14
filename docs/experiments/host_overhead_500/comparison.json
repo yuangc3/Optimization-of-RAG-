@@ -1,0 +1,352 @@
+{
+  "reference": "batch8_length_sorted",
+  "sample_count": 500,
+  "comparisons": {
+    "batch8_length_sorted": {
+      "seconds": [
+        44.36384309999994,
+        42.71014759999889,
+        43.90681519999998
+      ],
+      "median_seconds": 43.90681519999998,
+      "median_time_reduction_percent": 0.0,
+      "speedup": 1.0,
+      "median_process_cpu_seconds": 40.546875,
+      "peak_allocated_mib": [
+        2241.955078125,
+        2241.955078125,
+        2241.955078125
+      ],
+      "peak_reserved_mib": [
+        2342.0,
+        2342.0,
+        2342.0
+      ],
+      "quality_by_repeat": [
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        }
+      ],
+      "paired_results": [
+        {
+          "repeat": 1,
+          "seconds_saved": 0.0,
+          "text_differences": 0
+        },
+        {
+          "repeat": 2,
+          "seconds_saved": 0.0,
+          "text_differences": 0
+        },
+        {
+          "repeat": 3,
+          "seconds_saved": 0.0,
+          "text_differences": 0
+        }
+      ],
+      "repeat_prediction_disagreements": [
+        0,
+        0,
+        0
+      ],
+      "median_generation_profile": {
+        "sorting_s": 0.30088769999929355,
+        "batch_tokenization_s": 0.4134934999856341,
+        "text_decoding_s": 0.13547669999388745,
+        "logical_input_tokens": 181398,
+        "padded_input_token_slots": 184748,
+        "generated_token_slots": 13168,
+        "batches": 63
+      }
+    },
+    "sorted_reuse_tokens": {
+      "seconds": [
+        42.19522750000033,
+        39.11829349999971,
+        44.00147460000153
+      ],
+      "median_seconds": 42.19522750000033,
+      "median_time_reduction_percent": 3.8982278541570325,
+      "speedup": 1.0405635376654774,
+      "median_process_cpu_seconds": 39.421875,
+      "peak_allocated_mib": [
+        2241.955078125,
+        2241.955078125,
+        2241.955078125
+      ],
+      "peak_reserved_mib": [
+        2342.0,
+        2342.0,
+        2342.0
+      ],
+      "quality_by_repeat": [
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        }
+      ],
+      "paired_results": [
+        {
+          "repeat": 1,
+          "seconds_saved": 2.1686155999996117,
+          "text_differences": 0
+        },
+        {
+          "repeat": 2,
+          "seconds_saved": 3.591854099999182,
+          "text_differences": 0
+        },
+        {
+          "repeat": 3,
+          "seconds_saved": -0.0946594000015466,
+          "text_differences": 0
+        }
+      ],
+      "repeat_prediction_disagreements": [
+        0,
+        0,
+        0
+      ],
+      "median_generation_profile": {
+        "sorting_s": 0.2861990000019432,
+        "batch_tokenization_s": 0.06875169998966157,
+        "text_decoding_s": 0.13151469999502297,
+        "logical_input_tokens": 181398,
+        "padded_input_token_slots": 184748,
+        "generated_token_slots": 13168,
+        "batches": 63
+      }
+    },
+    "sorted_decode_new": {
+      "seconds": [
+        38.602473399998416,
+        41.76467539999794,
+        45.64300329999969
+      ],
+      "median_seconds": 41.76467539999794,
+      "median_time_reduction_percent": 4.87883211352128,
+      "speedup": 1.0512907087026504,
+      "median_process_cpu_seconds": 38.28125,
+      "peak_allocated_mib": [
+        2241.955078125,
+        2241.955078125,
+        2241.955078125
+      ],
+      "peak_reserved_mib": [
+        2342.0,
+        2342.0,
+        2342.0
+      ],
+      "quality_by_repeat": [
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.05853643388364075,
+          "acc": 0.066
+        }
+      ],
+      "paired_results": [
+        {
+          "repeat": 1,
+          "seconds_saved": 5.761369700001524,
+          "text_differences": 0
+        },
+        {
+          "repeat": 2,
+          "seconds_saved": 0.9454722000009497,
+          "text_differences": 0
+        },
+        {
+          "repeat": 3,
+          "seconds_saved": -1.7361880999997084,
+          "text_differences": 0
+        }
+      ],
+      "repeat_prediction_disagreements": [
+        0,
+        0,
+        0
+      ],
+      "median_generation_profile": {
+        "sorting_s": 0.29717080000045826,
+        "batch_tokenization_s": 0.4157269000170345,
+        "text_decoding_s": 0.012468200009607244,
+        "logical_input_tokens": 181398,
+        "padded_input_token_slots": 184748,
+        "generated_token_slots": 13168,
+        "batches": 63
+      }
+    },
+    "sorted_batch32": {
+      "seconds": [
+        15.240195200000016,
+        16.219041299998935,
+        17.025002200000017
+      ],
+      "median_seconds": 16.219041299998935,
+      "median_time_reduction_percent": 63.06031028185588,
+      "speedup": 2.707115321298483,
+      "median_process_cpu_seconds": 15.5,
+      "peak_allocated_mib": [
+        2642.68896484375,
+        2642.68896484375,
+        2642.68896484375
+      ],
+      "peak_reserved_mib": [
+        2844.0,
+        2844.0,
+        2844.0
+      ],
+      "quality_by_repeat": [
+        {
+          "em": 0.022,
+          "f1": 0.058264286138607096,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.058264286138607096,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.058264286138607096,
+          "acc": 0.066
+        }
+      ],
+      "paired_results": [
+        {
+          "repeat": 1,
+          "seconds_saved": 29.123647899999924,
+          "text_differences": 77
+        },
+        {
+          "repeat": 2,
+          "seconds_saved": 26.491106299999956,
+          "text_differences": 77
+        },
+        {
+          "repeat": 3,
+          "seconds_saved": 26.881812999999966,
+          "text_differences": 77
+        }
+      ],
+      "repeat_prediction_disagreements": [
+        0,
+        0,
+        0
+      ],
+      "median_generation_profile": {
+        "sorting_s": 0.29052949999822886,
+        "batch_tokenization_s": 0.381834699997853,
+        "text_decoding_s": 0.1181061999850499,
+        "logical_input_tokens": 181398,
+        "padded_input_token_slots": 195380,
+        "generated_token_slots": 16000,
+        "batches": 16
+      }
+    },
+    "sorted_batch32_combined": {
+      "seconds": [
+        15.466178700000455,
+        15.478644099999656,
+        16.120673099998385
+      ],
+      "median_seconds": 15.478644099999656,
+      "median_time_reduction_percent": 64.74660248188609,
+      "speedup": 2.8366060306277707,
+      "median_process_cpu_seconds": 15.0625,
+      "peak_allocated_mib": [
+        2642.68896484375,
+        2642.68896484375,
+        2642.68896484375
+      ],
+      "peak_reserved_mib": [
+        2844.0,
+        2844.0,
+        2844.0
+      ],
+      "quality_by_repeat": [
+        {
+          "em": 0.022,
+          "f1": 0.058264286138607096,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.058264286138607096,
+          "acc": 0.066
+        },
+        {
+          "em": 0.022,
+          "f1": 0.058264286138607096,
+          "acc": 0.066
+        }
+      ],
+      "paired_results": [
+        {
+          "repeat": 1,
+          "seconds_saved": 28.897664399999485,
+          "text_differences": 77
+        },
+        {
+          "repeat": 2,
+          "seconds_saved": 27.231503499999235,
+          "text_differences": 77
+        },
+        {
+          "repeat": 3,
+          "seconds_saved": 27.786142100001598,
+          "text_differences": 77
+        }
+      ],
+      "repeat_prediction_disagreements": [
+        0,
+        0,
+        0
+      ],
+      "median_generation_profile": {
+        "sorting_s": 0.2773615999976755,
+        "batch_tokenization_s": 0.06439859999591135,
+        "text_decoding_s": 0.007282999988092342,
+        "logical_input_tokens": 181398,
+        "padded_input_token_slots": 195380,
+        "generated_token_slots": 16000,
+        "batches": 16
+      }
+    }
+  },
+  "note": "Medians are from one session, with variant order rotated across repeats. Phase wall times may contain synchronization; they are not isolated CPU or GPU execution times."
+}

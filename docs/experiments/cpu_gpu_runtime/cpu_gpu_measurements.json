@@ -1,0 +1,66 @@
+[
+  {
+    "repeat": 1,
+    "batch_size": 1,
+    "wall_seconds": 27.75566290000006,
+    "process_cpu_seconds": 25.140625,
+    "cpu_core_equivalents": 0.9057836265910242,
+    "text_mismatches_against_saved": 0
+  },
+  {
+    "repeat": 1,
+    "batch_size": 8,
+    "wall_seconds": 9.973385199999939,
+    "process_cpu_seconds": 8.6875,
+    "cpu_core_equivalents": 0.8710683309414393,
+    "text_mismatches_against_saved": 16
+  },
+  {
+    "repeat": 2,
+    "batch_size": 8,
+    "wall_seconds": 9.223604599999817,
+    "process_cpu_seconds": 8.75,
+    "cpu_core_equivalents": 0.9486529810699142,
+    "text_mismatches_against_saved": 16
+  },
+  {
+    "repeat": 2,
+    "batch_size": 1,
+    "wall_seconds": 28.074579900000572,
+    "process_cpu_seconds": 25.53125,
+    "cpu_core_equivalents": 0.9094080869932974,
+    "text_mismatches_against_saved": 0
+  },
+  {
+    "repeat": 3,
+    "batch_size": 1,
+    "wall_seconds": 26.91780699999981,
+    "process_cpu_seconds": 24.71875,
+    "cpu_core_equivalents": 0.9183047489715701,
+    "text_mismatches_against_saved": 0
+  },
+  {
+    "repeat": 3,
+    "batch_size": 8,
+    "wall_seconds": 9.744771700000456,
+    "process_cpu_seconds": 9.109375,
+    "cpu_core_equivalents": 0.9347961430435127,
+    "text_mismatches_against_saved": 16
+  },
+  {
+    "repeat": 4,
+    "batch_size": 8,
+    "wall_seconds": 9.35178889999952,
+    "process_cpu_seconds": 8.625,
+    "cpu_core_equivalents": 0.9222834360600722,
+    "text_mismatches_against_saved": 16
+  },
+  {
+    "repeat": 4,
+    "batch_size": 1,
+    "wall_seconds": 27.119093300000713,
+    "process_cpu_seconds": 25.515625,
+    "cpu_core_equivalents": 0.9408730859006753,
+    "text_mismatches_against_saved": 0
+  }
+]

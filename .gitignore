@@ -1,8 +1,15 @@
 datasets/*
+.venv/
+output/
 indexes/*
 models/*
 results/*
 tests/*
+!tests/test_generator_score_path.py
+!tests/test_perf_dataset_clone.py
+!tests/test_adaptive_topk.py
+!tests/test_final_topk_study.py
+!tests/test_*.py
 webui_configs/*
 
 !.gitkeep

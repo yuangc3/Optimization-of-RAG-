@@ -1,0 +1,1583 @@
+{
+  "criterion": "No individual development lexical hit lost versus fixed-5; minimize mean k; ties prefer larger min_k then canonical configuration.",
+  "development_count": 200,
+  "fixed5_lexical_hits": 24,
+  "candidate_count": 81,
+  "candidates": [
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.003,
+        "higher_is_better": true
+      },
+      "mean_k": 3.235,
+      "k_distribution": {
+        "3": 47,
+        "5": 46,
+        "2": 76,
+        "4": 31
+      },
+      "lexical_hits": 18,
+      "lost_fixed5_hits": 6,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.005,
+        "higher_is_better": true
+      },
+      "mean_k": 3.655,
+      "k_distribution": {
+        "5": 84,
+        "3": 31,
+        "2": 61,
+        "4": 24
+      },
+      "lexical_hits": 18,
+      "lost_fixed5_hits": 6,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.008,
+        "higher_is_better": true
+      },
+      "mean_k": 4.195,
+      "k_distribution": {
+        "5": 131,
+        "3": 16,
+        "2": 38,
+        "4": 15
+      },
+      "lexical_hits": 20,
+      "lost_fixed5_hits": 4,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.01,
+        "higher_is_better": true
+      },
+      "mean_k": 4.505,
+      "k_distribution": {
+        "5": 159,
+        "3": 12,
+        "2": 23,
+        "4": 6
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.015,
+        "higher_is_better": true
+      },
+      "mean_k": 4.73,
+      "k_distribution": {
+        "5": 176,
+        "3": 8,
+        "4": 5,
+        "2": 11
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.02,
+        "higher_is_better": true
+      },
+      "mean_k": 4.81,
+      "k_distribution": {
+        "5": 184,
+        "3": 4,
+        "4": 3,
+        "2": 9
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.03,
+        "higher_is_better": true
+      },
+      "mean_k": 4.945,
+      "k_distribution": {
+        "5": 196,
+        "3": 1,
+        "2": 3
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.05,
+        "higher_is_better": true
+      },
+      "mean_k": 4.975,
+      "k_distribution": {
+        "5": 198,
+        "3": 1,
+        "2": 1
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7103873938322067,
+        "higher_is_better": true
+      },
+      "mean_k": 4.905,
+      "k_distribution": {
+        "5": 190,
+        "3": 3,
+        "4": 4,
+        "2": 3
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7174408435821533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.77,
+      "k_distribution": {
+        "5": 179,
+        "3": 9,
+        "4": 4,
+        "2": 8
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7223438680171966,
+        "higher_is_better": true
+      },
+      "mean_k": 4.67,
+      "k_distribution": {
+        "5": 173,
+        "3": 5,
+        "2": 17,
+        "4": 5
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7291661977767945,
+        "higher_is_better": true
+      },
+      "mean_k": 4.605,
+      "k_distribution": {
+        "5": 167,
+        "2": 19,
+        "3": 8,
+        "4": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7344361245632172,
+        "higher_is_better": true
+      },
+      "mean_k": 4.535,
+      "k_distribution": {
+        "5": 164,
+        "2": 26,
+        "4": 5,
+        "3": 5
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7389944493770599,
+        "higher_is_better": true
+      },
+      "mean_k": 4.525,
+      "k_distribution": {
+        "5": 162,
+        "2": 26,
+        "4": 7,
+        "3": 5
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7446167200803757,
+        "higher_is_better": true
+      },
+      "mean_k": 4.495,
+      "k_distribution": {
+        "5": 159,
+        "2": 27,
+        "4": 8,
+        "3": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7488960504531861,
+        "higher_is_better": true
+      },
+      "mean_k": 4.455,
+      "k_distribution": {
+        "3": 11,
+        "5": 156,
+        "2": 27,
+        "4": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7515321373939514,
+        "higher_is_better": true
+      },
+      "mean_k": 4.425,
+      "k_distribution": {
+        "3": 12,
+        "5": 151,
+        "4": 10,
+        "2": 27
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7551056444644928,
+        "higher_is_better": true
+      },
+      "mean_k": 4.345,
+      "k_distribution": {
+        "2": 37,
+        "5": 150,
+        "4": 6,
+        "3": 7
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7589826136827469,
+        "higher_is_better": true
+      },
+      "mean_k": 4.365,
+      "k_distribution": {
+        "2": 38,
+        "5": 154,
+        "4": 3,
+        "3": 5
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7632653713226318,
+        "higher_is_better": true
+      },
+      "mean_k": 4.385,
+      "k_distribution": {
+        "2": 36,
+        "3": 4,
+        "5": 153,
+        "4": 7
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7678120464086533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.38,
+      "k_distribution": {
+        "5": 153,
+        "2": 33,
+        "4": 3,
+        "3": 11
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7737547516822815,
+        "higher_is_better": true
+      },
+      "mean_k": 4.365,
+      "k_distribution": {
+        "5": 150,
+        "2": 34,
+        "4": 7,
+        "3": 9
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7794983983039856,
+        "higher_is_better": true
+      },
+      "mean_k": 4.375,
+      "k_distribution": {
+        "5": 153,
+        "4": 6,
+        "2": 37,
+        "3": 4
+      },
+      "lexical_hits": 21,
+      "lost_fixed5_hits": 3,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7847721576690674,
+        "higher_is_better": true
+      },
+      "mean_k": 4.4,
+      "k_distribution": {
+        "5": 155,
+        "3": 5,
+        "2": 35,
+        "4": 5
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7927510887384415,
+        "higher_is_better": true
+      },
+      "mean_k": 4.515,
+      "k_distribution": {
+        "5": 166,
+        "2": 30,
+        "4": 1,
+        "3": 3
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.804447227716446,
+        "higher_is_better": true
+      },
+      "mean_k": 4.65,
+      "k_distribution": {
+        "5": 174,
+        "2": 20,
+        "3": 4,
+        "4": 2
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.8167356878519059,
+        "higher_is_better": true
+      },
+      "mean_k": 4.735,
+      "k_distribution": {
+        "5": 181,
+        "2": 16,
+        "3": 2,
+        "4": 1
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.003,
+        "higher_is_better": true
+      },
+      "mean_k": 4.115,
+      "k_distribution": {
+        "3": 64,
+        "5": 87,
+        "4": 49
+      },
+      "lexical_hits": 21,
+      "lost_fixed5_hits": 3,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.005,
+        "higher_is_better": true
+      },
+      "mean_k": 4.46,
+      "k_distribution": {
+        "5": 130,
+        "3": 38,
+        "4": 32
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.008,
+        "higher_is_better": true
+      },
+      "mean_k": 4.75,
+      "k_distribution": {
+        "5": 167,
+        "3": 17,
+        "4": 16
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.01,
+        "higher_is_better": true
+      },
+      "mean_k": 4.84,
+      "k_distribution": {
+        "5": 181,
+        "3": 13,
+        "4": 6
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.015,
+        "higher_is_better": true
+      },
+      "mean_k": 4.895,
+      "k_distribution": {
+        "5": 187,
+        "3": 8,
+        "4": 5
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.02,
+        "higher_is_better": true
+      },
+      "mean_k": 4.945,
+      "k_distribution": {
+        "5": 193,
+        "3": 4,
+        "4": 3
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.03,
+        "higher_is_better": true
+      },
+      "mean_k": 4.99,
+      "k_distribution": {
+        "5": 199,
+        "3": 1
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.05,
+        "higher_is_better": true
+      },
+      "mean_k": 4.99,
+      "k_distribution": {
+        "5": 199,
+        "3": 1
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7103873938322067,
+        "higher_is_better": true
+      },
+      "mean_k": 4.92,
+      "k_distribution": {
+        "5": 190,
+        "3": 6,
+        "4": 4
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7174408435821533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.81,
+      "k_distribution": {
+        "5": 179,
+        "3": 17,
+        "4": 4
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7223438680171966,
+        "higher_is_better": true
+      },
+      "mean_k": 4.755,
+      "k_distribution": {
+        "5": 173,
+        "3": 22,
+        "4": 5
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7291661977767945,
+        "higher_is_better": true
+      },
+      "mean_k": 4.7,
+      "k_distribution": {
+        "5": 167,
+        "3": 27,
+        "4": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7344361245632172,
+        "higher_is_better": true
+      },
+      "mean_k": 4.665,
+      "k_distribution": {
+        "5": 164,
+        "3": 31,
+        "4": 5
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7389944493770599,
+        "higher_is_better": true
+      },
+      "mean_k": 4.655,
+      "k_distribution": {
+        "5": 162,
+        "3": 31,
+        "4": 7
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7446167200803757,
+        "higher_is_better": true
+      },
+      "mean_k": 4.63,
+      "k_distribution": {
+        "5": 159,
+        "3": 33,
+        "4": 8
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7488960504531861,
+        "higher_is_better": true
+      },
+      "mean_k": 4.59,
+      "k_distribution": {
+        "3": 38,
+        "5": 156,
+        "4": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7515321373939514,
+        "higher_is_better": true
+      },
+      "mean_k": 4.56,
+      "k_distribution": {
+        "3": 39,
+        "5": 151,
+        "4": 10
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7551056444644928,
+        "higher_is_better": true
+      },
+      "mean_k": 4.53,
+      "k_distribution": {
+        "3": 44,
+        "5": 150,
+        "4": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7589826136827469,
+        "higher_is_better": true
+      },
+      "mean_k": 4.555,
+      "k_distribution": {
+        "3": 43,
+        "5": 154,
+        "4": 3
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7632653713226318,
+        "higher_is_better": true
+      },
+      "mean_k": 4.565,
+      "k_distribution": {
+        "3": 40,
+        "5": 153,
+        "4": 7
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7678120464086533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.545,
+      "k_distribution": {
+        "5": 153,
+        "3": 44,
+        "4": 3
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7737547516822815,
+        "higher_is_better": true
+      },
+      "mean_k": 4.535,
+      "k_distribution": {
+        "5": 150,
+        "3": 43,
+        "4": 7
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7794983983039856,
+        "higher_is_better": true
+      },
+      "mean_k": 4.56,
+      "k_distribution": {
+        "5": 153,
+        "4": 6,
+        "3": 41
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7847721576690674,
+        "higher_is_better": true
+      },
+      "mean_k": 4.575,
+      "k_distribution": {
+        "5": 155,
+        "3": 40,
+        "4": 5
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7927510887384415,
+        "higher_is_better": true
+      },
+      "mean_k": 4.665,
+      "k_distribution": {
+        "5": 166,
+        "3": 33,
+        "4": 1
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.804447227716446,
+        "higher_is_better": true
+      },
+      "mean_k": 4.75,
+      "k_distribution": {
+        "5": 174,
+        "3": 24,
+        "4": 2
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 3,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.8167356878519059,
+        "higher_is_better": true
+      },
+      "mean_k": 4.815,
+      "k_distribution": {
+        "5": 181,
+        "3": 18,
+        "4": 1
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.003,
+        "higher_is_better": true
+      },
+      "mean_k": 4.705,
+      "k_distribution": {
+        "5": 141,
+        "4": 59
+      },
+      "lexical_hits": 21,
+      "lost_fixed5_hits": 3,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.005,
+        "higher_is_better": true
+      },
+      "mean_k": 4.825,
+      "k_distribution": {
+        "5": 165,
+        "4": 35
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.008,
+        "higher_is_better": true
+      },
+      "mean_k": 4.91,
+      "k_distribution": {
+        "5": 182,
+        "4": 18
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.01,
+        "higher_is_better": true
+      },
+      "mean_k": 4.96,
+      "k_distribution": {
+        "5": 192,
+        "4": 8
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.015,
+        "higher_is_better": true
+      },
+      "mean_k": 4.97,
+      "k_distribution": {
+        "5": 194,
+        "4": 6
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.02,
+        "higher_is_better": true
+      },
+      "mean_k": 4.985,
+      "k_distribution": {
+        "5": 197,
+        "4": 3
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.03,
+        "higher_is_better": true
+      },
+      "mean_k": 5,
+      "k_distribution": {
+        "5": 200
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "score_gap",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.05,
+        "higher_is_better": true
+      },
+      "mean_k": 5,
+      "k_distribution": {
+        "5": 200
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7103873938322067,
+        "higher_is_better": true
+      },
+      "mean_k": 4.95,
+      "k_distribution": {
+        "5": 190,
+        "4": 10
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7174408435821533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.895,
+      "k_distribution": {
+        "5": 179,
+        "4": 21
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7223438680171966,
+        "higher_is_better": true
+      },
+      "mean_k": 4.865,
+      "k_distribution": {
+        "5": 173,
+        "4": 27
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7291661977767945,
+        "higher_is_better": true
+      },
+      "mean_k": 4.835,
+      "k_distribution": {
+        "5": 167,
+        "4": 33
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7344361245632172,
+        "higher_is_better": true
+      },
+      "mean_k": 4.82,
+      "k_distribution": {
+        "5": 164,
+        "4": 36
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7389944493770599,
+        "higher_is_better": true
+      },
+      "mean_k": 4.81,
+      "k_distribution": {
+        "5": 162,
+        "4": 38
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7446167200803757,
+        "higher_is_better": true
+      },
+      "mean_k": 4.795,
+      "k_distribution": {
+        "5": 159,
+        "4": 41
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7488960504531861,
+        "higher_is_better": true
+      },
+      "mean_k": 4.78,
+      "k_distribution": {
+        "4": 44,
+        "5": 156
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7515321373939514,
+        "higher_is_better": true
+      },
+      "mean_k": 4.755,
+      "k_distribution": {
+        "4": 49,
+        "5": 151
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7551056444644928,
+        "higher_is_better": true
+      },
+      "mean_k": 4.75,
+      "k_distribution": {
+        "4": 50,
+        "5": 150
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7589826136827469,
+        "higher_is_better": true
+      },
+      "mean_k": 4.77,
+      "k_distribution": {
+        "4": 46,
+        "5": 154
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7632653713226318,
+        "higher_is_better": true
+      },
+      "mean_k": 4.765,
+      "k_distribution": {
+        "4": 47,
+        "5": 153
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7678120464086533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.765,
+      "k_distribution": {
+        "5": 153,
+        "4": 47
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7737547516822815,
+        "higher_is_better": true
+      },
+      "mean_k": 4.75,
+      "k_distribution": {
+        "5": 150,
+        "4": 50
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7794983983039856,
+        "higher_is_better": true
+      },
+      "mean_k": 4.765,
+      "k_distribution": {
+        "5": 153,
+        "4": 47
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7847721576690674,
+        "higher_is_better": true
+      },
+      "mean_k": 4.775,
+      "k_distribution": {
+        "5": 155,
+        "4": 45
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7927510887384415,
+        "higher_is_better": true
+      },
+      "mean_k": 4.83,
+      "k_distribution": {
+        "5": 166,
+        "4": 34
+      },
+      "lexical_hits": 22,
+      "lost_fixed5_hits": 2,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.804447227716446,
+        "higher_is_better": true
+      },
+      "mean_k": 4.87,
+      "k_distribution": {
+        "5": 174,
+        "4": 26
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    },
+    {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 4,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.8167356878519059,
+        "higher_is_better": true
+      },
+      "mean_k": 4.905,
+      "k_distribution": {
+        "5": 181,
+        "4": 19
+      },
+      "lexical_hits": 23,
+      "lost_fixed5_hits": 1,
+      "feasible": false
+    }
+  ],
+  "chosen": {
+    "score_gap": {
+      "config": {
+        "type": "score_gap",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "gap_threshold": 0.03,
+        "higher_is_better": true
+      },
+      "mean_k": 4.945,
+      "k_distribution": {
+        "5": 196,
+        "3": 1,
+        "2": 3
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    },
+    "similarity_threshold": {
+      "config": {
+        "type": "similarity_threshold",
+        "min_k": 2,
+        "max_k": 5,
+        "fallback_k": 5,
+        "score_threshold": 0.7174408435821533,
+        "higher_is_better": true
+      },
+      "mean_k": 4.77,
+      "k_distribution": {
+        "5": 179,
+        "3": 9,
+        "4": 4,
+        "2": 8
+      },
+      "lexical_hits": 24,
+      "lost_fixed5_hits": 0,
+      "feasible": true
+    }
+  },
+  "limitation": "Lexical coverage is not semantic sufficiency or answer quality. No LLM outputs or test answers are used for calibration."
+}
