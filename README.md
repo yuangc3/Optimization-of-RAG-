@@ -1,75 +1,419 @@
 # <div align="center">⚡FlashRAG: A Python Toolkit for Efficient RAG Research<div>
 
-**Project work:** [Adaptive Top-K performance report: results, bottlenecks, and next optimization tests](docs/performance_profilling_report.md).
-## CS598APE project: Lightweight Adaptive Top-K
+## CS598APE Final Project: Optimizing the Adaptive Top-K RAG Pipeline
 
-Authors: Yidong Zhang and Yuang Cai. The primary contribution is training-free per-query document-prefix selection using score gaps or absolute similarity thresholds. The implementation is integrated into FlashRAG's `SequentialPipeline`. Batching, allocator, tokenization, and decoding experiments are supporting system work; their speedups are not attributed to Adaptive-K.
+**Authors:** Yidong Zhang and Yuang Cai
 
-- Full English source report and experiment history: [performance report](docs/performance_profilling_report.md).
-- Submission PDF: [project report](docs/performance_profilling_report.pdf).
-- Core policy module: `flashrag/retriever/adaptive_topk.py`.
-- Final experimental protocol: `scripts/run_final_topk_study.py`.
-- Tests: `tests/test_*.py`; all run without downloading models.
-- Final evidence: `docs/experiments/final_topk/` (split manifest, resource audit, calibration grid, frozen policies, all repetitions, paired quality analysis, and test log).
+**Report:** [PDF (submission version)](docs/performance_profilling_report.pdf) · [Markdown source with full experiment history](docs/performance_profilling_report.md)
 
-Tested hardware: Windows 11 build 26200, AMD Ryzen 7 7800X3D (8 cores / 16 logical CPUs), about 63.15 GiB usable RAM, and NVIDIA RTX 4070 SUPER with 12 GiB VRAM. The final experiment uses CUDA PyTorch 2.11.0+cu128, Python 3.11.9, Qwen2.5-0.5B-Instruct in bfloat16, E5-base-v2 in float32, and CPU FAISS. This configuration was tested; a minimum GPU/RAM requirement was not measured. CUDA is required by the final benchmark harness. GPU-less unit tests work with a compatible CPU PyTorch installation. Portability and performance on Linux/macOS were not validated for the final artifact.
+This repository is a fork of [FlashRAG](https://github.com/RUC-NLPIR/FlashRAG). We optimized a retrieval-augmented generation (RAG) pipeline: E5 retriever → FAISS → Qwen2.5-0.5B generator. The main contribution is **Adaptive Top-K retrieval**: choose, for each query, how many retrieved documents to pass to the LLM. Four supporting optimizations make generation itself cheaper.
 
-Create an environment and install dependencies (activation is optional):
+| ID | Optimization | Where it lives | How to switch it on | Recorded result (one machine; see report) |
+| --- | --- | --- | --- | --- |
+| **1** | **Adaptive Top-K selection** (primary): score-gap and similarity-threshold policies | `flashrag/retriever/adaptive_topk.py`, `flashrag/pipeline/pipeline.py` | `SequentialPipeline(..., retrieval_policy=...)`; benchmark flag `--adaptive` | Final 500-question study: threshold policy uses 5.6% fewer documents and 4.7% fewer input tokens than fixed k=5, with EM/F1 ≥ fixed-5. The end-to-end latency gain is **not** significant. |
+| 2 | Skip unneeded generation-score collection | `HFCausalLMGenerator.generate()` in `flashrag/generator/generator.py` | On by default; `--collect-scores` restores the old behavior | −10.58 MiB peak GPU allocation on 100 prompts; no latency gain shown |
+| 3 | Keep the CUDA allocator cache (no `empty_cache()` per batch) | `flashrag/generator/generator.py` | `--retain-cuda-cache` | Device allocations 339 → 2; latency gain inconclusive |
+| 4 | Batched generation (+ continuation-only decoding) | `flashrag/generator/generator.py` | `--generator-batch-size N` (`--decode-generated-only`) | Batch 1 → 8: 2.76× generation throughput on 100 prompts |
+| 5 | Length-aware batching (+ tokenization reuse) | `flashrag/generator/generator.py` | `--sort-by-length` (`--reuse-tokenization`) | −11.46% generation time on 500 prompts, but +56.68% peak memory |
+
+The speedups come from different baselines and workloads, so **do not multiply them**. The final Adaptive Top-K study (Section 6) runs every method under one identical configuration (batch 8, no length sorting), so the Adaptive-K results are not mixed up with Optimizations 2–5. We report all results, including the negative ones.
+
+**Quickest way to check our work (about 5 minutes):**
+
+1. Do the setup in Section 2.
+2. Run the unit tests (Section 4). They need no GPU and no models.
+3. Optionally, run the short GPU demos in Section 5. Each takes under one minute.
+
+---
+
+### 1. What is where
+
+| Purpose | Location |
+| --- | --- |
+| Adaptive Top-K policies (Opt 1) | [flashrag/retriever/adaptive_topk.py](flashrag/retriever/adaptive_topk.py) |
+| Pipeline integration (Opt 1) | [flashrag/pipeline/pipeline.py](flashrag/pipeline/pipeline.py) (`SequentialPipeline`, argument `retrieval_policy`) |
+| Generator optimizations (Opts 2–5) | [flashrag/generator/generator.py](flashrag/generator/generator.py) |
+| End-to-end RAG benchmark: fixed-k vs adaptive, all generator flags | [examples/quick_start/perf_baseline.py](examples/quick_start/perf_baseline.py) |
+| Generation-only A/B profiler for Opts 2–5 (replays frozen prompts) | [scripts/profile_generation.py](scripts/profile_generation.py) |
+| Final Adaptive Top-K study (calibrate → freeze → evaluate) | [scripts/run_final_topk_study.py](scripts/run_final_topk_study.py) |
+| Paired quality and latency analysis of a benchmark folder | [scripts/summarize_adaptive_benchmark.py](scripts/summarize_adaptive_benchmark.py) |
+| Unit tests (56) | [tests/](tests/) |
+| Input questions (NQ) | [datasets/](datasets/), described in Section 3 |
+| Retrieval corpus and FAISS index | [examples/quick_start/indexes/](examples/quick_start/indexes/) |
+| Recorded results of every experiment | [docs/experiments/](docs/experiments/), one folder per experiment (listed in Section 5) |
+| Environment record | [docs/environment-lock.txt](docs/environment-lock.txt), [docs/environment_check.json](docs/environment_check.json), [docs/final_resource_manifest.json](docs/final_resource_manifest.json) |
+
+---
+
+### 2. Setup
+
+**Tested on:**
+
+- Windows 11 (build 26200), AMD Ryzen 7 7800X3D, ~63 GiB RAM
+- NVIDIA RTX 4070 SUPER (12 GiB VRAM)
+- Python 3.11.9, PyTorch 2.11.0+cu128, CPU FAISS
+
+**What needs a GPU:**
+
+- **Unit tests (Section 4) run on CPU only.**
+- All benchmarks (Sections 5 and 6) need a CUDA GPU.
+- We did not validate Linux or macOS.
+
+All commands below are PowerShell, run from the repository root.
 
 ```powershell
+# 2.1 Environment
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
 .\.venv\Scripts\python.exe -m pip install -r requirements-baseline.txt
-```
 
-Model weights are excluded from the submission archive. `scripts/download_qwen.py` downloads the pinned Qwen model described in `docs/qwen_download.json`. Download E5 with the pinned command below, or pass the model directory with `--retriever-path`. Exact model revisions and file checksums are recorded in `docs/final_resource_manifest.json`. The corpus and FAISS index must be the matching pair under `examples/quick_start/indexes/`; final SHA-256 values and sampled alignment checks are in `resource_audit.json`. If rebuilding the index, retain corpus order and E5 passage prefixes/pooling; changed resources require new experiments.
-
-The two submission archives preserve repository-relative paths. Extract `cs598ape_resources.zip` into the same directory as `cs598ape_final_artifact.zip`; it supplies the matching corpus/index and the large diagnostic traces. Models remain separate.
-
-```powershell
+# 2.2 Generator: Qwen2.5-0.5B-Instruct (pinned revision) -> models/Qwen2.5-0.5B-Instruct  (~1 GB)
 .\.venv\Scripts\python.exe scripts/download_qwen.py
+
+# 2.3 Retriever: E5-base-v2 (pinned revision) -> Hugging Face cache  (~440 MB)
 .\.venv\Scripts\python.exe -c "from huggingface_hub import snapshot_download; print(snapshot_download('intfloat/e5-base-v2', revision='f52bf8ec8c7124536f0efb74aca902b2995e5bcd', allow_patterns=['config.json','model.safetensors','tokenizer.json','tokenizer_config.json','special_tokens_map.json','vocab.txt']))"
 ```
 
-The official NQ JSONL, exact development/evaluation splits, prior excluded-question lists, and manifests are included in the artifact. The preparation stage verifies the pinned official source checksum, excludes the earlier 17 and 500 questions, and creates 200 development plus 500 new evaluation questions using seed 598. Gold-answer substring checks are explicitly lexical proxies, not ground-truth document relevance judgments.
+**Environment variables for every benchmark command** (set them once per PowerShell window):
 
-Run tests from the repository root:
+```powershell
+$env:PYTHONPATH = (Get-Location).Path
+$env:HF_HUB_OFFLINE = '1'          # remove these two lines if models are not downloaded yet
+$env:TRANSFORMERS_OFFLINE = '1'
+$env:HF_DATASETS_CACHE = Join-Path (Get-Location).Path 'models/datasets-cache'
+$env:TIKTOKEN_CACHE_DIR = Join-Path (Get-Location).Path 'models/tiktoken-cache'
+$E5 = Join-Path $env:USERPROFILE '.cache/huggingface/hub/models--intfloat--e5-base-v2/snapshots/f52bf8ec8c7124536f0efb74aca902b2995e5bcd'
+```
+
+If you stored the models somewhere else, set `$E5` to the E5 folder. Pass a different Qwen folder with `--model_path` (benchmark) or `--model-path` (profiler and study).
+
+---
+
+### 3. Input data
+
+Everything except the model weights is **already in this repository**. Each file is pinned by SHA-256, and the scripts check the checksums.
+
+| File | Content | Source |
+| --- | --- | --- |
+| `datasets/flashrag_official/nq/test.jsonl` | Official FlashRAG NQ test split, 3,610 questions (488 KB) | Hugging Face [`RUC-NLPIR/FlashRAG_datasets`](https://huggingface.co/datasets/RUC-NLPIR/FlashRAG_datasets) @ `bcafb8dd07d453be3cbeeeb3f78be1841bddf92c`, file `nq/test.jsonl` |
+| `examples/quick_start/dataset/nq/test.jsonl` | 17 questions used for early debugging | Upstream FlashRAG |
+| `datasets/nq_500_heldout/nq/test.jsonl` | 500 questions used by the Opt 1–5 experiments | `scripts/prepare_nq_benchmark.py`, seed 2024; [manifest](docs/nq_500_manifest.json) |
+| `datasets/nq_final_study/nq/dev.jsonl` / `test.jsonl` | 200 calibration + 500 evaluation questions for the final study | Built by `run_final_topk_study.py`, seed 598; [manifest](docs/experiments/final_topk/split_manifest.json) |
+| `examples/quick_start/indexes/general_knowledge.jsonl` + `e5_Flat.index` | Retrieval corpus (6.7 MB) + matching E5 FAISS Flat index (46 MB) | Upstream FlashRAG quick-start; checksums in [resource_audit.json](docs/experiments/final_topk/resource_audit.json) |
+
+**Final-study splits.**
+
+- The splits exclude all 517 questions used in earlier experiments.
+- They are disjoint from each other.
+- The script refuses to overwrite them if their content changes.
+
+**Re-downloading the official NQ file** (this also rebuilds the 500-question set):
+
+```powershell
+.\.venv\Scripts\python.exe scripts/prepare_nq_benchmark.py --revision bcafb8dd07d453be3cbeeeb3f78be1841bddf92c --sample-num 500 --seed 2024
+```
+
+---
+
+### 4. Unit tests (CPU only, no downloads, < 1 minute)
+
+Run the whole suite:
 
 ```powershell
 $env:PYTHONPATH = (Get-Location).Path
 .\.venv\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
-Run the final study using existing local resources:
+Expected ending: `Ran 56 tests ... OK`.
+
+Run the tests for one optimization at a time:
 
 ```powershell
-$env:PYTHONPATH = (Get-Location).Path
-$env:HF_HUB_OFFLINE = '1'
-$env:TRANSFORMERS_OFFLINE = '1'
-$env:HF_DATASETS_CACHE = Join-Path (Get-Location).Path 'models/datasets-cache'
-$env:TIKTOKEN_CACHE_DIR = Join-Path (Get-Location).Path 'models/tiktoken-cache'
-.\.venv\Scripts\python.exe scripts/run_final_topk_study.py --stage all --output-dir docs/experiments/reproduction
+# Opt 1  Adaptive Top-K policies + pipeline integration (17 tests) and final-study protocol (3 tests)
+.\.venv\Scripts\python.exe -m unittest tests.test_adaptive_topk tests.test_final_topk_study -v
+# Opt 2  text-only path skips score work but gives identical text; score API still works
+.\.venv\Scripts\python.exe -m unittest tests.test_generator_score_path -k text_only -k return_scores -v
+# Opt 3  retaining the allocator cache skips empty_cache() and keeps text identical
+.\.venv\Scripts\python.exe -m unittest tests.test_generator_score_path -k allocator -v
+# Opt 4  batched outputs + continuation-only decoding keep ids/scores/logits aligned
+.\.venv\Scripts\python.exe -m unittest tests.test_generator_score_path -k return_dict -k generated_only -v
+# Opt 5  length sorting restores the original order; tokenization reuse is exact
+.\.venv\Scripts\python.exe -m unittest tests.test_generator_score_path -k length_sort -k reused -v
 ```
 
-The development stage calibrates 81 score-only configurations against development retrieval coverage, then freezes one policy per family before LLM evaluation. Final methods are fixed k=1/3/5/10, score-gap, and similarity-threshold, all at generator batch 8 without length sorting and with the same greedy maximum-32-token decoding. Three measured repetitions rotate method order; each setting gets an eight-question warmup outside timing. All methods and negative results are reported. Completed measurements are checkpointed for interrupted runs; use the same code, resources, settings and split seed when resuming. Keep the original `final_topk/` evidence unchanged and write reproductions to a new directory.
+---
 
-To use a policy directly:
+### 5. The optimizations: what each does and how to run it
+
+The benchmarks below use two tools.
+
+- **`perf_baseline.py`** runs the **whole RAG pipeline**: retrieval, document selection, prompting, generation and evaluation. It compares fixed-k with adaptive selection and accepts every generator flag.
+- **`profile_generation.py`** isolates **generation only**. It replays the exact prompts saved by an earlier `perf_baseline.py` run, so the inputs are identical across variants. It then runs variants A/B with interleaved repetitions and checks every output text against the saved answers.
+
+Each optimization below has:
+
+- **Quick demo:** a small run that checks the code works (under 1 minute on the tested GPU). It does not reproduce the reported numbers.
+- **Full reproduction:** the exact command behind the reported result.
+- **Recorded evidence:** the folder holding our original output.
+
+Write every rerun to a **new** `--output-dir`. Never overwrite `docs/experiments/*`, because those folders are the evidence for the report.
+
+#### Optimization 1: Adaptive Top-K selection (primary contribution)
+
+**Idea.** Fixed top-k always sends k documents to the LLM. Our policies look only at the retriever similarity scores of one query and cut the ranked list early when the scores show a clear boundary. Fewer documents give shorter prompts and less generation work. The policies:
+
+- **Score-gap:** sort the scores s1 ≥ s2 ≥ …, then cut after the largest adjacent drop if that drop is at least `gap_threshold`; otherwise keep `fallback_k` documents.
+- **Similarity-threshold:** keep the documents with score ≥ `score_threshold` (at least `min_k` and at most `max_k`). If no score qualifies, keep `fallback_k`, so a weak query never gets *less* context.
+
+Both policies run in O(k) per query. They never see the question text or the gold answers. They record the chosen k and the reason in the output.
+
+**Use it in code:**
 
 ```python
-from flashrag.retriever.adaptive_topk import SimilarityThresholdPolicy
-policy = SimilarityThresholdPolicy(score_threshold=0.7174408435821533,
-                                   min_k=2, max_k=5, fallback_k=5)
-# Pass retrieval_policy=policy to SequentialPipeline(config, ...).
-# The calibrated threshold is specific to the recorded E5/index setup.
+from flashrag.retriever.adaptive_topk import SimilarityThresholdPolicy, ScoreGapPolicy
+from flashrag.pipeline import SequentialPipeline
+
+policy = SimilarityThresholdPolicy(score_threshold=0.7174408435821533, min_k=2, max_k=5, fallback_k=5)
+# or: policy = ScoreGapPolicy(gap_threshold=0.03, min_k=2, max_k=5, fallback_k=5)
+pipeline = SequentialPipeline(config, retrieval_policy=policy)   # retrieval_policy=None -> normal fixed top-k
 ```
 
-Export the PDF from the submission section of the single Markdown report:
+**CPU demo, no models needed:**
 
 ```powershell
-.\.venv\Scripts\python.exe scripts/export_project_report.py
+.\.venv\Scripts\python.exe -c "from flashrag.retriever.adaptive_topk import SimilarityThresholdPolicy as P; print(P(score_threshold=0.7174408435821533, min_k=2, max_k=5, fallback_k=5).select([0.80, 0.76, 0.73, 0.70, 0.69]))"
+# -> {'selected_k': 3, ..., 'reason': 'similarity_threshold', ...}  three scores pass the threshold, so 3 docs are kept
 ```
 
-Optional Windows CPU profiling: `scripts/profile_generation.py --windows-cpu-study ...` collects process/thread CPU counters and separate Python profiles. `scripts/capture_windows_cpu.ps1` is an administrator-only WPR entry point. Native ETW capture was blocked by the recorded Windows privilege error and is not claimed as completed. No C/C++ source was added by this project; Valgrind is not applicable to the authored Python implementation, and no Valgrind-clean claim is made for native third-party libraries.
+**Quick GPU demo (~15 s):** fixed k=5 vs adaptive score-gap on 20 questions, full RAG pipeline:
+
+```powershell
+.\.venv\Scripts\python.exe examples/quick_start/perf_baseline.py `
+  --model_path models/Qwen2.5-0.5B-Instruct --retriever_path $E5 `
+  --data-dir datasets/nq_500_heldout --k-values 5 --adaptive --adaptive-gap 0.01 `
+  --sample-num 20 --warmups 1 --warmup-sample-num 4 --repeats 1 --generator-batch-size 8 `
+  --output-dir results/demo_opt1
+.\.venv\Scripts\python.exe scripts/summarize_adaptive_benchmark.py results/demo_opt1
+```
+
+The console prints one `[summary]` line per setting: mean documents, EM/F1, average input tokens, median seconds and queries/s. The summarizer then prints the paired adaptive-vs-fixed quality comparison.
+
+**Full reproduction:**
+
+- The **final, held-out evaluation** of both policies is in Section 6. Use that one for grading.
+- The earlier exploratory 500-question score-gap run (`min_k=1, max_k=10, gap=0.01`) is reproduced with:
+
+```powershell
+.\.venv\Scripts\python.exe examples/quick_start/perf_baseline.py `
+  --model_path models/Qwen2.5-0.5B-Instruct --retriever_path $E5 `
+  --data-dir datasets/nq_500_heldout --k-values 5 --adaptive --adaptive-gap 0.01 `
+  --sample-num 500 --warmups 1 --warmup-sample-num 5 --repeats 3 `
+  --output-dir results/repro_opt1_nq500
+```
+
+**Recorded evidence:**
+
+- [final_topk/](docs/experiments/final_topk/): final study
+- [nq500_gap001/](docs/experiments/nq500_gap001/): exploratory 500-question run
+- [adaptive_gap_v1/](docs/experiments/adaptive_gap_v1/) and [adaptive_gap_sensitivity_001/](docs/experiments/adaptive_gap_sensitivity_001/): 17-question pilots
+
+**Result.**
+
+- The exploratory policy cut documents by 29.9% but lost EM (3.0% → 2.2%).
+- That loss motivated the guarded policies (`min_k=2`, `max_k=5`, fallback) and a fresh, disjoint evaluation set (Section 6).
+
+#### Optimization 2: Skip unneeded generation-score collection
+
+**Idea.** The original generator always collected per-token output scores and post-processed them, even when the caller only wanted text. The text-only path now skips this work. Score-returning calls still collect the scores. These are LLM token scores, not retrieval similarities.
+
+**Switch:** on by default. Restore the old behavior with `collect_scores=True`, the benchmark flag `--collect-scores`, or the profiler variant `score_collection_on`.
+
+#### Optimization 3: Retain the CUDA allocator cache
+
+**Idea.** The original code called `torch.cuda.empty_cache()` after every generation batch, which forced PyTorch to return memory to the driver and allocate it again for the next batch. Retaining the cache avoids those device allocations.
+
+**Switch:** the benchmark flag `--retain-cuda-cache`, or the profiler variant `retain_allocator_cache`.
+
+**Quick demo for Opts 2 and 3 together (~45 s, generation only, 16 prompts × 3 repeats):**
+
+```powershell
+.\.venv\Scripts\python.exe scripts/profile_generation.py `
+  --source-json docs/experiments/nq500_gap001/adaptive_topk_adaptive_gap_20261113_151722_140059.json `
+  --sample-num 16 --repeats 3 --skip-profile `
+  --variants baseline retain_allocator_cache score_collection_on `
+  --output-dir results/demo_opt2_opt3
+```
+
+How to read the output:
+
+- `baseline` already includes Opt 2 (no score collection). `score_collection_on` is the old behavior, and `retain_allocator_cache` adds Opt 3.
+- Compare `peak_allocated_mib` (Opt 2) and `device_allocations` (Opt 3) between variants in the `[study]` lines or in `comparison.json`.
+- `text_mismatches_against_saved` must be 0.
+
+**Full reproduction (100 prompts, order reversed on odd rounds, includes the PyTorch profiler trace):**
+
+```powershell
+.\.venv\Scripts\python.exe scripts/profile_generation.py `
+  --source-json docs/experiments/nq500_gap001/adaptive_topk_adaptive_gap_20261113_151722_140059.json `
+  --sample-num 100 --repeats 3 --reverse-odd-rounds `
+  --output-dir results/repro_opt2_opt3
+```
+
+**Recorded evidence:** [generation_optimization/](docs/experiments/generation_optimization/). CPU thread screening for Opt 3 is in [host_overhead_pilot/](docs/experiments/host_overhead_pilot/).
+
+**Results:**
+
+- Opt 2 lowered peak allocation by 10.58 MiB, with no latency gain shown.
+- Opt 3 cut device allocations from 339 to 2. Its 2.07% time change is within run-to-run noise.
+- All 100 output texts matched in every run.
+
+#### Optimization 4: Batched generation
+
+**Idea.** Profiling showed that generation dominates RAG time and that batch size 1 leaves the GPU mostly idle, waiting on Python and kernel-launch overhead. Generating 8 (or 32) prompts per call amortizes that overhead. Continuation-only decoding (`--decode-generated-only`) decodes only the new tokens instead of the whole prompt plus answer.
+
+**Switch:** `--generator-batch-size N` (default 1), optionally `--decode-generated-only`. Profiler variants: `batch4`, `batch8`, `sorted_batch32`, `sorted_decode_new`.
+
+#### Optimization 5: Length-aware batching
+
+**Idea.** In a batch, every prompt is padded to the longest one. Sorting prompts by token length before batching puts similar lengths together, which removes most of the padding work. Outputs are restored to the original order. `--reuse-tokenization` reuses the token IDs computed for sorting instead of tokenizing twice.
+
+**Switch:** `--sort-by-length`, optionally `--reuse-tokenization`. It needs batch size > 1. Profiler variants: `batch8_length_sorted`, `sorted_reuse_tokens`.
+
+**Quick demo for Opts 4 and 5 together (~50 s, 32 prompts × 3 repeats):**
+
+```powershell
+.\.venv\Scripts\python.exe scripts/profile_generation.py `
+  --source-json docs/experiments/nq500_gap001/adaptive_topk_adaptive_gap_20261113_151722_140059.json `
+  --sample-num 32 --repeats 3 --skip-profile `
+  --variants baseline batch8 batch8_length_sorted `
+  --output-dir results/demo_opt4_opt5
+```
+
+On the tested GPU, the final `[done]` line showed batch 1 ≈ 7.3 s, batch 8 ≈ 3.0 s, and batch 8 + length sorting ≈ 2.4 s.
+
+**Full reproduction:**
+
+```powershell
+# Opt 4  batch size 1 / 4 / 8 on 100 frozen prompts
+.\.venv\Scripts\python.exe scripts/profile_generation.py `
+  --source-json docs/experiments/nq500_gap001/adaptive_topk_adaptive_gap_20261113_151722_140059.json `
+  --sample-num 100 --repeats 3 --skip-profile --variants baseline batch4 batch8 `
+  --output-dir results/repro_opt4_batching
+
+# Opt 4  full RAG pipeline on 500 questions at batch 8
+.\.venv\Scripts\python.exe examples/quick_start/perf_baseline.py `
+  --model_path models/Qwen2.5-0.5B-Instruct --retriever_path $E5 `
+  --data-dir datasets/nq_500_heldout --k-values 5 --adaptive --adaptive-gap 0.01 `
+  --sample-num 500 --warmups 1 --warmup-sample-num 5 --repeats 3 --generator-batch-size 8 `
+  --output-dir results/repro_opt4_nq500_batch8
+
+# Opt 5  batch 8 vs batch 8 + length sorting on 500 frozen prompts (with padding/GPU diagnostic)
+.\.venv\Scripts\python.exe scripts/profile_generation.py `
+  --source-json docs/experiments/nq500_batch8/adaptive_topk_adaptive_gap_20261113_160953_930358.json `
+  --sample-num 500 --repeats 4 --warmup-sample-num 8 --skip-profile --padding-study `
+  --variants batch8 batch8_length_sorted --output-dir results/repro_opt5_length_sorting
+
+# Opts 4 + 5 follow-ups: token reuse, continuation decoding, batch 32 (500 prompts, CPU/CUDA traces)
+.\.venv\Scripts\python.exe scripts/profile_generation.py `
+  --source-json docs/experiments/nq500_batch8/adaptive_topk_adaptive_gap_20261113_160953_930358.json `
+  --sample-num 500 --repeats 3 --warmup-sample-num 8 --skip-profile --execution-study --cpu-threads 8 `
+  --variants batch8_length_sorted sorted_reuse_tokens sorted_decode_new sorted_batch32 sorted_batch32_combined `
+  --output-dir results/repro_opt45_followups
+```
+
+**Recorded evidence:**
+
+| Folder | Content |
+| --- | --- |
+| [generation_batching/](docs/experiments/generation_batching/) | Batch 1/4/8 timings and memory (Opt 4) |
+| [nq500_batch8/](docs/experiments/nq500_batch8/) | Full RAG pipeline at batch 8 (Opt 4) |
+| [cpu_gpu_runtime/](docs/experiments/cpu_gpu_runtime/) | CPU/GPU traces (Opt 4) |
+| [length_bucketing/](docs/experiments/length_bucketing/) | Length sorting (Opt 5) |
+| [nq500_length_sorted/](docs/experiments/nq500_length_sorted/) | Full RAG pipeline with length sorting (Opt 5) |
+| [host_overhead_pilot/](docs/experiments/host_overhead_pilot/), [host_overhead_500/](docs/experiments/host_overhead_500/), [nq500_host_optimized/](docs/experiments/nq500_host_optimized/) | Follow-ups: token reuse, continuation decoding, batch 32 |
+
+**Results.**
+
+- **Opt 4:**
+  - Batch 1 → 8 gave 2.76× generation throughput.
+  - With length sorting already on, batch 8 → 32 gave 2.71×, and 2.84× together with token reuse and continuation decoding.
+  - Batching changes some output texts (floating-point batch effects), and fixed-5 EM dropped at batch 32.
+- **Opt 5:**
+  - Generation time fell 11.46% and padded slots fell 53.36%.
+  - Peak memory rose 56.68%, so length sorting stays opt-in.
+
+---
+
+### 6. Final Adaptive Top-K study (the main result)
+
+This study evaluates Optimization 1 under a **frozen, held-out protocol**, and it is the result to grade.
+
+- All methods share one generator configuration: batch 8, no length sorting, greedy decoding with at most 32 new tokens.
+- The only thing that differs between methods is the number of documents.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/run_final_topk_study.py --stage all --output-dir results/repro_final_topk
+```
+
+What the script does:
+
+1. **Builds the splits.** It verifies the NQ checksum and creates the 200 development and 500 evaluation questions described in Section 3.
+2. **Develop (`--stage develop`).**
+   - Audits the corpus/index pair.
+   - Grid-searches 81 score-only policy configurations on the development questions.
+   - For each family, picks the one that uses the fewest documents without losing any development answer hit compared with fixed k=5.
+   - Freezes the choices in `frozen_policies.json`.
+   - No evaluation question is used in this stage.
+3. **Evaluate (`--stage evaluate`).**
+   - Runs fixed k=1, 3, 5 and 10, score-gap, and similarity-threshold on the 500 evaluation questions.
+   - Gives each method an 8-question warm-up, then 3 timed repetitions with rotated method order.
+   - Compares EM/F1/accuracy against fixed-5 with paired bootstrap 95% intervals.
+
+**Runtime:**
+
+- About 43–59 s per method per repetition on the tested GPU.
+- The 18 timed runs take about 15 minutes, plus development, warm-ups and model loading.
+- Completed measurements are checkpointed, so rerun the same command to resume.
+
+**Main output:** `evaluation_summary.json`. For each method it gives median time, queries/s, time change vs fixed-5, EM/F1/accuracy, mean k, input tokens, paired confidence intervals and per-stage times.
+
+**Our recorded result:** [docs/experiments/final_topk/evaluation_summary.json](docs/experiments/final_topk/evaluation_summary.json)
+
+| Method | Mean docs | Input tokens | Median time change vs fixed-5 | EM | F1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| fixed k=1 | 1 | 138 | 8.0% faster | 2.8% | 7.88% |
+| fixed k=3 | 3 | 309 | 4.1% faster | 4.0% | 8.66% |
+| fixed k=5 (reference) | 5 | 474 | — | 2.6% | 7.66% |
+| fixed k=10 | 10 | 785 | 24.8% slower | 2.2% | 7.10% |
+| score-gap (frozen) | 4.93 | 469 | 1.3% faster | 2.6% | 7.73% |
+| similarity-threshold (frozen) | 4.72 | 452 | 0.2% slower | 2.8% | 7.77% |
+
+**Interpretation:**
+
+- Both adaptive policies kept EM/F1 at or above fixed-5 while using fewer documents.
+- On this small corpus, the calibration stayed conservative (mean k close to 5). The resulting time changes are within run-to-run noise, so **no robust latency gain is claimed**.
+- Fixed k=3 is a strong simple baseline on this workload.
+- Section 4 of the report discusses this in full.
+
+---
+
+### 7. Other entry points (optional)
+
+- **Rebuild the PDF from the Markdown report:** `.\.venv\Scripts\python.exe scripts/export_project_report.py`
+- **Build the submission archives:** `.\.venv\Scripts\python.exe scripts/package_submission.py`. This writes `dist/cs598ape_final_artifact.zip` and `dist/cs598ape_resources.zip` with a SHA-256 inventory. Extract both into the same folder. Model weights are never included. A `git clone` of this repository already contains the same files.
+- **Windows CPU profiling:**
+  - `scripts/profile_generation.py --windows-cpu-study ...` collects process/thread CPU counters and Python profiles.
+  - `scripts/capture_windows_cpu.ps1` is an administrator-only WPR capture. Native ETW capture was blocked by a Windows privilege error and is not claimed.
+- **Valgrind:** this project adds no C/C++ code, so Valgrind does not apply to our Python code.
+
+### 8. Known limitations
+
+- All results come from one Windows + RTX 4070 SUPER machine, a 0.5B generator and a small quick-start corpus. Absolute times will differ elsewhere.
+- Calibrated thresholds are specific to E5-base-v2 and this corpus/index.
+- Absolute answer quality is low for every method (EM 2.2–4.0%) because the generator is small. The study compares methods with each other.
+- The development criterion "answer hit" is a lexical proxy (does a gold-answer string appear in a retrieved document), not a human relevance judgment.
+
+---
 
 The upstream FlashRAG documentation follows below.
 

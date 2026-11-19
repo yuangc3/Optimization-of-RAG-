@@ -1,4 +1,10 @@
 datasets/*
+# CS598APE: keep the small, checksummed NQ question files used by the final study.
+!datasets/flashrag_official/
+datasets/flashrag_official/*
+!datasets/flashrag_official/nq/
+!datasets/nq_500_heldout/
+!datasets/nq_final_study/
 .venv/
 output/
 indexes/*
